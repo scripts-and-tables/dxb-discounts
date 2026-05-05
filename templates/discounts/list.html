@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Discounts in Dubai — DXB Discounts{% endblock %}
+{% block meta_description %}Browse the latest discounts and offers across Dubai. Filter by category, area or deal type.{% endblock %}
+
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-slate-900">Discounts</h1>
+    <p class="text-slate-600 mt-1">Filter to find offers across Dubai.</p>
+  </header>
+
+  <form
+    class="card p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3"
+    hx-get="{% url 'discounts:list' %}"
+    hx-target="#results"
+    hx-trigger="change from:select, keyup changed delay:300ms from:input[name=q], submit"
+    hx-push-url="true"
+    hx-indicator="#filter-indicator"
+  >
+    <input type="search" name="q" value="{{ selected.q }}" placeholder="Search…" class="field sm:col-span-2">
+    <select name="category" class="field">
+      <option value="">All categories</option>
+      {% for value, label in categories %}
+        <option value="{{ value }}" {% if value == selected.category %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+    <select name="area" class="field">
+      <option value="">All areas</option>
+      {% for area in areas %}
+        <option value="{{ area }}" {% if area == selected.area %}selected{% endif %}>{{ area }}</option>
+      {% endfor %}
+    </select>
+    <select name="type" class="field">
+      <option value="">All deal types</option>
+      {% for value, label in discount_types %}
+        <option value="{{ value }}" {% if value == selected.type %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+    <noscript><button type="submit" class="btn-primary col-span-full">Apply filters</button></noscript>
+    <span id="filter-indicator" class="htmx-indicator text-xs text-slate-400 col-span-full">Updating…</span>
+  </form>
+
+  <div id="results">
+    {% include "discounts/_results.html" %}
+  </div>
+</section>
+{% endblock %}

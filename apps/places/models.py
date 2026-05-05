@@ -1,0 +1,49 @@
+from django.db import models
+from django.urls import reverse
+from django.utils.text import slugify
+
+
+class Category(models.TextChoices):
+    RESTAURANT = "restaurant", "Restaurants & Cafes"
+    ATTRACTION = "attraction", "Attractions & Entertainment"
+    HOTEL = "hotel", "Hotels & Staycations"
+    RETAIL = "retail", "Retail, Beauty & Services"
+
+
+class Place(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=220, unique=True, blank=True)
+    category = models.CharField(max_length=20, choices=Category.choices)
+    area = models.CharField(max_length=120, help_text="e.g. Dubai Marina, Downtown, JBR")
+    address = models.TextField(blank=True)
+    phone = models.CharField(max_length=40, blank=True)
+    website = models.URLField(blank=True)
+    description = models.TextField(blank=True)
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["name"]
+        indexes = [
+            models.Index(fields=["category"]),
+            models.Index(fields=["area"]),
+            models.Index(fields=["is_published"]),
+        ]
+
+    def __str__(self) -> str:
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base = slugify(self.name)[:200] or "place"
+            slug = base
+            i = 2
+            while Place.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+                slug = f"{base}-{i}"
+                i += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self) -> str:
+        return reverse("places:detail", kwargs={"slug": self.slug})

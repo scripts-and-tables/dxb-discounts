@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Not found — DXB Discounts{% endblock %}
+
+{% block content %}
+<section class="max-w-2xl mx-auto px-4 py-20 text-center">
+  <div class="text-6xl mb-4">🤷</div>
+  <h1 class="text-3xl font-bold text-slate-900 mb-2">Page not found</h1>
+  <p class="text-slate-600 mb-6">The page you're looking for doesn't exist, or the offer has expired.</p>
+  <a href="{% url 'pages:home' %}" class="btn-primary">Back home</a>
+</section>
+{% endblock %}

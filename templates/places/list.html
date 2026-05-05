@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Places in Dubai — DXB Discounts{% endblock %}
+
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-slate-900">Places</h1>
+    <p class="text-slate-600 mt-1">Venues across Dubai with active discounts.</p>
+  </header>
+
+  <form method="get" class="card p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    <input type="search" name="q" value="{{ selected.q }}" placeholder="Search places…" class="field sm:col-span-2">
+    <select name="category" class="field" onchange="this.form.submit()">
+      <option value="">All categories</option>
+      {% for value, label in categories %}
+        <option value="{{ value }}" {% if value == selected.category %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+    <select name="area" class="field" onchange="this.form.submit()">
+      <option value="">All areas</option>
+      {% for area in areas %}
+        <option value="{{ area }}" {% if area == selected.area %}selected{% endif %}>{{ area }}</option>
+      {% endfor %}
+    </select>
+    <noscript><button type="submit" class="btn-primary col-span-full">Apply</button></noscript>
+  </form>
+
+  {% if page_obj.object_list %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for place in page_obj.object_list %}
+        <a href="{{ place.get_absolute_url }}" class="card block p-5 hover:border-amber-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="chip">{{ place.get_category_display }}</span>
+            {% if place.live_discount_count %}<span class="chip-amber">{{ place.live_discount_count }} offer{{ place.live_discount_count|pluralize }}</span>{% endif %}
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1">{{ place.name }}</h3>
+          <p class="text-sm text-slate-500">{{ place.area }}</p>
+        </a>
+      {% endfor %}
+    </div>
+
+    {% if page_obj.has_other_pages %}
+      <nav class="mt-8 flex items-center justify-between text-sm">
+        {% if page_obj.has_previous %}
+          <a href="?{% for k, v in selected.items %}{% if v %}{{ k }}={{ v }}&{% endif %}{% endfor %}page={{ page_obj.previous_page_number }}" class="btn-ghost">← Previous</a>
+        {% else %}<span></span>{% endif %}
+        <span class="text-slate-500">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+          <a href="?{% for k, v in selected.items %}{% if v %}{{ k }}={{ v }}&{% endif %}{% endfor %}page={{ page_obj.next_page_number }}" class="btn-ghost">Next →</a>
+        {% else %}<span></span>{% endif %}
+      </nav>
+    {% endif %}
+  {% else %}
+    <div class="card p-12 text-center text-slate-500">No places match those filters.</div>
+  {% endif %}
+</section>
+{% endblock %}

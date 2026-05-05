@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}{{ discount.title }} — {{ discount.place.name }}{% endblock %}
+{% block meta_description %}{{ discount.headline }} at {{ discount.place.name }}, {{ discount.place.area }}. {{ discount.description|truncatewords:20 }}{% endblock %}
+
+{% block content %}
+<section class="max-w-3xl mx-auto px-4 py-8">
+  <nav class="text-sm text-slate-500 mb-4">
+    <a href="{% url 'discounts:list' %}" class="hover:text-slate-900">Discounts</a>
+    <span class="mx-1">/</span>
+    <a href="{% url 'places:detail' discount.place.slug %}" class="hover:text-slate-900">{{ discount.place.name }}</a>
+  </nav>
+
+  <header class="mb-6">
+    <div class="flex flex-wrap items-center gap-2 mb-3">
+      <span class="chip-amber font-bold text-sm">{{ discount.headline }}</span>
+      <span class="chip">{{ discount.get_discount_type_display }}</span>
+      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+    </div>
+    <h1 class="text-3xl font-bold text-slate-900 mb-2">{{ discount.title }}</h1>
+    <p class="text-slate-600">
+      at <a href="{% url 'places:detail' discount.place.slug %}" class="font-medium text-slate-900 hover:text-amber-700">{{ discount.place.name }}</a>
+      &middot; {{ discount.place.area }}
+    </p>
+  </header>
+
+  <article class="card p-6 mb-6">
+    <p class="text-slate-800 whitespace-pre-line">{{ discount.description }}</p>
+
+    {% if discount.discount_type == 'promo_code' and discount.promo_code %}
+      <div class="mt-4 p-4 rounded-lg bg-amber-50 border border-amber-200">
+        <p class="text-sm text-amber-900 mb-1">Promo code</p>
+        <p class="text-2xl font-mono font-bold tracking-wider text-amber-950">{{ discount.promo_code }}</p>
+      </div>
+    {% endif %}
+
+    {% if discount.terms %}
+      <div class="mt-6 pt-4 border-t border-slate-200">
+        <h3 class="text-sm font-semibold text-slate-700 mb-2">Terms & conditions</h3>
+        <p class="text-sm text-slate-600 whitespace-pre-line">{{ discount.terms }}</p>
+      </div>
+    {% endif %}
+
+    {% if discount.valid_from or discount.valid_until %}
+      <div class="mt-4 text-sm text-slate-500">
+        {% if discount.valid_from %}Valid from {{ discount.valid_from|date:"j M Y" }}{% endif %}
+        {% if discount.valid_until %}{% if discount.valid_from %} ·{% endif %} Valid until {{ discount.valid_until|date:"j M Y" }}{% endif %}
+      </div>
+    {% endif %}
+  </article>
+
+  <aside class="card p-5 mb-6">
+    <h2 class="font-semibold text-slate-900 mb-2">{{ discount.place.name }}</h2>
+    <p class="text-sm text-slate-600">{{ discount.place.area }}{% if discount.place.address %} · {{ discount.place.address }}{% endif %}</p>
+    <div class="mt-3 flex flex-wrap gap-3 text-sm">
+      {% if discount.place.phone %}<a href="tel:{{ discount.place.phone }}" class="text-amber-700 hover:text-amber-900">{{ discount.place.phone }}</a>{% endif %}
+      {% if discount.place.website %}<a href="{{ discount.place.website }}" rel="noopener noreferrer nofollow" target="_blank" class="text-amber-700 hover:text-amber-900">Website ↗</a>{% endif %}
+      <a href="{% url 'places:detail' discount.place.slug %}" class="text-slate-600 hover:text-slate-900">More at this place →</a>
+    </div>
+  </aside>
+
+  {% if related %}
+  <section>
+    <h2 class="text-xl font-bold text-slate-900 mb-3">More at {{ discount.place.name }}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {% for d in related %}
+        {% with discount=d %}{% include "discounts/_card.html" %}{% endwith %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</section>
+{% endblock %}

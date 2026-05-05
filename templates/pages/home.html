@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}DXB Discounts — All Dubai discounts in one place{% endblock %}
+
+{% block content %}
+<section class="bg-gradient-to-br from-amber-50 via-white to-rose-50 border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-16 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+      Every Dubai discount, in one place.
+    </h1>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+      Browse offers across restaurants, attractions, hotels and more — updated regularly.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="{% url 'discounts:list' %}" class="btn-primary">Browse all discounts</a>
+      <a href="{% url 'places:list' %}" class="btn-ghost">Browse places</a>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Categories</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    {% for value, label in categories %}
+      <a href="{% url 'discounts:list' %}?category={{ value }}" class="card p-4 text-center hover:border-amber-300">
+        <div class="text-3xl mb-2">
+          {% if value == 'restaurant' %}🍽️
+          {% elif value == 'attraction' %}🎢
+          {% elif value == 'hotel' %}🏨
+          {% else %}🛍️{% endif %}
+        </div>
+        <div class="text-sm font-medium text-slate-900">{{ label }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if featured %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <div class="flex items-end justify-between mb-4">
+    <h2 class="text-2xl font-bold text-slate-900">Featured</h2>
+    <a href="{% url 'discounts:list' %}" class="text-sm font-medium text-amber-700 hover:text-amber-800">See all →</a>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for discount in featured %}{% include "discounts/_card.html" %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if recent %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Latest</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for discount in recent %}{% include "discounts/_card.html" %}{% endfor %}
+  </div>
+</section>
+{% elif not featured %}
+<section class="max-w-6xl mx-auto px-4 py-16 text-center text-slate-500">
+  <p>No discounts published yet. Check back soon.</p>
+</section>
+{% endif %}
+{% endblock %}
