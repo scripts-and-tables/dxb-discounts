@@ -5,7 +5,7 @@
   },
   "deploy": {
     "preDeployCommand": "python manage.py migrate --noinput",
-    "startCommand": "python manage.py collectstatic --noinput && gunicorn config.wsgi --log-file -",
+    "startCommand": "gunicorn config.wsgi --log-file -",
     "healthcheckPath": "/healthz/",
     "healthcheckTimeout": 60,
     "restartPolicyType": "ON_FAILURE",
