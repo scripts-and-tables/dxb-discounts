@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "preDeployCommand": "python manage.py migrate --noinput",
+    "preDeployCommand": "python manage.py migrate --noinput && python manage.py collectstatic --noinput",
     "startCommand": "gunicorn config.wsgi --log-file -",
     "healthcheckPath": "/healthz/",
     "healthcheckTimeout": 30,

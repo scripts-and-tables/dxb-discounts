@@ -122,6 +122,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = True
+    # Railway sends internal healthchecks over plain HTTP without X-Forwarded-Proto,
+    # so /healthz/ must be exempt from the HTTPS redirect or the deploy is marked unhealthy.
+    SECURE_REDIRECT_EXEMPT = [r"^healthz/?$"]
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 60 * 60 * 24 * 30  # 30 days
