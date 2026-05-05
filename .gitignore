@@ -26,9 +26,10 @@ media/
 .env.*
 !.env.example
 
-# IDE
+# IDE / agent state
 .vscode/
 .idea/
+.claude/
 *.swp
 .DS_Store
 
