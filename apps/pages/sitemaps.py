@@ -21,7 +21,7 @@ class PlaceSitemap(sitemaps.Sitemap):
     changefreq = "weekly"
 
     def items(self):
-        return Place.objects.filter(is_published=True)
+        return Place.objects.filter(is_published=True, is_members_only=False)
 
     def lastmod(self, obj: Place):
         return obj.updated_at
@@ -32,7 +32,7 @@ class DiscountSitemap(sitemaps.Sitemap):
     changefreq = "daily"
 
     def items(self):
-        return Discount.objects.live()
+        return Discount.objects.live().filter(is_members_only=False, place__is_members_only=False)
 
     def lastmod(self, obj: Discount):
         return obj.updated_at

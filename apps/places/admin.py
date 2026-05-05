@@ -14,8 +14,8 @@ class DiscountInline(admin.TabularInline):
 
 @admin.register(Place)
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ("name", "category", "area", "is_published", "discount_count", "updated_at")
-    list_filter = ("category", "is_published", "area")
+    list_display = ("name", "category", "area", "is_published", "is_members_only", "discount_count", "updated_at")
+    list_filter = ("category", "is_published", "is_members_only", "area")
     search_fields = ("name", "area", "address")
     prepopulated_fields = {"slug": ("name",)}
     list_per_page = 50

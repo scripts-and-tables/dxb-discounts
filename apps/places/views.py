@@ -1,8 +1,10 @@
 from django.core.paginator import Paginator
 from django.db.models import Count, Q
+from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_GET
 
+from apps.accounts.selectors import attach_favorited
 from apps.discounts.models import Discount
 
 from .models import Category, Place
@@ -35,6 +37,8 @@ def place_list(request):
             filter=Q(discounts__is_active=True),
         ))
     )
+    if not request.user.is_authenticated:
+        qs = qs.filter(is_members_only=False)
 
     category = request.GET.get("category", "").strip()
     area = request.GET.get("area", "").strip()
@@ -60,12 +64,17 @@ def place_list(request):
 @require_GET
 def place_detail(request, slug: str):
     place = get_object_or_404(Place, slug=slug, is_published=True)
-    discounts = (
+    if place.is_members_only and not request.user.is_authenticated:
+        raise Http404
+    discounts_qs = (
         Discount.objects
         .live()
         .filter(place=place)
         .order_by("-is_featured", "-created_at")
     )
+    if not request.user.is_authenticated:
+        discounts_qs = discounts_qs.filter(is_members_only=False)
+    discounts = attach_favorited(discounts_qs, request.user)
     return render(request, "places/detail.html", {
         "place": place,
         "discounts": discounts,

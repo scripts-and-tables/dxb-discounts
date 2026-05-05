@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "anymail",
     "apps.places",
     "apps.discounts",
     "apps.pages",
+    "apps.accounts",
 ]
 
 SITE_ID = 1
@@ -116,6 +118,23 @@ STORAGES = {
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Authentication
+LOGIN_URL = "accounts:login"
+LOGIN_REDIRECT_URL = "accounts:profile"
+LOGOUT_REDIRECT_URL = "pages:home"
+
+# Email — console in dev, Resend (via Anymail) in prod.
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="DXB Discounts <onboarding@resend.dev>")
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+RESEND_API_KEY = env("RESEND_API_KEY", default="")
+
+if DEBUG or not RESEND_API_KEY:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+else:
+    EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
+    ANYMAIL = {"RESEND_API_KEY": RESEND_API_KEY}
 
 
 # Production hardening

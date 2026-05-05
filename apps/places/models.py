@@ -20,6 +20,7 @@ class Place(models.Model):
     website = models.URLField(blank=True)
     description = models.TextField(blank=True)
     is_published = models.BooleanField(default=True)
+    is_members_only = models.BooleanField(default=False, help_text="Hidden from anonymous visitors; visible to signed-in users.")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

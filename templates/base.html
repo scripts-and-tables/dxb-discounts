@@ -36,6 +36,26 @@
         <a href="{% url 'discounts:list' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Discounts</a>
         <a href="{% url 'places:list' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Places</a>
         <a href="{% url 'pages:about' %}" class="px-3 py-2 rounded-md hover:bg-slate-100 hidden sm:inline-block">About</a>
+        <span class="mx-1 h-6 w-px bg-slate-200 hidden sm:inline-block"></span>
+        {% if user.is_authenticated %}
+          <details class="relative">
+            <summary class="list-none cursor-pointer ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full bg-amber-100 text-amber-900 font-semibold text-sm hover:bg-amber-200" title="{{ user.email|default:user.username }}">
+              {{ user.email|default:user.username|slice:":1"|upper }}
+            </summary>
+            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white border border-slate-200 shadow-lg py-1 z-40">
+              <div class="px-3 py-2 text-xs text-slate-500 truncate">{{ user.email|default:user.username }}</div>
+              <a href="{% url 'accounts:profile' %}" class="block px-3 py-2 text-sm hover:bg-slate-50">Profile & favorites</a>
+              {% if user.is_staff %}<a href="/admin/" class="block px-3 py-2 text-sm hover:bg-slate-50">Admin</a>{% endif %}
+              <form method="post" action="{% url 'accounts:logout' %}" class="border-t border-slate-100 mt-1 pt-1">
+                {% csrf_token %}
+                <button type="submit" class="block w-full text-left px-3 py-2 text-sm hover:bg-slate-50">Sign out</button>
+              </form>
+            </div>
+          </details>
+        {% else %}
+          <a href="{% url 'accounts:login' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Sign in</a>
+          <a href="{% url 'accounts:signup' %}" class="btn-primary text-sm py-1.5 px-3 ml-1">Sign up</a>
+        {% endif %}
       </nav>
     </div>
   </header>

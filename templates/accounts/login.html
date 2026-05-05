@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Sign in — DXB Discounts{% endblock %}
+
+{% block content %}
+<section class="max-w-md mx-auto px-4 py-12">
+  {% if messages %}
+    <div class="mb-4 space-y-2">
+      {% for m in messages %}
+        <div class="rounded-md px-4 py-2 text-sm bg-emerald-50 text-emerald-900 border border-emerald-200">{{ m }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="card p-8">
+    <h1 class="text-2xl font-bold text-slate-900 mb-1">Sign in</h1>
+    <p class="text-sm text-slate-600 mb-6">We'll email you a 6-digit code to confirm.</p>
+
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}">
+      {% for field in form %}
+        <div>
+          <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-slate-700 mb-1">{{ field.label }}</label>
+          {{ field }}
+          {% for err in field.errors %}<p class="mt-1 text-xs text-rose-600">{{ err }}</p>{% endfor %}
+        </div>
+      {% endfor %}
+      {% for err in form.non_field_errors %}<p class="text-sm text-rose-600">{{ err }}</p>{% endfor %}
+      <button type="submit" class="btn-primary w-full">Continue</button>
+    </form>
+
+    <div class="mt-6 pt-4 border-t border-slate-200 text-sm text-slate-600 flex items-center justify-between">
+      <a href="{% url 'accounts:password_reset' %}" class="hover:text-amber-700">Forgot password?</a>
+      <span>New here? <a href="{% url 'accounts:signup' %}" class="font-medium text-amber-700 hover:text-amber-800">Create account</a></span>
+    </div>
+  </div>
+</section>
+{% endblock %}

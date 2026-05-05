@@ -1,13 +1,21 @@
-{# discount card. Expects: discount #}
-<a href="{{ discount.get_absolute_url }}" class="card block p-5 group">
+{# Discount card. Expects: discount. Optionally: favorited (bool). #}
+<div class="card block p-5 group relative">
   <div class="flex items-start justify-between gap-3 mb-3">
-    <span class="chip-amber text-sm font-bold">{{ discount.headline }}</span>
-    {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+    <div class="flex flex-wrap gap-2">
+      <span class="chip-amber text-sm font-bold">{{ discount.headline }}</span>
+      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+      {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
+    </div>
+    {% if user.is_authenticated %}
+      {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
+    {% endif %}
   </div>
-  <h3 class="font-semibold text-slate-900 group-hover:text-amber-700 line-clamp-2 mb-1">{{ discount.title }}</h3>
-  <p class="text-sm text-slate-600 mb-3 line-clamp-2">{{ discount.description }}</p>
-  <div class="flex items-center justify-between text-xs text-slate-500">
-    <span class="truncate">{{ discount.place.name }}</span>
-    <span class="ml-2 shrink-0">{{ discount.place.area }}</span>
-  </div>
-</a>
+  <a href="{{ discount.get_absolute_url }}" class="block">
+    <h3 class="font-semibold text-slate-900 group-hover:text-amber-700 line-clamp-2 mb-1">{{ discount.title }}</h3>
+    <p class="text-sm text-slate-600 mb-3 line-clamp-2">{{ discount.description }}</p>
+    <div class="flex items-center justify-between text-xs text-slate-500">
+      <span class="truncate">{{ discount.place.name }}</span>
+      <span class="ml-2 shrink-0">{{ discount.place.area }}</span>
+    </div>
+  </a>
+</div>

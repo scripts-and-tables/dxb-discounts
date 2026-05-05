@@ -1,8 +1,10 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_GET
 
+from apps.accounts.selectors import attach_favorited
 from apps.places.models import Category, Place
 
 from .models import Discount, DiscountType
@@ -26,9 +28,17 @@ def _filter_choices():
     }
 
 
+def _gate_members_only(qs, user):
+    """Filter members-only items out for anonymous users."""
+    if user.is_authenticated:
+        return qs
+    return qs.filter(is_members_only=False, place__is_members_only=False)
+
+
 @require_GET
 def discount_list(request):
     qs = Discount.objects.live().select_related("place")
+    qs = _gate_members_only(qs, request.user)
 
     category = request.GET.get("category", "").strip()
     area = request.GET.get("area", "").strip()
@@ -50,6 +60,7 @@ def discount_list(request):
         )
 
     page = Paginator(qs, PAGE_SIZE).get_page(request.GET.get("page"))
+    page.object_list = attach_favorited(page.object_list, request.user)
 
     selected = {
         "category": category,
@@ -74,6 +85,8 @@ def discount_detail(request, slug: str):
         is_active=True,
         place__is_published=True,
     )
+    if not request.user.is_authenticated and (discount.is_members_only or discount.place.is_members_only):
+        raise Http404
     related = (
         Discount.objects
         .live()
@@ -81,6 +94,8 @@ def discount_detail(request, slug: str):
         .exclude(pk=discount.pk)
         .order_by("-is_featured", "-created_at")[:6]
     )
+    related = attach_favorited(related, request.user)
+    attach_favorited([discount], request.user)
     return render(request, "discounts/detail.html", {
         "discount": discount,
         "related": related,

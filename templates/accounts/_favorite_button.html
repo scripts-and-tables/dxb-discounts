@@ -1,0 +1,15 @@
+{# Heart-shaped favorite toggle. Variables: discount, favorited #}
+<form
+  method="post"
+  action="{% url 'accounts:favorite_toggle' discount.slug %}"
+  hx-post="{% url 'accounts:favorite_toggle' discount.slug %}"
+  hx-swap="outerHTML"
+  class="inline-block"
+>
+  {% csrf_token %}
+  <button type="submit"
+          aria-label="{% if favorited %}Remove from favorites{% else %}Save to favorites{% endif %}"
+          class="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors {% if favorited %}bg-rose-100 text-rose-600 hover:bg-rose-200{% else %}bg-slate-100 text-slate-400 hover:bg-rose-50 hover:text-rose-500{% endif %}">
+    {% if favorited %}♥{% else %}♡{% endif %}
+  </button>
+</form>

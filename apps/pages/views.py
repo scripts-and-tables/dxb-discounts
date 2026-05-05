@@ -2,23 +2,31 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
+from apps.accounts.selectors import attach_favorited
 from apps.discounts.models import Discount
 from apps.places.models import Category
 
 
 @require_GET
 def home(request):
-    featured = (
-        Discount.objects
-        .featured()
-        .select_related("place")[:6]
-    )
-    recent = (
+    featured_qs = Discount.objects.featured().select_related("place")
+    if not request.user.is_authenticated:
+        featured_qs = featured_qs.filter(is_members_only=False, place__is_members_only=False)
+    featured = list(featured_qs[:6])
+
+    recent_qs = (
         Discount.objects
         .live()
         .select_related("place")
-        .exclude(pk__in=[d.pk for d in featured])[:9]
+        .exclude(pk__in=[d.pk for d in featured])
     )
+    if not request.user.is_authenticated:
+        recent_qs = recent_qs.filter(is_members_only=False, place__is_members_only=False)
+    recent = list(recent_qs[:9])
+
+    attach_favorited(featured, request.user)
+    attach_favorited(recent, request.user)
+
     return render(request, "pages/home.html", {
         "featured": featured,
         "recent": recent,

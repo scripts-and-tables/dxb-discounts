@@ -9,6 +9,7 @@ from apps.pages.views import robots_txt
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.pages.urls")),
+    path("accounts/", include("apps.accounts.urls")),
     path("discounts/", include("apps.discounts.urls")),
     path("places/", include("apps.places.urls")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),

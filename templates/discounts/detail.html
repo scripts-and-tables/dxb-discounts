@@ -11,17 +11,25 @@
     <a href="{% url 'places:detail' discount.place.slug %}" class="hover:text-slate-900">{{ discount.place.name }}</a>
   </nav>
 
-  <header class="mb-6">
-    <div class="flex flex-wrap items-center gap-2 mb-3">
-      <span class="chip-amber font-bold text-sm">{{ discount.headline }}</span>
-      <span class="chip">{{ discount.get_discount_type_display }}</span>
-      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+  <header class="mb-6 flex items-start justify-between gap-4">
+    <div class="flex-1 min-w-0">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="chip-amber font-bold text-sm">{{ discount.headline }}</span>
+        <span class="chip">{{ discount.get_discount_type_display }}</span>
+        {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+        {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
+      </div>
+      <h1 class="text-3xl font-bold text-slate-900 mb-2">{{ discount.title }}</h1>
+      <p class="text-slate-600">
+        at <a href="{% url 'places:detail' discount.place.slug %}" class="font-medium text-slate-900 hover:text-amber-700">{{ discount.place.name }}</a>
+        &middot; {{ discount.place.area }}
+      </p>
     </div>
-    <h1 class="text-3xl font-bold text-slate-900 mb-2">{{ discount.title }}</h1>
-    <p class="text-slate-600">
-      at <a href="{% url 'places:detail' discount.place.slug %}" class="font-medium text-slate-900 hover:text-amber-700">{{ discount.place.name }}</a>
-      &middot; {{ discount.place.area }}
-    </p>
+    {% if user.is_authenticated %}
+      <div class="shrink-0">
+        {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
+      </div>
+    {% endif %}
   </header>
 
   <article class="card p-6 mb-6">
