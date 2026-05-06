@@ -22,7 +22,12 @@ Renders as a native <details> so each tile can be collapsed independently.
     <h3 class="font-semibold text-slate-900 mb-2">{{ discount.title }}</h3>
     <p class="text-sm text-slate-700 whitespace-pre-line mb-3">{{ discount.description }}</p>
     {% if discount.terms %}
-      <p class="text-xs text-slate-500 italic whitespace-pre-line">{{ discount.terms }}</p>
+      <p class="text-xs text-slate-500 italic whitespace-pre-line mb-3">{{ discount.terms }}</p>
+    {% endif %}
+    {% if discount.external_url %}
+      <a href="{{ discount.external_url }}" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-amber-700 hover:text-amber-900">
+        View full offer ↗
+      </a>
     {% endif %}
   </div>
 </details>
