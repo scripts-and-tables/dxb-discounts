@@ -1,19 +1,29 @@
-{# Inner of a program-branded tile. Expects: discount, header_class, program_label. #}
-<a href="{{ discount.get_absolute_url }}" class="card overflow-hidden block group hover:shadow-lg transition-shadow">
-  <div class="{{ header_class }} px-5 py-3 text-white flex items-center justify-between gap-3">
+{% comment %}
+Inner of a program-branded tile. Expects: discount, header_class, program_label.
+Renders as a native <details> so each tile can be collapsed independently.
+{% endcomment %}
+<details class="card overflow-hidden group">
+  <summary class="{{ header_class }} px-5 py-3 text-white flex items-center justify-between gap-3 cursor-pointer select-none list-none">
     <span class="font-semibold tracking-wide uppercase text-xs sm:text-sm">{{ program_label }}</span>
-    <span class="font-bold text-base sm:text-lg">{{ discount.headline }}</span>
-  </div>
-  <div class="p-5">
-    <div class="flex flex-wrap gap-2 mb-3">
-      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
-      {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
-    </div>
-    <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-amber-700">{{ discount.title }}</h3>
+    <span class="flex items-center gap-3">
+      <span class="font-bold text-base sm:text-lg">{{ discount.headline }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </span>
+  </summary>
+  <div class="p-5 border-t border-slate-100">
+    {% if discount.is_featured or discount.is_members_only %}
+      <div class="flex flex-wrap gap-2 mb-3">
+        {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+        {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
+      </div>
+    {% endif %}
+    <h3 class="font-semibold text-slate-900 mb-2">{{ discount.title }}</h3>
     <p class="text-sm text-slate-700 whitespace-pre-line mb-3">{{ discount.description }}</p>
     {% if discount.terms %}
-      <p class="text-xs text-slate-500 italic mb-3">{{ discount.terms|truncatewords:30 }}</p>
+      <p class="text-xs text-slate-500 italic mb-3 whitespace-pre-line">{{ discount.terms }}</p>
     {% endif %}
-    <div class="text-xs font-medium text-amber-700 group-hover:text-amber-900">View full details →</div>
+    <a href="{{ discount.get_absolute_url }}" class="text-xs font-medium text-amber-700 hover:text-amber-900">View full details →</a>
   </div>
-</a>
+</details>

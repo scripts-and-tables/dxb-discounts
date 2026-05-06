@@ -27,7 +27,7 @@
 
   <h2 class="text-xl font-bold text-slate-900 mb-3">Discount programs</h2>
   {% if discounts %}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="space-y-3">
       {% for discount in discounts %}{% include "places/_program_tile.html" %}{% endfor %}
     </div>
   {% else %}
