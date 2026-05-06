@@ -2,7 +2,7 @@
 Inner of a program-branded tile. Expects: discount, header_class, program_label.
 Renders as a native <details> so each tile can be collapsed independently.
 {% endcomment %}
-<details class="card overflow-hidden group">
+<details class="card overflow-hidden group"{% if forloop.first %} open{% endif %}>
   <summary class="{{ header_class }} px-5 py-3 text-white flex items-center justify-between gap-3 cursor-pointer select-none list-none">
     <span class="font-semibold tracking-wide uppercase text-xs sm:text-sm">{{ program_label }}</span>
     <span class="flex items-center gap-3">
