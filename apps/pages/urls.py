@@ -8,5 +8,4 @@ app_name = "pages"
 urlpatterns = [
     path("", views.home, name="home"),
     path("about/", views.about, name="about"),
-    path("healthz/", views.healthz, name="healthz"),
 ]

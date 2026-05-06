@@ -33,12 +33,6 @@ if RAILWAY_DOMAIN:
     if railway_origin not in CSRF_TRUSTED_ORIGINS:
         CSRF_TRUSTED_ORIGINS = list(CSRF_TRUSTED_ORIGINS) + [railway_origin]
 
-# Railway's internal healthcheck hits the container with Host=RAILWAY_PRIVATE_DOMAIN;
-# it must be in ALLOWED_HOSTS or the deploy is rolled back as unhealthy.
-RAILWAY_PRIVATE = env("RAILWAY_PRIVATE_DOMAIN", default=None)
-if RAILWAY_PRIVATE and RAILWAY_PRIVATE not in ALLOWED_HOSTS:
-    ALLOWED_HOSTS = list(ALLOWED_HOSTS) + [RAILWAY_PRIVATE]
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -59,6 +53,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    "apps.pages.middleware.HealthCheckMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -147,9 +142,6 @@ else:
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = True
-    # Railway sends internal healthchecks over plain HTTP without X-Forwarded-Proto,
-    # so /healthz/ must be exempt from the HTTPS redirect or the deploy is marked unhealthy.
-    SECURE_REDIRECT_EXEMPT = [r"^healthz/?$"]
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 60 * 60 * 24 * 30  # 30 days

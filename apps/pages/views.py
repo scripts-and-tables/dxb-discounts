@@ -40,11 +40,6 @@ def about(request):
 
 
 @require_GET
-def healthz(request):
-    return HttpResponse("ok", content_type="text/plain")
-
-
-@require_GET
 def robots_txt(request):
     lines = [
         "User-agent: *",
