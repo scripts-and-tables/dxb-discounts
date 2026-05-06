@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}DXB Discounts — All Dubai discounts in one place{% endblock %}
+{% block title %}DXB Discounts — Where your loyalty cards save you money{% endblock %}
 
 {% block content %}
 <section class="bg-gradient-to-br from-amber-50 via-white to-rose-50 border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 py-16 text-center">
     <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-      Every Dubai discount, in one place.
+      Where do your loyalty cards work?
     </h1>
     <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-      Browse offers across restaurants, attractions, hotels and more — updated regularly.
+      Browse Dubai venues and see at a glance which programs they accept — Fazaa, Esaad, Entertainer, and each venue's own loyalty.
     </p>
     <div class="flex flex-wrap items-center justify-center gap-3">
-      <a href="{% url 'discounts:list' %}" class="btn-primary">Browse all discounts</a>
-      <a href="{% url 'places:list' %}" class="btn-ghost">Browse places</a>
+      <a href="{% url 'places:list' %}" class="btn-primary">Browse all places</a>
+      <a href="{% url 'discounts:list' %}" class="btn-ghost">Browse all discounts</a>
     </div>
   </div>
 </section>
@@ -22,7 +22,7 @@
   <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Categories</h2>
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
     {% for value, label in categories %}
-      <a href="{% url 'discounts:list' %}?category={{ value }}" class="card p-4 text-center hover:border-amber-300">
+      <a href="{% url 'places:list' %}?category={{ value }}" class="card p-4 text-center hover:border-amber-300">
         <div class="text-3xl mb-2">
           {% if value == 'restaurant' %}🍽️
           {% elif value == 'attraction' %}🎢
@@ -35,26 +35,30 @@
   </div>
 </section>
 
-{% if featured %}
+{% if places %}
 <section class="max-w-6xl mx-auto px-4 py-8">
   <div class="flex items-end justify-between mb-4">
-    <h2 class="text-2xl font-bold text-slate-900">Featured</h2>
-    <a href="{% url 'discounts:list' %}" class="text-sm font-medium text-amber-700 hover:text-amber-800">See all →</a>
+    <h2 class="text-2xl font-bold text-slate-900">Places</h2>
+    <a href="{% url 'places:list' %}" class="text-sm font-medium text-amber-700 hover:text-amber-800">See all →</a>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for discount in featured %}{% include "discounts/_card.html" %}{% endfor %}
+    {% for place in places %}
+      <a href="{{ place.get_absolute_url }}" class="card block p-5 hover:border-amber-300 group">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="chip">{{ place.get_category_display }}</span>
+        </div>
+        <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-amber-700">{{ place.name }}</h3>
+        <p class="text-sm text-slate-500 mb-3">{{ place.area }}</p>
+        {% if place.programs %}
+          <div class="flex flex-wrap gap-1.5">
+            {% for prog in place.programs %}{% include "places/_program_bubble.html" with program=prog %}{% endfor %}
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
   </div>
 </section>
-{% endif %}
-
-{% if recent %}
-<section class="max-w-6xl mx-auto px-4 py-8">
-  <h2 class="text-2xl font-bold text-slate-900 mb-4">Latest</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {% for discount in recent %}{% include "discounts/_card.html" %}{% endfor %}
-  </div>
-</section>
-{% elif not featured %}
+{% else %}
 <section class="max-w-6xl mx-auto px-4 py-16 text-center text-slate-500">
   <p>No discounts published yet. Check back soon.</p>
 </section>

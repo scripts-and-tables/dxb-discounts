@@ -1,35 +1,43 @@
+from django.db.models import Prefetch
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
-from apps.accounts.selectors import attach_favorited
 from apps.discounts.models import Discount
-from apps.places.models import Category
+from apps.places.models import Category, Place
 
 
 @require_GET
 def home(request):
-    featured_qs = Discount.objects.featured().select_related("place")
+    visible_discounts = Discount.objects.live().select_related("place")
     if not request.user.is_authenticated:
-        featured_qs = featured_qs.filter(is_members_only=False, place__is_members_only=False)
-    featured = list(featured_qs[:6])
+        visible_discounts = visible_discounts.filter(
+            is_members_only=False,
+            place__is_members_only=False,
+        )
 
-    recent_qs = (
-        Discount.objects
-        .live()
-        .select_related("place")
-        .exclude(pk__in=[d.pk for d in featured])
-    )
+    place_ids = list(visible_discounts.values_list("place_id", flat=True).distinct())
+    places_qs = Place.objects.filter(id__in=place_ids, is_published=True)
     if not request.user.is_authenticated:
-        recent_qs = recent_qs.filter(is_members_only=False, place__is_members_only=False)
-    recent = list(recent_qs[:9])
+        places_qs = places_qs.filter(is_members_only=False)
+    places_qs = places_qs.prefetch_related(
+        Prefetch("discounts", queryset=visible_discounts, to_attr="visible_discounts")
+    ).order_by("name")
 
-    attach_favorited(featured, request.user)
-    attach_favorited(recent, request.user)
+    places = list(places_qs)
+    for place in places:
+        seen: set[str] = set()
+        place.programs = []
+        for d in place.visible_discounts:
+            if d.source_program and d.source_program not in seen:
+                seen.add(d.source_program)
+                place.programs.append({
+                    "value": d.source_program,
+                    "label": d.get_source_program_display(),
+                })
 
     return render(request, "pages/home.html", {
-        "featured": featured,
-        "recent": recent,
+        "places": places,
         "categories": Category.choices,
     })
 
