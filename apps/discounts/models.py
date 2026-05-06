@@ -13,6 +13,13 @@ class DiscountType(models.TextChoices):
     PROMO_CODE = "promo_code", "Promo code / voucher"
 
 
+class DiscountProgram(models.TextChoices):
+    IN_HOUSE = "in_house", "Loyalty program"
+    FAZAA = "fazaa", "Fazaa"
+    ESAAD = "esaad", "Esaad"
+    ENTERTAINER = "entertainer", "Entertainer"
+
+
 class DiscountQuerySet(models.QuerySet):
     def live(self):
         today = timezone.localdate()
@@ -57,6 +64,14 @@ class Discount(models.Model):
 
     valid_from = models.DateField(null=True, blank=True)
     valid_until = models.DateField(null=True, blank=True, help_text="Leave blank for ongoing offers.")
+
+    source_program = models.CharField(
+        max_length=20,
+        choices=DiscountProgram.choices,
+        blank=True,
+        default="",
+        help_text="Which program/card offers this discount. Leave blank if none.",
+    )
 
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=False)

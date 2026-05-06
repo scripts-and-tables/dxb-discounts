@@ -12,7 +12,7 @@ from datetime import date
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from apps.discounts.models import Discount, DiscountType
+from apps.discounts.models import Discount, DiscountProgram, DiscountType
 from apps.places.models import Category, Place
 
 
@@ -136,6 +136,27 @@ PLACES = [
         "phone": "+971 800 49646286",
         "website": "https://gymnation.com",
         "description": "24/7 affordable gym chain with classes and personal training.",
+    },
+    {
+        "key": "mondoux",
+        "name": "Mondoux",
+        "category": Category.RESTAURANT,
+        "area": "Multiple locations",
+        "address": (
+            "Bluewaters Island; "
+            "Dubai Creek Harbour (South Tower 1 Promenade, Ras Al Khor); "
+            "The Beach JBR; "
+            "The Dubai Mall (Dubai Fountain View)."
+        ),
+        "phone": "+971 50 137 2814",
+        "website": "https://mondoux.ae",
+        "description": (
+            "French-inspired all-day café known for healthy bowls, crepes, "
+            "macarons and chocolate, with four Dubai branches: Bluewaters, "
+            "Dubai Creek Harbour, The Beach JBR, and The Dubai Mall.\n\n"
+            "Opening hours (all branches): Mon–Thu 8:00 — 23:30, "
+            "Fri–Sun 8:00 — 00:30."
+        ),
     },
 ]
 
@@ -290,6 +311,25 @@ DISCOUNTS = [
         "description": "Active members can sign in a friend each day for a full week.",
         "terms": "Friend must register at reception. Photo ID required.",
     },
+    {
+        "place": "mondoux",
+        "title": "Up to 25% cashback via the Mondoux app",
+        "discount_type": DiscountType.PERCENTAGE,
+        "percentage": 25,
+        "source_program": DiscountProgram.IN_HOUSE,
+        "description": (
+            "Members of Mondoux's own loyalty program earn 10%–25% cashback "
+            "on every purchase, redeemable as in-app credit on future visits. "
+            "Includes exclusive offers, gifts and invitations to VIP events.\n\n"
+            "How to enrol: download the Mondoux app (iOS or Android) from "
+            "the link on https://mondoux.ae/loyalty-program/ and register."
+        ),
+        "terms": (
+            "Cashback rate varies based on Mondoux's tier rules — see the app "
+            "for the current schedule. Valid at all four Dubai branches."
+        ),
+        "is_featured": True,
+    },
 ]
 
 
@@ -337,6 +377,7 @@ class Command(BaseCommand):
                 "percentage": spec.get("percentage"),
                 "fixed_price_aed": spec.get("fixed_price_aed"),
                 "promo_code": spec.get("promo_code", ""),
+                "source_program": spec.get("source_program", ""),
                 "description": spec["description"],
                 "terms": spec.get("terms", ""),
                 "valid_from": spec.get("valid_from"),

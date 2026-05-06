@@ -5,6 +5,7 @@
       <span class="chip-amber text-sm font-bold">{{ discount.headline }}</span>
       {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
       {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
+      {% if discount.source_program %}<span class="chip bg-sky-100 text-sky-900">{{ discount.get_source_program_display }}</span>{% endif %}
     </div>
     {% if user.is_authenticated %}
       {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
