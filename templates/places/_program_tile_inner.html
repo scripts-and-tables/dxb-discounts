@@ -1,0 +1,19 @@
+{# Inner of a program-branded tile. Expects: discount, header_class, program_label. #}
+<a href="{{ discount.get_absolute_url }}" class="card overflow-hidden block group hover:shadow-lg transition-shadow">
+  <div class="{{ header_class }} px-5 py-3 text-white flex items-center justify-between gap-3">
+    <span class="font-semibold tracking-wide uppercase text-xs sm:text-sm">{{ program_label }}</span>
+    <span class="font-bold text-base sm:text-lg">{{ discount.headline }}</span>
+  </div>
+  <div class="p-5">
+    <div class="flex flex-wrap gap-2 mb-3">
+      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900">Featured</span>{% endif %}
+      {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900">Members</span>{% endif %}
+    </div>
+    <h3 class="font-semibold text-slate-900 mb-2 group-hover:text-amber-700">{{ discount.title }}</h3>
+    <p class="text-sm text-slate-700 whitespace-pre-line mb-3">{{ discount.description }}</p>
+    {% if discount.terms %}
+      <p class="text-xs text-slate-500 italic mb-3">{{ discount.terms|truncatewords:30 }}</p>
+    {% endif %}
+    <div class="text-xs font-medium text-amber-700 group-hover:text-amber-900">View full details →</div>
+  </div>
+</a>

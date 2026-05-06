@@ -25,10 +25,10 @@
     </article>
   {% endif %}
 
-  <h2 class="text-xl font-bold text-slate-900 mb-3">Active offers</h2>
+  <h2 class="text-xl font-bold text-slate-900 mb-3">Discount programs</h2>
   {% if discounts %}
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-      {% for discount in discounts %}{% include "discounts/_card.html" %}{% endfor %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for discount in discounts %}{% include "places/_program_tile.html" %}{% endfor %}
     </div>
   {% else %}
     <div class="card p-8 text-center text-slate-500">No active offers right now.</div>
