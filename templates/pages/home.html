@@ -27,11 +27,14 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {% for place in places %}
       <a href="{{ place.get_absolute_url }}" class="card block p-5 hover:border-amber-300 group">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="chip">{{ place.get_category_display }}</span>
+        <div class="flex items-start gap-3 mb-3">
+          {% include "places/_logo.html" with place=place size_class="w-12 h-12" %}
+          <div class="min-w-0 flex-1">
+            <span class="chip mb-1">{{ place.get_category_display }}</span>
+            <h3 class="font-semibold text-slate-900 mt-1 group-hover:text-amber-700 truncate">{{ place.name }}</h3>
+            <p class="text-sm text-slate-500 truncate">{{ place.area }}</p>
+          </div>
         </div>
-        <h3 class="font-semibold text-slate-900 mb-1 group-hover:text-amber-700">{{ place.name }}</h3>
-        <p class="text-sm text-slate-500 mb-3">{{ place.area }}</p>
         {% if place.programs %}
           <div class="flex flex-wrap gap-1.5">
             {% for prog in place.programs %}{% include "places/_program_bubble.html" with program=prog %}{% endfor %}

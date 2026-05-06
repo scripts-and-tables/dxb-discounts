@@ -9,13 +9,16 @@
     <a href="{% url 'places:list' %}" class="hover:text-slate-900">Places</a>
   </nav>
 
-  <header class="mb-6">
-    <span class="chip mb-2">{{ place.get_category_display }}</span>
-    <h1 class="text-3xl font-bold text-slate-900">{{ place.name }}</h1>
-    <p class="text-slate-600 mt-1">{{ place.area }}{% if place.address %} · {{ place.address }}{% endif %}</p>
-    <div class="mt-3 flex flex-wrap gap-3 text-sm">
-      {% if place.phone %}<a href="tel:{{ place.phone }}" class="text-amber-700 hover:text-amber-900">{{ place.phone }}</a>{% endif %}
-      {% if place.website %}<a href="{{ place.website }}" rel="noopener noreferrer nofollow" target="_blank" class="text-amber-700 hover:text-amber-900">Website ↗</a>{% endif %}
+  <header class="mb-6 flex items-start gap-4">
+    {% include "places/_logo.html" with place=place size_class="w-16 h-16 sm:w-20 sm:h-20" %}
+    <div class="min-w-0 flex-1">
+      <span class="chip mb-2">{{ place.get_category_display }}</span>
+      <h1 class="text-3xl font-bold text-slate-900">{{ place.name }}</h1>
+      <p class="text-slate-600 mt-1">{{ place.area }}{% if place.address %} · {{ place.address }}{% endif %}</p>
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        {% if place.phone %}<a href="tel:{{ place.phone }}" class="text-amber-700 hover:text-amber-900">{{ place.phone }}</a>{% endif %}
+        {% if place.website %}<a href="{{ place.website }}" rel="noopener noreferrer nofollow" target="_blank" class="text-amber-700 hover:text-amber-900">Website ↗</a>{% endif %}
+      </div>
     </div>
   </header>
 

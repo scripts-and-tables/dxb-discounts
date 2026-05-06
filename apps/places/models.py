@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -48,3 +50,21 @@ class Place(models.Model):
 
     def get_absolute_url(self) -> str:
         return reverse("places:detail", kwargs={"slug": self.slug})
+
+    @property
+    def logo_domain(self) -> str:
+        """Bare domain extracted from `website`, e.g. 'mondoux.ae'. Empty if unset."""
+        if not self.website:
+            return ""
+        netloc = urlparse(self.website).netloc or urlparse(self.website).path
+        return netloc.removeprefix("www.").strip("/")
+
+    @property
+    def logo_url(self) -> str:
+        """Brand logo via Clearbit. Returns "" if no website is set."""
+        return f"https://logo.clearbit.com/{self.logo_domain}" if self.logo_domain else ""
+
+    @property
+    def favicon_url(self) -> str:
+        """Favicon via Google's S2 service — used as the onerror fallback for logo_url."""
+        return f"https://www.google.com/s2/favicons?domain={self.logo_domain}&sz=128" if self.logo_domain else ""
