@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
 from apps.discounts.models import Discount
-from apps.places.models import Category, Place
+from apps.places.models import Place
 
 
 @require_GET
@@ -36,10 +36,7 @@ def home(request):
                     "label": d.get_source_program_display(),
                 })
 
-    return render(request, "pages/home.html", {
-        "places": places,
-        "categories": Category.choices,
-    })
+    return render(request, "pages/home.html", {"places": places})
 
 
 @require_GET

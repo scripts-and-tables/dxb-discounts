@@ -11,27 +11,10 @@
     <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
       Browse Dubai venues and see at a glance which programs they accept — Fazaa, Esaad, Entertainer, and each venue's own loyalty.
     </p>
-    <div class="flex flex-wrap items-center justify-center gap-3">
-      <a href="{% url 'places:list' %}" class="btn-primary">Browse all places</a>
-      <a href="{% url 'discounts:list' %}" class="btn-ghost">Browse all discounts</a>
-    </div>
-  </div>
-</section>
-
-<section class="max-w-6xl mx-auto px-4 py-12">
-  <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Categories</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-    {% for value, label in categories %}
-      <a href="{% url 'places:list' %}?category={{ value }}" class="card p-4 text-center hover:border-amber-300">
-        <div class="text-3xl mb-2">
-          {% if value == 'restaurant' %}🍽️
-          {% elif value == 'attraction' %}🎢
-          {% elif value == 'hotel' %}🏨
-          {% else %}🛍️{% endif %}
-        </div>
-        <div class="text-sm font-medium text-slate-900">{{ label }}</div>
-      </a>
-    {% endfor %}
+    <form method="get" action="{% url 'places:list' %}" class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2" role="search">
+      <input type="search" name="q" placeholder="Search places, areas, brands…" class="field flex-1" aria-label="Search places">
+      <button type="submit" class="btn-primary">Search</button>
+    </form>
   </div>
 </section>
 
