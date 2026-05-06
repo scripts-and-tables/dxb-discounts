@@ -116,6 +116,7 @@ class Discount(models.Model):
     description = models.TextField()
     terms = models.TextField(blank=True, help_text="Fine print, exclusions, hours, etc.")
     external_url = models.URLField(
+        max_length=500,
         blank=True,
         help_text="Source-of-truth link, e.g. the Fazaa/Supper Club/Entertainer offer page or the venue's loyalty signup page.",
     )
