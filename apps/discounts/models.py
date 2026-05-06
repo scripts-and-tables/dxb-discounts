@@ -18,6 +18,60 @@ class DiscountProgram(models.TextChoices):
     FAZAA = "fazaa", "Fazaa"
     ESAAD = "esaad", "Esaad"
     ENTERTAINER = "entertainer", "Entertainer"
+    ZOMATO = "zomato", "Zomato Pro / Gold"
+    REPEAT = "repeat", "Repeat"
+    ELITE_CLUB = "elite_club", "Elite Club"
+    SUPPER_CLUB = "supper_club", "Supper Club ME"
+    EMIRATES_PLATINUM = "emirates_platinum", "Emirates Platinum"
+    SHUKRAN = "shukran", "Shukran"
+    SHARE_REWARDS = "share_rewards", "SHARE Rewards"
+    EMIRATES_SKYWARDS = "emirates_skywards", "Emirates Skywards"
+
+
+class Program(models.Model):
+    """Catalog entry for a UAE discount/loyalty program (Fazaa, Esaad, etc.).
+
+    Slug matches the corresponding `DiscountProgram` TextChoices value so
+    we can list venues per program by querying
+    Discount.objects.filter(source_program=program.slug).
+    """
+
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+    short_description = models.CharField(max_length=240)
+    description = models.TextField(blank=True)
+    official_url = models.URLField()
+    cost_summary = models.CharField(max_length=80, blank=True, help_text="e.g. 'Free', 'AED 275/year'")
+    eligibility = models.CharField(max_length=160, blank=True, help_text="e.g. 'UAE residents', 'Emirates Group employees'")
+    is_published = models.BooleanField(default=True)
+    sort_order = models.PositiveSmallIntegerField(default=100, help_text="Lower = higher up in the directory.")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["sort_order", "name"]
+
+    def __str__(self) -> str:
+        return self.name
+
+    def get_absolute_url(self) -> str:
+        return reverse("discounts:detail", kwargs={"slug": self.slug})
+
+    @property
+    def logo_domain(self) -> str:
+        from urllib.parse import urlparse
+        if not self.official_url:
+            return ""
+        netloc = urlparse(self.official_url).netloc or urlparse(self.official_url).path
+        return netloc.removeprefix("www.").strip("/")
+
+    @property
+    def logo_url(self) -> str:
+        return f"https://logo.clearbit.com/{self.logo_domain}" if self.logo_domain else ""
+
+    @property
+    def favicon_url(self) -> str:
+        return f"https://www.google.com/s2/favicons?domain={self.logo_domain}&sz=128" if self.logo_domain else ""
 
 
 class DiscountQuerySet(models.QuerySet):
@@ -115,7 +169,9 @@ class Discount(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self) -> str:
-        return reverse("discounts:detail", kwargs={"slug": self.slug})
+        """Discounts no longer have their own detail page; deep-link to the
+        place page where this discount is rendered inside a collapsible tile."""
+        return self.place.get_absolute_url()
 
     @property
     def headline(self) -> str:

@@ -6,6 +6,6 @@ from . import views
 app_name = "discounts"
 
 urlpatterns = [
-    path("", views.discount_list, name="list"),
-    path("<slug:slug>/", views.discount_detail, name="detail"),
+    path("", views.program_list, name="list"),
+    path("<slug:slug>/", views.program_detail, name="detail"),
 ]

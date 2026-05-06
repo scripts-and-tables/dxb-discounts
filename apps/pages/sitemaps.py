@@ -1,7 +1,7 @@
 from django.contrib import sitemaps
 from django.urls import reverse
 
-from apps.discounts.models import Discount
+from apps.discounts.models import Program
 from apps.places.models import Place
 
 
@@ -10,7 +10,7 @@ class StaticSitemap(sitemaps.Sitemap):
     changefreq = "weekly"
 
     def items(self):
-        return ["pages:home", "pages:about"]
+        return ["pages:home", "pages:about", "discounts:list", "places:list"]
 
     def location(self, item):
         return reverse(item)
@@ -27,19 +27,19 @@ class PlaceSitemap(sitemaps.Sitemap):
         return obj.updated_at
 
 
-class DiscountSitemap(sitemaps.Sitemap):
+class ProgramSitemap(sitemaps.Sitemap):
     priority = 0.7
-    changefreq = "daily"
+    changefreq = "weekly"
 
     def items(self):
-        return Discount.objects.live().filter(is_members_only=False, place__is_members_only=False)
+        return Program.objects.filter(is_published=True)
 
-    def lastmod(self, obj: Discount):
+    def lastmod(self, obj: Program):
         return obj.updated_at
 
 
 sitemaps = {
     "static": StaticSitemap,
     "places": PlaceSitemap,
-    "discounts": DiscountSitemap,
+    "programs": ProgramSitemap,
 }
