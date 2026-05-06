@@ -71,6 +71,26 @@ def parse_title(title: str) -> dict | None:
 
     discount_type, percentage, _ = parse_offer(title)
 
+    # Strip trailing price phrases BEFORE the at-split, otherwise patterns
+    # like "Starting at AED99" cause the parser to take "AED99" as the venue.
+    # Covers: "(starting at AED 160)", ", Starting at AED99", " for AED89",
+    # " - only AED 99", " from AED 135 per person".
+    title = re.sub(
+        r"\s*\([^)]*aed[^)]*\)\s*$",  # parenthetical containing AED
+        "",
+        title,
+        flags=re.IGNORECASE,
+    ).strip()
+    title = re.sub(
+        r"\s*[,\-–—]?\s*"
+        r"(?:(?:starting\s+at|starting\s+from|starting|from|for|only|just|at)\s+)*"
+        r"aed\s*\d+(?:\.\d+)?"
+        r"(?:\s*per\s+\w+)?\s*$",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    ).strip()
+
     # Find last ' at ' (case-insensitive) — splits offer from venue
     parts = re.split(r"\s+at\s+", title, flags=re.IGNORECASE)
     if len(parts) >= 2:
