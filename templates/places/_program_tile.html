@@ -1,16 +1,33 @@
 {% comment %}
 Program-branded discount tile for the Place detail page.
-Expects: discount.
-Each program (Fazaa/Esaad/in-house/etc.) gets a distinctive header strip.
+Expects: discount. Each program (Fazaa/Esaad/Supper Club/...) gets a
+distinctive header strip; the label inside the strip comes from the
+choices' display name automatically.
 {% endcomment %}
 {% if discount.source_program == "fazaa" %}
-  {% include "places/_program_tile_inner.html" with header_class="bg-red-700" program_label="Fazaa" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-red-700" %}
 {% elif discount.source_program == "esaad" %}
-  {% include "places/_program_tile_inner.html" with header_class="bg-teal-800" program_label="Esaad" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-teal-800" %}
 {% elif discount.source_program == "in_house" %}
-  {% include "places/_program_tile_inner.html" with header_class="bg-amber-700" program_label="Loyalty program" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-amber-700" %}
 {% elif discount.source_program == "entertainer" %}
-  {% include "places/_program_tile_inner.html" with header_class="bg-blue-700" program_label="Entertainer" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-blue-700" %}
+{% elif discount.source_program == "zomato" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-rose-600" %}
+{% elif discount.source_program == "repeat" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-violet-700" %}
+{% elif discount.source_program == "elite_club" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-stone-700" %}
+{% elif discount.source_program == "supper_club" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-emerald-700" %}
+{% elif discount.source_program == "emirates_platinum" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-zinc-800" %}
+{% elif discount.source_program == "shukran" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-orange-700" %}
+{% elif discount.source_program == "share_rewards" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-indigo-700" %}
+{% elif discount.source_program == "emirates_skywards" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-sky-700" %}
 {% else %}
-  {% include "places/_program_tile_inner.html" with header_class="bg-slate-700" program_label="Offer" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-slate-700" %}
 {% endif %}

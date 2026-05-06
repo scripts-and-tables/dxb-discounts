@@ -1,10 +1,12 @@
 {% comment %}
-Inner of a program-branded tile. Expects: discount, header_class, program_label.
+Inner of a program-branded tile. Expects: discount, header_class.
+The program label comes from the source_program TextChoices display
+name so it stays in sync as new choices are added.
 Renders as a native <details> so each tile can be collapsed independently.
 {% endcomment %}
 <details class="card overflow-hidden group"{% if forloop.first %} open{% endif %}>
   <summary class="{{ header_class }} px-5 py-3 text-white flex items-center justify-between gap-3 cursor-pointer select-none list-none">
-    <span class="font-semibold tracking-wide uppercase text-xs sm:text-sm">{{ program_label }}</span>
+    <span class="font-semibold tracking-wide uppercase text-xs sm:text-sm">{{ discount.get_source_program_display|default:"Offer" }}</span>
     <span class="flex items-center gap-3">
       <span class="font-bold text-base sm:text-lg">{{ discount.headline }}</span>
       <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
