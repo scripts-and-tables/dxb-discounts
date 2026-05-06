@@ -1,6 +1,8 @@
-{# Program-branded discount tile for the Place detail page.
-   Expects: discount.
-   Each program (Fazaa/Esaad/in-house/etc.) gets a distinctive header strip. #}
+{% comment %}
+Program-branded discount tile for the Place detail page.
+Expects: discount.
+Each program (Fazaa/Esaad/in-house/etc.) gets a distinctive header strip.
+{% endcomment %}
 {% if discount.source_program == "fazaa" %}
   {% include "places/_program_tile_inner.html" with header_class="bg-red-700" program_label="Fazaa" %}
 {% elif discount.source_program == "esaad" %}

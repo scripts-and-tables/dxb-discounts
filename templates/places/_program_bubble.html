@@ -1,5 +1,7 @@
-{# Small chip showing a program a place accepts (no percentage).
-   Expects: program (dict with .value and .label). #}
+{% comment %}
+Small chip showing a program a place accepts (no percentage).
+Expects: program (dict with .value and .label).
+{% endcomment %}
 {% if program.value == "fazaa" %}<span class="chip bg-red-100 text-red-900">{{ program.label }}</span>
 {% elif program.value == "esaad" %}<span class="chip bg-teal-100 text-teal-900">{{ program.label }}</span>
 {% elif program.value == "in_house" %}<span class="chip bg-amber-100 text-amber-900">{{ program.label }}</span>
