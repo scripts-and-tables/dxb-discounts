@@ -36,6 +36,27 @@ PLACES = [
             "Fri–Sun 8:00 — 00:30."
         ),
     },
+    {
+        "key": "caribou-coffee",
+        "name": "Caribou Coffee",
+        "category": Category.RESTAURANT,
+        "area": "Multiple locations across the UAE",
+        "address": (
+            "40+ Dubai outlets including The Dubai Mall (2nd floor), Times "
+            "Square Center, Burjuman, Deira City Centre, Dubai Media City, "
+            "and DIFC. Operated under M.H. Alshaya Co. franchise."
+        ),
+        "phone": "",
+        "website": "https://www.cariboucoffee.com",
+        "description": (
+            "American specialty coffee chain founded in 1992 in Edina, "
+            "Minnesota, with a strong presence in the UAE through 40+ "
+            "outlets across Dubai and additional branches in Abu Dhabi and "
+            "the northern emirates. Known for hand-crafted espresso drinks, "
+            "the signature Mint Condition cooler, blueberry muffins, and "
+            "the Caribou Perks loyalty program."
+        ),
+    },
 ]
 
 DISCOUNTS = [
@@ -57,6 +78,60 @@ DISCOUNTS = [
             "for the current schedule. Valid at all four Dubai branches."
         ),
         "is_featured": True,
+    },
+    {
+        "place": "caribou-coffee",
+        "title": "Up to 30% off with Fazaa Card",
+        "discount_type": DiscountType.PERCENTAGE,
+        "percentage": 30,
+        "source_program": DiscountProgram.FAZAA,
+        "description": (
+            "Fazaa cardholders get up to 30% off at Caribou Coffee outlets "
+            "across the UAE. Show your Fazaa card or scan via the Fazaa app "
+            "at checkout to apply the discount."
+        ),
+        "terms": (
+            "Discount tier may vary by item category. See the official Fazaa "
+            "offer at fazaa.ae/offers/view/caribou-coffee for current T&Cs. "
+            "Cardholders only; one transaction at a time."
+        ),
+        "is_featured": True,
+    },
+    {
+        "place": "caribou-coffee",
+        "title": "20% off with Esaad Card",
+        "discount_type": DiscountType.PERCENTAGE,
+        "percentage": 20,
+        "source_program": DiscountProgram.ESAAD,
+        "description": (
+            "Esaad cardholders get 20% off at Caribou Coffee outlets in "
+            "the UAE. Present your Esaad card or scan via the Esaad app "
+            "at checkout."
+        ),
+        "terms": (
+            "Typically applies to beverages. Verify the live offer on the "
+            "Esaad app before redeeming. Cardholders only."
+        ),
+    },
+    {
+        "place": "caribou-coffee",
+        "title": "Caribou Perks: earn points for free drinks",
+        "discount_type": DiscountType.PERCENTAGE,
+        "percentage": 10,
+        "source_program": DiscountProgram.IN_HOUSE,
+        "description": (
+            "Caribou's own loyalty program. Earn points on every purchase "
+            "via the Caribou Rewards app (iOS or Android), then redeem for "
+            "free drinks, bakery items and size upgrades. Members also get "
+            "a sign-up bonus and exclusive seasonal offers.\n\n"
+            "How to enrol: download the Caribou Rewards app from the UAE "
+            "App Store or Google Play and register."
+        ),
+        "terms": (
+            "Points-based program — the 10% headline is an indicative "
+            "effective rebate; actual value depends on which rewards you "
+            "redeem. Valid at all participating UAE outlets."
+        ),
     },
 ]
 
