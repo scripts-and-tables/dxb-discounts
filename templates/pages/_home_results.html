@@ -1,0 +1,32 @@
+{% if places %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <div class="flex items-end justify-between mb-4">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ places|length }} place{{ places|length|pluralize }}</h2>
+    <a href="{% url 'places:list' %}" class="text-sm font-medium text-amber-700 hover:text-amber-800 dark:text-amber-400 dark:hover:text-amber-300">See all →</a>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for place in places %}
+      <a href="{{ place.get_absolute_url }}" class="card block p-5 hover:border-amber-300 group">
+        <div class="flex items-start gap-3 mb-3">
+          {% include "places/_logo.html" with place=place size_class="w-12 h-12" %}
+          <div class="min-w-0 flex-1">
+            <span class="chip mb-1">{{ place.get_category_display }}</span>
+            <h3 class="font-semibold text-slate-900 dark:text-slate-100 mt-1 group-hover:text-amber-700 dark:group-hover:text-amber-300 truncate">{{ place.name }}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 truncate">{{ place.area }}</p>
+          </div>
+        </div>
+        {% if place.programs %}
+          <div class="flex flex-wrap gap-1.5">
+            {% for prog in place.programs %}{% include "places/_program_bubble.html" with program=prog %}{% endfor %}
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% else %}
+<section class="max-w-6xl mx-auto px-4 py-16 text-center text-slate-500 dark:text-slate-400">
+  <p class="mb-2">No places match those filters.</p>
+  <a href="{% url 'pages:home' %}" class="text-amber-700 dark:text-amber-400 hover:underline">Clear filters →</a>
+</section>
+{% endif %}

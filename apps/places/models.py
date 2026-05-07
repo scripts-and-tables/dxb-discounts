@@ -12,6 +12,22 @@ class Category(models.TextChoices):
     RETAIL = "retail", "Retail, Beauty & Services"
 
 
+class Experience(models.Model):
+    """Tag for what kind of visit a Place supports — breakfast, brunch, pool,
+    spa, staycation, etc. Used as a multi-select filter on the home page."""
+
+    slug = models.SlugField(max_length=40, unique=True)
+    label = models.CharField(max_length=60)
+    sort_order = models.PositiveSmallIntegerField(default=100, help_text="Lower = higher in the filter panel.")
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["sort_order", "label"]
+
+    def __str__(self) -> str:
+        return self.label
+
+
 class Place(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, blank=True)
@@ -23,6 +39,10 @@ class Place(models.Model):
     description = models.TextField(blank=True)
     is_published = models.BooleanField(default=True)
     is_members_only = models.BooleanField(default=False, help_text="Hidden from anonymous visitors; visible to signed-in users.")
+    experiences = models.ManyToManyField(
+        Experience, blank=True, related_name="places",
+        help_text="What kind of visit this place supports — used as a home-page filter.",
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
