@@ -1,0 +1,4795 @@
+{
+  "places": [
+    {
+      "slug": "asha-s-restaurant",
+      "name": "Asha's Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Asha's Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "mangiare-restaurant",
+      "name": "Mangiare Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Mangiare Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "khayal-restaurant",
+      "name": "Khayal Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Khayal Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "mado-restaurant-and-cafe",
+      "name": "Mado Restaurant and Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Mado Restaurant and Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "falla-restaurant",
+      "name": "Falla restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Falla restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sand-restaurant",
+      "name": "Sand Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Sand Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "be-healthy-restaurant",
+      "name": "Be Healthy Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Be Healthy Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hatam-restaurant",
+      "name": "Hatam Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Hatam Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "villa-rosa-restaurant",
+      "name": "Villa Rosa Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Villa Rosa Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gazebo-restaurant",
+      "name": "GAZEBO Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "GAZEBO Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "selections",
+      "name": "Selections",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Selections — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ibn-albahr-restaurant",
+      "name": "Ibn Albahr Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Ibn Albahr Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "illy-cafe-dubai",
+      "name": "Illy Cafe Dubai",
+      "category": "restaurant",
+      "area": "Dubai",
+      "description": "Illy Cafe Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "viking-restaurant",
+      "name": "Viking Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Viking Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "planet-terra-restaurant",
+      "name": "Planet Terra Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Planet Terra Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ana-restaurant",
+      "name": "Ana Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Ana Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "heart-attack-restaurant",
+      "name": "Heart Attack Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Heart Attack Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "6-8-cafe",
+      "name": "6.8 Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "6.8 Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "organic-foods-and-cafe",
+      "name": "Organic foods and cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Organic foods and cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "coalyard-caf",
+      "name": "Coalyard café",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Coalyard café — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "le-petit-cafe",
+      "name": "Le Petit Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Le Petit Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "cafe-arabia",
+      "name": "Cafe Arabia",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Cafe Arabia — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "caf-bateel",
+      "name": "Café Bateel",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Café Bateel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dice-board-game-cafe",
+      "name": "Dice Board Game Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Dice Board Game Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "forest-cafe",
+      "name": "Forest Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Forest Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "orki-cafe",
+      "name": "ORKI Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "ORKI Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "mak-cafe-coffee",
+      "name": "Mak Cafe Coffee",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Mak Cafe Coffee — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "azf-coffee-station",
+      "name": "Azf Coffee Station",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Azf Coffee Station — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-coffee-club",
+      "name": "The coffee club",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "The coffee club — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hook-cafe",
+      "name": "Hook Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Hook Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "elli-s-caf-bakery",
+      "name": "Elli's Café & Bakery",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Elli's Café & Bakery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "du-roi-coffee-resto",
+      "name": "Du Roi Coffee & Resto",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Du Roi Coffee & Resto — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "maktaba-cafe",
+      "name": "Maktaba cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Maktaba cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "opulent-cafe",
+      "name": "Opulent Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Opulent Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "crag-cafe",
+      "name": "Crag cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Crag cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-first-collection-marina-hotel",
+      "name": "The First Collection Marina Hotel",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "The First Collection Marina Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-h-dubai-hotel",
+      "name": "The H Dubai Hotel",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "The H Dubai Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jumeirah-hotels-resorts-global",
+      "name": "Jumeirah Hotels & Resorts Global",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Jumeirah Hotels & Resorts Global — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "premier-inn-hotels-llc",
+      "name": "Premier Inn Hotels LLC",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "Premier Inn Hotels LLC — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "la-ville-hotel-suites-city-walk-dubai-autograph-collection",
+      "name": "La Ville Hotel & Suites CITY WALK Dubai, Autograph Collection",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "La Ville Hotel & Suites CITY WALK Dubai, Autograph Collection — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "media-one-hotel-dubai",
+      "name": "Media One Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Media One Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hilton-dubai-creek-hotel",
+      "name": "Hilton Dubai Creek Hotel",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Hilton Dubai Creek Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "25hours-hotel-one-central",
+      "name": "25hours Hotel One Central",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "25hours Hotel One Central — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "holiday-international-hotel",
+      "name": "Holiday International Hotel",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "Holiday International Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "rove-at-the-park-hotel-dubai",
+      "name": "Rove At The Park Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Rove At The Park Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-seef-heritage-hotel-dubai-curio-collection-by-hilton",
+      "name": "Al Seef Heritage Hotel Dubai Curio Collection by Hilton",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Al Seef Heritage Hotel Dubai Curio Collection by Hilton — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "shangri-la-hotel-dubai",
+      "name": "Shangri-La Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Shangri-La Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "millennium-plaza-downtown-hotel-dubai",
+      "name": "Millennium Plaza Downtown Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Millennium Plaza Downtown Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sheraton-mall-of-the-emirates-hotel-dubai",
+      "name": "Sheraton Mall of the Emirates Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Sheraton Mall of the Emirates Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "swissotel-al-murooj-hotel-dubai",
+      "name": "Swissotel Al Murooj Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Swissotel Al Murooj Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "conrad-hotel-dubai",
+      "name": "Conrad Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Conrad Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "radisson-red-hotel-dubai-silicon-oasis",
+      "name": "Radisson RED Hotel Dubai Silicon Oasis",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Radisson RED Hotel Dubai Silicon Oasis — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "rove-dubai-marina-dubai",
+      "name": "Rove Dubai Marina Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Rove Dubai Marina Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "crowne-plaza-dubai-marina-summer-offer",
+      "name": "Crowne Plaza Dubai Marina Summer Offer",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Crowne Plaza Dubai Marina Summer Offer — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jannah-place-dubai-marina",
+      "name": "Jannah Place Dubai Marina",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Jannah Place Dubai Marina — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kempinski-palm-jumeirah",
+      "name": "Kempinski Palm Jumeirah",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Kempinski Palm Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "waldorf-astoria-dubai-palm-jumeirah",
+      "name": "Waldorf Astoria Dubai Palm Jumeirah",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Waldorf Astoria Dubai Palm Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "w-dubai-the-palm",
+      "name": "W Dubai The Palm",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "W Dubai The Palm — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hilton-dubai-palm-jumeirah",
+      "name": "Hilton Dubai Palm Jumeirah",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Hilton Dubai Palm Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ja-group-of-resorts-hotel",
+      "name": "JA Group of Resorts & Hotel",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "JA Group of Resorts & Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "rotana-hotels-and-resorts",
+      "name": "Rotana Hotels and Resorts",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "Rotana Hotels and Resorts — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-retreat-palm-dubai-mgallery-by-sofitel",
+      "name": "The Retreat Palm Dubai MGallery By Sofitel",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "The Retreat Palm Dubai MGallery By Sofitel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sheraton-grand-hotel-dubai",
+      "name": "Sheraton Grand Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Sheraton Grand Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ramada-by-wyndham-downtown-dubai",
+      "name": "Ramada By Wyndham Downtown Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Ramada By Wyndham Downtown Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-ritz-carlton-dubai-jbr",
+      "name": "The Ritz-Carlton Dubai JBR",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "The Ritz-Carlton Dubai JBR — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "copthorne-hotel-dubai",
+      "name": "Copthorne Hotel Dubai",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Copthorne Hotel Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "holiday-inn-dubai-festival-city",
+      "name": "Holiday Inn Dubai Festival City",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Holiday Inn Dubai Festival City — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "holiday-inn-express-safa-park",
+      "name": "Holiday Inn Express Safa Park",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Holiday Inn Express Safa Park — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "holiday-inn-and-suites-dubai-science-park-l-l-c",
+      "name": "Holiday Inn and Suites Dubai Science Park L.L.C",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Holiday Inn and Suites Dubai Science Park L.L.C — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-khoory-courtyard-hotel",
+      "name": "AL Khoory Courtyard Hotel",
+      "category": "hotel",
+      "area": "UAE",
+      "description": "AL Khoory Courtyard Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-address-dubai-mall",
+      "name": "The Address Dubai Mall",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "The Address Dubai Mall — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "madinat-jumeirah",
+      "name": "Madinat Jumeirah",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Madinat Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kempinski-hotel-mall-of-the-emirates-dubai-suites-offer",
+      "name": "Kempinski Hotel Mall of the Emirates Dubai Suites Offer",
+      "category": "hotel",
+      "area": "Dubai",
+      "description": "Kempinski Hotel Mall of the Emirates Dubai Suites Offer — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gpr-spa-for-men",
+      "name": "GPR SPA For Men",
+      "category": "retail",
+      "area": "UAE",
+      "description": "GPR SPA For Men — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "armonia-spa",
+      "name": "Armonia Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Armonia Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ahasees-spa-club-by-grand-hyatt-dubai-hotel",
+      "name": "Ahasees Spa & Club by Grand Hyatt Dubai Hotel",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Ahasees Spa & Club by Grand Hyatt Dubai Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "coya-spa",
+      "name": "Coya Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Coya Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "top-spa-beauty-centre",
+      "name": "Top Spa & Beauty Centre",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Top Spa & Beauty Centre — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "corpofino-spa-slimming-lounge",
+      "name": "Corpofino Spa & Slimming Lounge",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Corpofino Spa & Slimming Lounge — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "obagi-medi-spa",
+      "name": "Obagi Medi Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Obagi Medi Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jazz-lounge-spa",
+      "name": "Jazz Lounge Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Jazz Lounge Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "versailles-spa-salon",
+      "name": "Versailles Spa & Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Versailles Spa & Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "lavender-spa-and-salon",
+      "name": "Lavender spa and salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Lavender spa and salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fen-salon-and-spa",
+      "name": "Fen salon and spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fen salon and spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "bianco-beauty-salon-spa",
+      "name": "Bianco Beauty Salon Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Bianco Beauty Salon Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "spaces-salon-spa",
+      "name": "Spaces Salon & Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Spaces Salon & Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-edition-spa-and-health-club",
+      "name": "The Edition Spa And Health Club",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Edition Spa And Health Club — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "boho-ladies-salon",
+      "name": "Boho Ladies Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Boho Ladies Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "oppa-spa-and-beauty-center",
+      "name": "Oppa Spa and Beauty Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Oppa Spa and Beauty Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "saray-spa-palm-jumeirah",
+      "name": "Saray Spa Palm Jumeirah",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Saray Spa Palm Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "eforea-spa-hilton-dubai-palm-jumeirah-hotel",
+      "name": "Eforea spa Hilton Dubai Palm Jumeirah Hotel",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Eforea spa Hilton Dubai Palm Jumeirah Hotel — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "nado-salon",
+      "name": "Nado Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Nado Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "nayomi-beauty-salon",
+      "name": "Nayomi Beauty Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Nayomi Beauty Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fati-salon",
+      "name": "Fati Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fati Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "nour-elasr-gents-salon",
+      "name": "Nour Elasr Gents Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Nour Elasr Gents Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "elmax-salon-and-spa",
+      "name": "Elmax Salon and Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Elmax Salon and Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-safy-oasis-beauty-salon",
+      "name": "Al Safy Oasis Beauty Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Al Safy Oasis Beauty Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "b22-gents-salon",
+      "name": "B22 Gents Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "B22 Gents Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kozma-kozma-american-salon",
+      "name": "Kozma & Kozma American Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Kozma & Kozma American Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "bristles-mane-gents-salon",
+      "name": "Bristles & Mane Gents Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Bristles & Mane Gents Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "beaudeluxe-home-salon-spa-services",
+      "name": "BeauDeluxe Home Salon & Spa Services",
+      "category": "retail",
+      "area": "UAE",
+      "description": "BeauDeluxe Home Salon & Spa Services — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sisters-beauty-lounge",
+      "name": "Sisters Beauty Lounge",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Sisters Beauty Lounge — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "eline-beauty-salon",
+      "name": "Eline Beauty Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Eline Beauty Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "linstant-shl-beauty-salon",
+      "name": "Linstant Shl Beauty Salon",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Linstant Shl Beauty Salon — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "najwa-beauty-center",
+      "name": "Najwa Beauty Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Najwa Beauty Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dr-joy-dental-clinic",
+      "name": "Dr Joy Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dr Joy Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dubai-smile-dental-clinic",
+      "name": "Dubai Smile Dental Clinic",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Dubai Smile Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dr-omar-yahia-dental-clinic",
+      "name": "Dr. Omar Yahia Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dr. Omar Yahia Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "pearly-white-dental-clinic",
+      "name": "Pearly White Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Pearly White Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "apex-medical-and-dental-clinics",
+      "name": "Apex Medical and Dental Clinics",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Apex Medical and Dental Clinics — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "revive-dental-clinic",
+      "name": "Revive Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Revive Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "art-of-teeth-dental-clinic",
+      "name": "Art Of Teeth Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Art Of Teeth Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "lotus-dental-clinic",
+      "name": "Lotus Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Lotus Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "city-smile-dental-clinic",
+      "name": "City Smile Dental Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "City Smile Dental Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "lucia-clinic",
+      "name": "Lucia Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Lucia Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "emirates-hospital-jumeirah",
+      "name": "Emirates Hospital, Jumeirah",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Emirates Hospital, Jumeirah — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "well-health-medical-center",
+      "name": "Well Health Medical Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Well Health Medical Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kaya-skin-clinic",
+      "name": "Kaya Skin Clinic",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Kaya Skin Clinic — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gym-hub-men-body-fitness-club",
+      "name": "Gym Hub Men Body Fitness Club",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Gym Hub Men Body Fitness Club — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "strong-ladies-physical-fitness-gym",
+      "name": "Strong Ladies Physical Fitness Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Strong Ladies Physical Fitness Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fitnation-gym",
+      "name": "Fitnation Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fitnation Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fitness-zone",
+      "name": "Fitness Zone",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Fitness Zone — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fitness-time",
+      "name": "Fitness Time",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fitness Time — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "go-fitness-gym",
+      "name": "Go Fitness Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Go Fitness Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "body-mind-fitness-center",
+      "name": "Body & Mind Fitness Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Body & Mind Fitness Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gymnation-uae",
+      "name": "GymNation UAE",
+      "category": "retail",
+      "area": "UAE",
+      "description": "GymNation UAE — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "body-factory-gym",
+      "name": "Body Factory Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Body Factory Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-dungeon-gym",
+      "name": "The Dungeon Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Dungeon Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "super-gym",
+      "name": "Super Gym",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Super Gym — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "peak-fitness",
+      "name": "Peak Fitness",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Peak Fitness — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "movibes-fitness",
+      "name": "Movibes Fitness",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Movibes Fitness — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "nemo-diving-center",
+      "name": "Nemo Diving Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Nemo Diving Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "life-pharmacy",
+      "name": "Life Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Life Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-ain-pharmacy",
+      "name": "Al Ain Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Al Ain Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "bait-al-maqdes-pharmacy",
+      "name": "Bait Al Maqdes Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Bait Al Maqdes Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "althiqa-pharmacy",
+      "name": "Althiqa Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Althiqa Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-thiqa-al-almyiah-pharmacy",
+      "name": "Al Thiqa Al Almyiah Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Al Thiqa Al Almyiah Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-sana-pharmacy",
+      "name": "Al Sana Pharmacy",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Al Sana Pharmacy — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "a-to-z-fashion",
+      "name": "A To Z Fashion",
+      "category": "retail",
+      "area": "UAE",
+      "description": "A To Z Fashion — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "max",
+      "name": "Max",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Max — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "posh-fusion-fashion-clothing",
+      "name": "Posh Fusion Fashion Clothing",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Posh Fusion Fashion Clothing — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "optifashion",
+      "name": "Optifashion",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Optifashion — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "athlete-s-co",
+      "name": "Athlete'S Co",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Athlete'S Co — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fragrance",
+      "name": "Fragrance",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fragrance — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-brand-zone",
+      "name": "The Brand Zone",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Brand Zone — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "home-centre",
+      "name": "Home Centre",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Home Centre — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jumbo-electronics",
+      "name": "Jumbo Electronics",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Jumbo Electronics — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "megamart",
+      "name": "Megamart",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Megamart — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "raico-trading",
+      "name": "Raico Trading",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Raico Trading — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-villa-home-furnishings",
+      "name": "The Villa Home Furnishings",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Villa Home Furnishings — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "homes-r-us",
+      "name": "Homes R Us",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Homes R Us — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "pan-emirates-home-furnishings",
+      "name": "Pan Emirates Home Furnishings",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Pan Emirates Home Furnishings — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "asghar-furniture",
+      "name": "Asghar Furniture",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Asghar Furniture — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "creative-furniture",
+      "name": "Creative Furniture",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Creative Furniture — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "united-furniture",
+      "name": "United Furniture",
+      "category": "retail",
+      "area": "UAE",
+      "description": "United Furniture — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "home-box",
+      "name": "Home Box",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Home Box — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-home",
+      "name": "The Home",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Home — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-one",
+      "name": "THE One",
+      "category": "retail",
+      "area": "UAE",
+      "description": "THE One — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "maisons-du-monde",
+      "name": "Maisons du Monde",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Maisons du Monde — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "mattress-land",
+      "name": "Mattress Land",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Mattress Land — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dwell",
+      "name": "Dwell",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dwell — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "bloomingdale-s-home",
+      "name": "Bloomingdale's Home",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Bloomingdale's Home — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "mall-mart",
+      "name": "Mall Mart",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Mall Mart — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "brands",
+      "name": "Brands",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Brands — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sharaf-dg",
+      "name": "Sharaf DG",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Sharaf DG — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "a-s-two-electronics-trading",
+      "name": "A S Two Electronics Trading",
+      "category": "retail",
+      "area": "UAE",
+      "description": "A S Two Electronics Trading — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "footlocker",
+      "name": "Footlocker",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Footlocker — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "thefaceshop",
+      "name": "TheFaceShop",
+      "category": "retail",
+      "area": "UAE",
+      "description": "TheFaceShop — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "skin-story-clean-beauty",
+      "name": "Skin Story Clean Beauty",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Skin Story Clean Beauty — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "nlb-nail-lab-beauty",
+      "name": "NLB Nail Lab Beauty",
+      "category": "retail",
+      "area": "UAE",
+      "description": "NLB Nail Lab Beauty — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "face-room",
+      "name": "Face Room",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Face Room — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-nail-spa",
+      "name": "The Nail Spa",
+      "category": "retail",
+      "area": "UAE",
+      "description": "The Nail Spa — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "perfume-bay-boutique",
+      "name": "Perfume Bay Boutique",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Perfume Bay Boutique — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "yateem-optician",
+      "name": "Yateem Optician",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Yateem Optician — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "elegance-style-perfumes-and-gifts",
+      "name": "Elegance Style Perfumes And Gifts",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Elegance Style Perfumes And Gifts — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "11-11-perfumes",
+      "name": "11:11 Perfumes",
+      "category": "retail",
+      "area": "UAE",
+      "description": "11:11 Perfumes — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sa-perfume",
+      "name": "Sa Perfume",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Sa Perfume — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "coral-perfumes",
+      "name": "Coral Perfumes",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Coral Perfumes — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "happy-journey-travel-tours-llc",
+      "name": "Happy Journey Travel & Tours LLC",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Happy Journey Travel & Tours LLC — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hala-travel-management-llc",
+      "name": "Hala Travel Management LLC",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Hala Travel Management LLC — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "emirates-airlines",
+      "name": "Emirates Airlines",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Emirates Airlines — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ski-dubai-slope-access",
+      "name": "Ski Dubai Slope Access",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Ski Dubai Slope Access — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hatta-wadi-hub",
+      "name": "Hatta Wadi Hub",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Hatta Wadi Hub — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "adventure-sports",
+      "name": "Adventure Sports",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Adventure Sports — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "borders",
+      "name": "Borders",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Borders — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "enjoy-a-up-10-discount-on-emirates-holidays-packages",
+      "name": "Enjoy a Up 10% discount on Emirates Holidays packages",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Enjoy a Up 10% discount on Emirates Holidays packages — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "auto-hub-car-surveying-evaluating-services",
+      "name": "Auto Hub Car Surveying & Evaluating Services",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Auto Hub Car Surveying & Evaluating Services — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "autotrust-automotive-service-center",
+      "name": "Autotrust Automotive Service Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Autotrust Automotive Service Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ag-cars-services",
+      "name": "Ag Cars Services",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Ag Cars Services — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dynatrade-auto-service",
+      "name": "Dynatrade Auto Service",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dynatrade Auto Service — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "1885-car-services-center",
+      "name": "1885 Car Services Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "1885 Car Services Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "a-f-auto-repair",
+      "name": "A&F Auto Repair",
+      "category": "retail",
+      "area": "UAE",
+      "description": "A&F Auto Repair — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "car-dip-auto-care",
+      "name": "Car Dip Auto Care",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Car Dip Auto Care — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "royal-star-auto-services-car-washing",
+      "name": "Royal Star Auto Services Car Washing",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Royal Star Auto Services Car Washing — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fasttrack-emarat",
+      "name": "Fasttrack Emarat",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fasttrack Emarat — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "4all-rent-a-car",
+      "name": "4All Rent A Car",
+      "category": "retail",
+      "area": "UAE",
+      "description": "4All Rent A Car — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "zofeur",
+      "name": "Zofeur",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Zofeur — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "washnow",
+      "name": "Washnow",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Washnow — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "e-r-laundry",
+      "name": "E R Laundry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "E R Laundry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "baba-express-laundry",
+      "name": "Baba Express Laundry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Baba Express Laundry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "royal-express-laundry",
+      "name": "Royal Express Laundry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Royal Express Laundry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "laundryheap",
+      "name": "laundryheap",
+      "category": "retail",
+      "area": "UAE",
+      "description": "laundryheap — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "zara-automatic-laundry",
+      "name": "Zara Automatic Laundry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Zara Automatic Laundry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "laundrybox",
+      "name": "Laundrybox",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Laundrybox — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dobe-laundry",
+      "name": "Dobe Laundry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dobe Laundry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "xline-dubai-marina",
+      "name": "Xline Dubai Marina",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Xline Dubai Marina — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "aisha-dhow-cruise",
+      "name": "Aisha Dhow Cruise",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Aisha Dhow Cruise — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sea-cloud-boat-rental",
+      "name": "Sea Cloud Boat Rental",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Sea Cloud Boat Rental — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dubai-outlet-mall",
+      "name": "Dubai Outlet Mall",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Dubai Outlet Mall — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dubai-miracle-garden",
+      "name": "Dubai Miracle Garden",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Dubai Miracle Garden — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dubai-parks-and-resorts",
+      "name": "Dubai Parks and Resorts",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Dubai Parks and Resorts — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fashionbox",
+      "name": "Fashionbox",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fashionbox — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "arte-museum-dubai",
+      "name": "Arte Museum Dubai",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Arte Museum Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dreamland-aqua-park",
+      "name": "Dreamland Aqua Park",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Dreamland Aqua Park — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fun-city",
+      "name": "Fun City",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Fun City — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "the-roxy-cinemas",
+      "name": "The ROXY Cinemas",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "The ROXY Cinemas — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "star-cinemas",
+      "name": "Star Cinemas",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Star Cinemas — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "glowland",
+      "name": "Glowland",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Glowland — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "royal-cinemas",
+      "name": "Royal Cinemas",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Royal Cinemas — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dubai-ice-rink",
+      "name": "Dubai Ice Rink",
+      "category": "attraction",
+      "area": "Dubai",
+      "description": "Dubai Ice Rink — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kids-hq-arcade",
+      "name": "Kids Hq Arcade",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Kids Hq Arcade — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "friends-avenue",
+      "name": "Friends Avenue",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Friends Avenue — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "makerspace-al-zeina",
+      "name": "Makerspace Al Zeina",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Makerspace Al Zeina — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "global-feet",
+      "name": "Global Feet",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Global Feet — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-forsan-international-sports-resort",
+      "name": "AL Forsan International Sports Resort",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "AL Forsan International Sports Resort — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sugar",
+      "name": "Sugar",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Sugar — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "little-rose-nursery",
+      "name": "Little Rose Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Little Rose Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "little-scholar-nursery",
+      "name": "Little Scholar Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Little Scholar Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "edu-fun-nursery",
+      "name": "Edu Fun Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Edu Fun Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "little-smarties-nursery",
+      "name": "Little Smarties Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Little Smarties Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "playhouse-nursery",
+      "name": "Playhouse Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Playhouse Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "blossom-nursery",
+      "name": "Blossom Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Blossom Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hummingbird-nursery",
+      "name": "Hummingbird Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Hummingbird Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "iq-kids-nursery",
+      "name": "IQ Kids Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "IQ Kids Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fun-first-nursery",
+      "name": "Fun First Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fun First Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "alawail-nursery",
+      "name": "Alawail Nursery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Alawail Nursery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "university-of-dubai",
+      "name": "University of Dubai",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "University of Dubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "ceeem",
+      "name": "Ceeem",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Ceeem — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "makkah-daets",
+      "name": "Makkah daets",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Makkah daets — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "irtiqaa-for-talents-and-personal-competencies",
+      "name": "Irtiqaa for talents and personal competencies",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Irtiqaa for talents and personal competencies — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "zabeel-international-institute",
+      "name": "Zabeel International Institute",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Zabeel International Institute — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "aafaq-human-resources-training-and-development-center",
+      "name": "Aafaq Human Resources Training and Development Center",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Aafaq Human Resources Training and Development Center — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "pure-gold-jewellers",
+      "name": "Pure Gold Jewellers",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Pure Gold Jewellers — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gold-plus",
+      "name": "Gold Plus",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Gold Plus — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "karat-world-gold-jewellery",
+      "name": "Karat World Gold & Jewellery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Karat World Gold & Jewellery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "lifestyle-fine-jewelry",
+      "name": "Lifestyle Fine Jewelry",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Lifestyle Fine Jewelry — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "al-romaizan-gold-jewellery",
+      "name": "Al Romaizan Gold & Jewellery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Al Romaizan Gold & Jewellery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kalyan-jewellers",
+      "name": "Kalyan Jewellers",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Kalyan Jewellers — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "alliali-jewellery",
+      "name": "Alliali Jewellery",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Alliali Jewellery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "joyalukkas",
+      "name": "Joyalukkas",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Joyalukkas — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "arakkal-gold-diamonds",
+      "name": "Arakkal Gold & Diamonds",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Arakkal Gold & Diamonds — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "marasea-restaurant",
+      "name": "Marasea Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Marasea Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "sauce-wonder",
+      "name": "Sauce & Wonder",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Sauce & Wonder — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kulcha-king",
+      "name": "Kulcha King",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Kulcha King — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "chicken-tikka-inn",
+      "name": "Chicken Tikka Inn",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Chicken Tikka Inn — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fajita-station-restaurant",
+      "name": "Fajita station restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Fajita station restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "galleria-restaurant-cafe",
+      "name": "Galleria Restaurant Cafe",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Galleria Restaurant Cafe — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "kcal-meal-plans",
+      "name": "Kcal Meal Plans",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Kcal Meal Plans — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jashanmal",
+      "name": "Jashanmal",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Jashanmal — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "national-food-product-company",
+      "name": "National Food Product Company",
+      "category": "retail",
+      "area": "UAE",
+      "description": "National Food Product Company — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "fazaa-stores",
+      "name": "Fazaa Stores",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Fazaa Stores — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "burger-pit",
+      "name": "Burger Pit",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Burger Pit — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "bait-almandi-restaurants",
+      "name": "Bait Almandi Restaurants",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Bait Almandi Restaurants — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "20four-eatery",
+      "name": "20four Eatery",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "20four Eatery — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "gala-restaurant",
+      "name": "Gala Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Gala Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "tala-restaurant",
+      "name": "Tala Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Tala Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "grand-buffet-restaurant",
+      "name": "Grand Buffet Restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Grand Buffet Restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "eggspectation-restaurant",
+      "name": "Eggspectation restaurant",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Eggspectation restaurant — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "hurricane-s-grill",
+      "name": "Hurricane's Grill",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Hurricane's Grill — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "alloro-restaurants",
+      "name": "Alloro Restaurants",
+      "category": "restaurant",
+      "area": "UAE",
+      "description": "Alloro Restaurants — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "palm-avenue",
+      "name": "Palm Avenue",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Palm Avenue — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "dream-center-for-people-of-determination",
+      "name": "Dream Center for People of Determination",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Dream Center for People of Determination — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "jumeira-pest-control-services",
+      "name": "Jumeira Pest Control Services",
+      "category": "retail",
+      "area": "Dubai",
+      "description": "Jumeira Pest Control Services — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "air-arabia",
+      "name": "Air Arabia",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Air Arabia — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "flydubai",
+      "name": "flydubai",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "flydubai — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "du",
+      "name": "du",
+      "category": "retail",
+      "area": "UAE",
+      "description": "du — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "airlink-international-uae",
+      "name": "Airlink international UAE",
+      "category": "attraction",
+      "area": "UAE",
+      "description": "Airlink international UAE — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    },
+    {
+      "slug": "rzr-real-estate",
+      "name": "Rzr Real Estate",
+      "category": "retail",
+      "area": "UAE",
+      "description": "Rzr Real Estate — UAE venue listed on Fazaa. Discount details and full terms via fazaa.ae."
+    }
+  ],
+  "discounts": [
+    {
+      "place_slug": "asha-s-restaurant",
+      "discount_slug": "fazaa-asha-s-restaurant",
+      "title": "Asha's Restaurant — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "Asha's Restaurant - Discount 35%",
+      "external_url": "https://www.fazaa.ae/offers/view/ashas-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "mangiare-restaurant",
+      "discount_slug": "fazaa-mangiare-restaurant",
+      "title": "Mangiare Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Mangiare Restaurant - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/mangiare-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "khayal-restaurant",
+      "discount_slug": "fazaa-khayal-restaurant",
+      "title": "Khayal Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Khayal Restaurant - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/khayal-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "mado-restaurant-and-cafe",
+      "discount_slug": "fazaa-mado-restaurant-and-cafe",
+      "title": "Mado Restaurant and Cafe — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Mado Restaurant and Cafe - 10% Discount on the total bill",
+      "external_url": "https://www.fazaa.ae/offers/view/mado-restaurant-and-cafe",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "falla-restaurant",
+      "discount_slug": "fazaa-falla-restaurant",
+      "title": "Falla restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Falla restaurant - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/falla-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "sand-restaurant",
+      "discount_slug": "fazaa-sand-restaurant",
+      "title": "Sand Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Sand Restaurant - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sand-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "be-healthy-restaurant",
+      "discount_slug": "fazaa-be-healthy-restaurant",
+      "title": "Be Healthy Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Be Healthy Restaurant - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/be-healthy-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "hatam-restaurant",
+      "discount_slug": "fazaa-hatam-restaurant",
+      "title": "Hatam Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Hatam Restaurant - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/hatam-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "villa-rosa-restaurant",
+      "discount_slug": "fazaa-villa-rosa-restaurant",
+      "title": "Villa Rosa Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Villa Rosa Restaurant - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/villa-rosa-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "gazebo-restaurant",
+      "discount_slug": "fazaa-gazebo-restaurant",
+      "title": "GAZEBO Restaurant — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "GAZEBO Restaurant - 10% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/gazebo-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "selections",
+      "discount_slug": "fazaa-selections",
+      "title": "Selections — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Selections - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/selec-tions",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "ibn-albahr-restaurant",
+      "discount_slug": "fazaa-ibn-albahr-restaurant",
+      "title": "Ibn Albahr Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "IBN ALBAHR RESTAURANT - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ibn-albahr-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "illy-cafe-dubai",
+      "discount_slug": "fazaa-illy-cafe-dubai",
+      "title": "Illy Cafe Dubai — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Illy Cafe Dubai - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/illy-cafe-dubai",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "viking-restaurant",
+      "discount_slug": "fazaa-viking-restaurant",
+      "title": "Viking Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Viking Restaurant - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/viking-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "planet-terra-restaurant",
+      "discount_slug": "fazaa-planet-terra-restaurant",
+      "title": "Planet Terra Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "PLANET TERRA RESTAURANT - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/planet-terra-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "ana-restaurant",
+      "discount_slug": "fazaa-ana-restaurant",
+      "title": "Ana Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Ana Restaurant - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ana-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "heart-attack-restaurant",
+      "discount_slug": "fazaa-heart-attack-restaurant",
+      "title": "Heart Attack Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "HEART ATTACK RESTAURANT - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/heart-attack-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "6-8-cafe",
+      "discount_slug": "fazaa-6-8-cafe",
+      "title": "6.8 Cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "6.8 Cafe - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/6.8-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "organic-foods-and-cafe",
+      "discount_slug": "fazaa-organic-foods-and-cafe",
+      "title": "Organic foods and cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Organic foods and cafe - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/organic-foods-and-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "coalyard-caf",
+      "discount_slug": "fazaa-coalyard-caf",
+      "title": "Coalyard café — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Coalyard café - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/coalyard-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "le-petit-cafe",
+      "discount_slug": "fazaa-le-petit-cafe",
+      "title": "Le Petit Cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Le Petit Cafe - up to 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/le-petit-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "cafe-arabia",
+      "discount_slug": "fazaa-cafe-arabia",
+      "title": "Cafe Arabia — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "CAFE ARABIA - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/cafe-arabia",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "caf-bateel",
+      "discount_slug": "fazaa-caf-bateel",
+      "title": "Café Bateel — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Café Bateel - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/cafe-bateel",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "dice-board-game-cafe",
+      "discount_slug": "fazaa-dice-board-game-cafe",
+      "title": "Dice Board Game Cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "DICE BOARD GAME CAFE - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dice-board-game-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "forest-cafe",
+      "discount_slug": "fazaa-forest-cafe",
+      "title": "Forest Cafe — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "FOREST CAFE - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/forest-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "orki-cafe",
+      "discount_slug": "fazaa-orki-cafe",
+      "title": "ORKI Cafe — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "ORKI Cafe - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/orki-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "mak-cafe-coffee",
+      "discount_slug": "fazaa-mak-cafe-coffee",
+      "title": "Mak Cafe Coffee — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "MAK CAFE COFFEE - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/mak-cafe-coffee",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "azf-coffee-station",
+      "discount_slug": "fazaa-azf-coffee-station",
+      "title": "Azf Coffee Station — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "AZF COFFEE STATION - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/azf-coffee-station",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "the-coffee-club",
+      "discount_slug": "fazaa-the-coffee-club",
+      "title": "The coffee club — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "The coffee club - 15% Discount on the bill",
+      "external_url": "https://www.fazaa.ae/offers/view/the-coffee-club",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "hook-cafe",
+      "discount_slug": "fazaa-hook-cafe",
+      "title": "Hook Cafe — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Hook Cafe - 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/hook-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "elli-s-caf-bakery",
+      "discount_slug": "fazaa-elli-s-caf-bakery",
+      "title": "Elli's Café & Bakery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Elli's Café & Bakery - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ellis-cafe-bakery",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "du-roi-coffee-resto",
+      "discount_slug": "fazaa-du-roi-coffee-resto",
+      "title": "Du Roi Coffee & Resto — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "DU ROI COFFEE & RESTO - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/du-roi-coffee-resto",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "maktaba-cafe",
+      "discount_slug": "fazaa-maktaba-cafe",
+      "title": "Maktaba cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Maktaba cafe - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/maktaba-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "opulent-cafe",
+      "discount_slug": "fazaa-opulent-cafe",
+      "title": "Opulent Cafe — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Opulent Cafe - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/opulent-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "crag-cafe",
+      "discount_slug": "fazaa-crag-cafe",
+      "title": "Crag cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Crag cafe - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/crag-cafe",
+      "bucket": "cafe"
+    },
+    {
+      "place_slug": "the-first-collection-marina-hotel",
+      "discount_slug": "fazaa-the-first-collection-marina-hotel",
+      "title": "The First Collection Marina Hotel — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "THE FIRST COLLECTION MARINA HOTEL - Enjoy 30% discount on the best available rate",
+      "external_url": "https://www.fazaa.ae/offers/view/the-first-collection-marina-hotel-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "the-h-dubai-hotel",
+      "discount_slug": "fazaa-the-h-dubai-hotel",
+      "title": "The H Dubai Hotel — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "The H Dubai Hotel - 20% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/the-h-dubai-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "jumeirah-hotels-resorts-global",
+      "discount_slug": "fazaa-jumeirah-hotels-resorts-global",
+      "title": "Jumeirah Hotels & Resorts Global — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Jumeirah Hotels & Resorts Global - 20% Discount on best available room rate",
+      "external_url": "https://www.fazaa.ae/offers/view/jumeirah-hotels-resorts-global",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "premier-inn-hotels-llc",
+      "discount_slug": "fazaa-premier-inn-hotels-llc",
+      "title": "Premier Inn Hotels LLC — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Premier Inn Hotels LLC - Enjoy 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/premier-inn-hotel-llc",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "la-ville-hotel-suites-city-walk-dubai-autograph-collection",
+      "discount_slug": "fazaa-la-ville-hotel-suites-city-walk-dubai-autograph-collection",
+      "title": "La Ville Hotel & Suites CITY WALK Dubai, Autograph Collection — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "La Ville Hotel & Suites CITY WALK Dubai, Autograph Collection",
+      "external_url": "https://www.fazaa.ae/offers/view/la-ville-hotel-suites-city-walk-dubai-autograph-collection",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "media-one-hotel-dubai",
+      "discount_slug": "fazaa-media-one-hotel-dubai",
+      "title": "Media One Hotel Dubai — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Media One Hotel Dubai - 15% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/media-one-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "hilton-dubai-creek-hotel",
+      "discount_slug": "fazaa-hilton-dubai-creek-hotel",
+      "title": "Hilton Dubai Creek Hotel — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Hilton Dubai Creek Hotel - 30% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/hilton-dubai-creek-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "25hours-hotel-one-central",
+      "discount_slug": "fazaa-25hours-hotel-one-central",
+      "title": "25hours Hotel One Central — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "25hours Hotel One Central - Enjoy up to 35% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/25-hours-hotel-one-central-summer-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "holiday-international-hotel",
+      "discount_slug": "fazaa-holiday-international-hotel",
+      "title": "Holiday International Hotel — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Holiday International Hotel - Enjoy 15% discount on the bill",
+      "external_url": "https://www.fazaa.ae/offers/view/holiday-international-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "rove-at-the-park-hotel-dubai",
+      "discount_slug": "fazaa-rove-at-the-park-hotel-dubai",
+      "title": "Rove At The Park Hotel Dubai — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Rove At The Park Hotel Dubai - 25% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/rove-at-the-park-hotel-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "al-seef-heritage-hotel-dubai-curio-collection-by-hilton",
+      "discount_slug": "fazaa-al-seef-heritage-hotel-dubai-curio-collection-by-hilton",
+      "title": "Al Seef Heritage Hotel Dubai Curio Collection by Hilton — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Al Seef Heritage Hotel Dubai Curio Collection by Hilton",
+      "external_url": "https://www.fazaa.ae/offers/view/al-seef-heritage-hotel-dubai-curio-collection-by-hilton",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "shangri-la-hotel-dubai",
+      "discount_slug": "fazaa-shangri-la-hotel-dubai",
+      "title": "Shangri-La Hotel Dubai — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Shangri-La Hotel Dubai - Sea and Burj Khalifa View",
+      "external_url": "https://www.fazaa.ae/offers/view/shangri-la-hotel-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "millennium-plaza-downtown-hotel-dubai",
+      "discount_slug": "fazaa-millennium-plaza-downtown-hotel-dubai",
+      "title": "Millennium Plaza Downtown Hotel Dubai — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Millennium Plaza Downtown Hotel Dubai - Enjoy 25% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/millennium-plaza-downtown-hotel-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "sheraton-mall-of-the-emirates-hotel-dubai",
+      "discount_slug": "fazaa-sheraton-mall-of-the-emirates-hotel-dubai",
+      "title": "Sheraton Mall of the Emirates Hotel Dubai — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Sheraton Mall of the Emirates Hotel Dubai",
+      "external_url": "https://www.fazaa.ae/offers/view/sheraton-dubai-mall-of-the-emirates-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "swissotel-al-murooj-hotel-dubai",
+      "discount_slug": "fazaa-swissotel-al-murooj-hotel-dubai",
+      "title": "Swissotel Al Murooj Hotel Dubai — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Swissotel Al Murooj Hotel Dubai - 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/swissotel-al-murooj-hotel-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "conrad-hotel-dubai",
+      "discount_slug": "fazaa-conrad-hotel-dubai",
+      "title": "Conrad Hotel Dubai — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Conrad Hotel Dubai - 20% Discount on Rooms & Suites",
+      "external_url": "https://www.fazaa.ae/offers/view/conrad-hotel-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "millennium-plaza-downtown-hotel-dubai",
+      "discount_slug": "fazaa-millennium-plaza-downtown-hotel-dubai",
+      "title": "Millennium Plaza Downtown Hotel Dubai — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Millennium Plaza Downtown Hotel Dubai - Book a room for AED 175",
+      "external_url": "https://www.fazaa.ae/offers/view/millennium-plaza-downtown-hotel-dubai-summer-promotion",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "radisson-red-hotel-dubai-silicon-oasis",
+      "discount_slug": "fazaa-radisson-red-hotel-dubai-silicon-oasis",
+      "title": "Radisson RED Hotel Dubai Silicon Oasis — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Radisson RED Hotel Dubai Silicon Oasis",
+      "external_url": "https://www.fazaa.ae/offers/view/radisson-red-hotel-dubai-silicon-oasis",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "rove-dubai-marina-dubai",
+      "discount_slug": "fazaa-rove-dubai-marina-dubai",
+      "title": "Rove Dubai Marina Dubai — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Rove Dubai Marina Dubai - 25% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/rove-dubai-marina-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "crowne-plaza-dubai-marina-summer-offer",
+      "discount_slug": "fazaa-crowne-plaza-dubai-marina-summer-offer",
+      "title": "Crowne Plaza Dubai Marina Summer Offer — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Crowne Plaza Dubai Marina Summer Offer",
+      "external_url": "https://www.fazaa.ae/offers/view/crowne-plaza-dubai-marina-summer-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "jannah-place-dubai-marina",
+      "discount_slug": "fazaa-jannah-place-dubai-marina",
+      "title": "Jannah Place Dubai Marina — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Jannah Place Dubai Marina - 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/jannah-place-dubai-marina",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "the-first-collection-marina-hotel",
+      "discount_slug": "fazaa-the-first-collection-marina-hotel",
+      "title": "The First Collection Marina Hotel — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "THE FIRST COLLECTION MARINA HOTEL - Enjoy 35% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/wyndham-dubai-marina",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "kempinski-palm-jumeirah",
+      "discount_slug": "fazaa-kempinski-palm-jumeirah",
+      "title": "Kempinski Palm Jumeirah — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Kempinski Palm Jumeirah - Enjoy 30% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kempinski-palm-jumeirah",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "waldorf-astoria-dubai-palm-jumeirah",
+      "discount_slug": "fazaa-waldorf-astoria-dubai-palm-jumeirah",
+      "title": "Waldorf Astoria Dubai Palm Jumeirah — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Waldorf Astoria Dubai Palm Jumeirah",
+      "external_url": "https://www.fazaa.ae/offers/view/waldorf-astoria-dubai-palm-jumeirah",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "w-dubai-the-palm",
+      "discount_slug": "fazaa-w-dubai-the-palm",
+      "title": "W Dubai The Palm — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "W Dubai The Palm - Enjoy 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/w-dubai-the-palm",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "hilton-dubai-palm-jumeirah",
+      "discount_slug": "fazaa-hilton-dubai-palm-jumeirah",
+      "title": "Hilton Dubai Palm Jumeirah — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "HILTON DUBAI PALM JUMEIRAH - Enjoy 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/hilton-dubai-palm-jumeirah",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "ja-group-of-resorts-hotel",
+      "discount_slug": "fazaa-ja-group-of-resorts-hotel",
+      "title": "JA Group of Resorts & Hotel — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "JA Group of Resorts & Hotel - 30% Discounts",
+      "external_url": "https://www.fazaa.ae/offers/view/ja-resort-and-hotels",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "rotana-hotels-and-resorts",
+      "discount_slug": "fazaa-rotana-hotels-and-resorts",
+      "title": "Rotana Hotels and Resorts — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Rotana Hotels and Resorts - 20% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/rotana-hotels-and-resorts",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "the-retreat-palm-dubai-mgallery-by-sofitel",
+      "discount_slug": "fazaa-the-retreat-palm-dubai-mgallery-by-sofitel",
+      "title": "The Retreat Palm Dubai MGallery By Sofitel — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "The Retreat Palm Dubai MGallery By Sofitel",
+      "external_url": "https://www.fazaa.ae/offers/view/the-retreat-palm-dubai-mgallery-by-sofitel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "sheraton-grand-hotel-dubai",
+      "discount_slug": "fazaa-sheraton-grand-hotel-dubai",
+      "title": "Sheraton Grand Hotel Dubai — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Sheraton Grand Hotel Dubai - Weddings and Meetings Offer",
+      "external_url": "https://www.fazaa.ae/offers/view/sheraton-grand-hotel-dubai-weddings-and-meetings-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "ramada-by-wyndham-downtown-dubai",
+      "discount_slug": "fazaa-ramada-by-wyndham-downtown-dubai",
+      "title": "Ramada By Wyndham Downtown Dubai — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Ramada By Wyndham Downtown Dubai - 30% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/ramada-by-wyndham-downtown-dubai",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "the-ritz-carlton-dubai-jbr",
+      "discount_slug": "fazaa-the-ritz-carlton-dubai-jbr",
+      "title": "The Ritz-Carlton Dubai JBR — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "The Ritz-Carlton Dubai JBR - Deluxe Room offer",
+      "external_url": "https://www.fazaa.ae/offers/view/the-ritz-carlton-dubai-jbr-uae-national-day",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "copthorne-hotel-dubai",
+      "discount_slug": "fazaa-copthorne-hotel-dubai",
+      "title": "Copthorne Hotel Dubai — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Copthorne Hotel Dubai - Superior room AED 175 per night",
+      "external_url": "https://www.fazaa.ae/offers/view/copthorne-hotel-dubai-summer-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "holiday-inn-dubai-festival-city",
+      "discount_slug": "fazaa-holiday-inn-dubai-festival-city",
+      "title": "Holiday Inn Dubai Festival City — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Holiday Inn Dubai Festival City - 30% Discount on Best Available Rate",
+      "external_url": "https://www.fazaa.ae/offers/view/holiday-inn-dubai-festival-city",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "holiday-inn-express-safa-park",
+      "discount_slug": "fazaa-holiday-inn-express-safa-park",
+      "title": "Holiday Inn Express Safa Park — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Holiday Inn Express Safa Park - Standard room at AED 330",
+      "external_url": "https://www.fazaa.ae/offers/view/holiday-inn-express-safa-park-exclusive-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "holiday-inn-and-suites-dubai-science-park-l-l-c",
+      "discount_slug": "fazaa-holiday-inn-and-suites-dubai-science-park-l-l-c",
+      "title": "Holiday Inn and Suites Dubai Science Park L.L.C — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Holiday Inn and Suites Dubai Science Park L.L.C.",
+      "external_url": "https://www.fazaa.ae/offers/view/holiday-inn-and-suites-dubai-science-park-llc-summer-offer",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "al-khoory-courtyard-hotel",
+      "discount_slug": "fazaa-al-khoory-courtyard-hotel",
+      "title": "AL Khoory Courtyard Hotel — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "AL Khoory Courtyard Hotel - Enjoy 20% discount on Room rates",
+      "external_url": "https://www.fazaa.ae/offers/view/al-khoory-courtyard-hotel",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "the-address-dubai-mall",
+      "discount_slug": "fazaa-the-address-dubai-mall",
+      "title": "The Address Dubai Mall — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "The Address Dubai Mall - Enjoy 15% Discount on best available rate",
+      "external_url": "https://www.fazaa.ae/offers/view/address-dubai-mall",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "madinat-jumeirah",
+      "discount_slug": "fazaa-madinat-jumeirah",
+      "title": "Madinat Jumeirah — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Madinat Jumeirah - Enjoy 20% on the best available rate",
+      "external_url": "https://www.fazaa.ae/offers/view/jumeirah-al-qasr-madinat-jumeirah",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "kempinski-hotel-mall-of-the-emirates-dubai-suites-offer",
+      "discount_slug": "fazaa-kempinski-hotel-mall-of-the-emirates-dubai-suites-offer",
+      "title": "Kempinski Hotel Mall of the Emirates Dubai Suites Offer — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Kempinski Hotel Mall of the Emirates Dubai Suites Offer",
+      "external_url": "https://www.fazaa.ae/offers/view/kempinski-hotel-mall-of-the-emirates-dubaisuites-offer-",
+      "bucket": "hotel"
+    },
+    {
+      "place_slug": "gpr-spa-for-men",
+      "discount_slug": "fazaa-gpr-spa-for-men",
+      "title": "GPR SPA For Men — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "GPR SPA For Men - 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/gpr-spa-for-men",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "armonia-spa",
+      "discount_slug": "fazaa-armonia-spa",
+      "title": "Armonia Spa — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "ARMONIA SPA - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/armonia-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "ahasees-spa-club-by-grand-hyatt-dubai-hotel",
+      "discount_slug": "fazaa-ahasees-spa-club-by-grand-hyatt-dubai-hotel",
+      "title": "Ahasees Spa & Club by Grand Hyatt Dubai Hotel — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Ahasees Spa & Club by Grand Hyatt Dubai Hotel - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ahasees-spa-club-grand-hayatt-dubai-hotel",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "coya-spa",
+      "discount_slug": "fazaa-coya-spa",
+      "title": "Coya Spa — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Coya Spa - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/coya-spa-beauty-center",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "top-spa-beauty-centre",
+      "discount_slug": "fazaa-top-spa-beauty-centre",
+      "title": "Top Spa & Beauty Centre — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "TOP SPA & BEAUTY CENTRE - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/top-spa-and-beauty-centre",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "corpofino-spa-slimming-lounge",
+      "discount_slug": "fazaa-corpofino-spa-slimming-lounge",
+      "title": "Corpofino Spa & Slimming Lounge — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "Corpofino Spa & Slimming Lounge - Discount Up to 35%",
+      "external_url": "https://www.fazaa.ae/offers/view/corpofino-spa-limming-lounge1",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "obagi-medi-spa",
+      "discount_slug": "fazaa-obagi-medi-spa",
+      "title": "Obagi Medi Spa — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Obagi Medi Spa - Consultation free and Discounts up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/obagi-medi-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "jazz-lounge-spa",
+      "discount_slug": "fazaa-jazz-lounge-spa",
+      "title": "Jazz Lounge Spa — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Jazz Lounge Spa - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/jazz-lounge-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "versailles-spa-salon",
+      "discount_slug": "fazaa-versailles-spa-salon",
+      "title": "Versailles Spa & Salon — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Versailles Spa & Salon - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/versailles-spa-salon",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "lavender-spa-and-salon",
+      "discount_slug": "fazaa-lavender-spa-and-salon",
+      "title": "Lavender spa and salon — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Lavender spa and salon - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/lavender-spa-and-salon",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "fen-salon-and-spa",
+      "discount_slug": "fazaa-fen-salon-and-spa",
+      "title": "Fen salon and spa — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Fen salon and spa - Up to 30% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fen-salon-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "bianco-beauty-salon-spa",
+      "discount_slug": "fazaa-bianco-beauty-salon-spa",
+      "title": "Bianco Beauty Salon Spa — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "BIANCO BEAUTY SALON SPA - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/bianco-beauty-salon-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "spaces-salon-spa",
+      "discount_slug": "fazaa-spaces-salon-spa",
+      "title": "Spaces Salon & Spa — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "SPACES SALON & SPA - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/spaces-salon-spa",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "the-edition-spa-and-health-club",
+      "discount_slug": "fazaa-the-edition-spa-and-health-club",
+      "title": "The Edition Spa And Health Club — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "The Edition Spa And Health Club - Discount 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/the-edition-spa-and-health-club-summer-offer",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "boho-ladies-salon",
+      "discount_slug": "fazaa-boho-ladies-salon",
+      "title": "Boho Ladies Salon — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Boho Ladies Salon - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/boho-ladies-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "oppa-spa-and-beauty-center",
+      "discount_slug": "fazaa-oppa-spa-and-beauty-center",
+      "title": "Oppa Spa and Beauty Center — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Oppa Spa and Beauty Center - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/oppa-spa-beauty-center",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "saray-spa-palm-jumeirah",
+      "discount_slug": "fazaa-saray-spa-palm-jumeirah",
+      "title": "Saray Spa Palm Jumeirah — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Saray Spa Palm Jumeirah - Discount 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/saray-spa-palm-jumeirah",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "eforea-spa-hilton-dubai-palm-jumeirah-hotel",
+      "discount_slug": "fazaa-eforea-spa-hilton-dubai-palm-jumeirah-hotel",
+      "title": "Eforea spa Hilton Dubai Palm Jumeirah Hotel — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Eforea spa Hilton Dubai Palm Jumeirah Hotel - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/eforea-spa-hilton-dubai-palm-jumeirah-hotel",
+      "bucket": "spa"
+    },
+    {
+      "place_slug": "nado-salon",
+      "discount_slug": "fazaa-nado-salon",
+      "title": "Nado Salon — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Nado Salon - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/nado-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "nayomi-beauty-salon",
+      "discount_slug": "fazaa-nayomi-beauty-salon",
+      "title": "Nayomi Beauty Salon — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Nayomi Beauty Salon - Enjoy 20% off Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/noyomi-beauty-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "fati-salon",
+      "discount_slug": "fazaa-fati-salon",
+      "title": "Fati Salon — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Fati Salon - 30% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fati-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "nour-elasr-gents-salon",
+      "discount_slug": "fazaa-nour-elasr-gents-salon",
+      "title": "Nour Elasr Gents Salon — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Nour Elasr Gents Salon - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/nour-elasr-gents-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "elmax-salon-and-spa",
+      "discount_slug": "fazaa-elmax-salon-and-spa",
+      "title": "Elmax Salon and Spa — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "ELMAX SALON AND SPA - Up to 40% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/elmax-salon-and-spa",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "al-safy-oasis-beauty-salon",
+      "discount_slug": "fazaa-al-safy-oasis-beauty-salon",
+      "title": "Al Safy Oasis Beauty Salon — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "AL SAFY OASIS BEAUTY SALON - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/alsafy-oasis-beauty-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "b22-gents-salon",
+      "discount_slug": "fazaa-b22-gents-salon",
+      "title": "B22 Gents Salon — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "B22 Gents Salon - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/b22-gents-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "kozma-kozma-american-salon",
+      "discount_slug": "fazaa-kozma-kozma-american-salon",
+      "title": "Kozma & Kozma American Salon — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Kozma & Kozma American Salon - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kozma-kozma-american-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "bristles-mane-gents-salon",
+      "discount_slug": "fazaa-bristles-mane-gents-salon",
+      "title": "Bristles & Mane Gents Salon — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "BRISTLES & MANE GENTS SALON - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/bristles-mane-gents-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "beaudeluxe-home-salon-spa-services",
+      "discount_slug": "fazaa-beaudeluxe-home-salon-spa-services",
+      "title": "BeauDeluxe Home Salon & Spa Services — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "BeauDeluxe Home Salon & Spa Services - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/beaudeluxe-home-salon-spa-services",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "sisters-beauty-lounge",
+      "discount_slug": "fazaa-sisters-beauty-lounge",
+      "title": "Sisters Beauty Lounge — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Sisters Beauty Lounge - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sisters-beauty-lounge",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "eline-beauty-salon",
+      "discount_slug": "fazaa-eline-beauty-salon",
+      "title": "Eline Beauty Salon — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Eline Beauty Salon - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/eline-beauty-salon-",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "linstant-shl-beauty-salon",
+      "discount_slug": "fazaa-linstant-shl-beauty-salon",
+      "title": "Linstant Shl Beauty Salon — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "LINSTANT SHL BEAUTY SALON - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/linstant-shl-beauty-salon",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "najwa-beauty-center",
+      "discount_slug": "fazaa-najwa-beauty-center",
+      "title": "Najwa Beauty Center — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Najwa Beauty Center - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/najwa-beauty-center",
+      "bucket": "salon"
+    },
+    {
+      "place_slug": "dr-joy-dental-clinic",
+      "discount_slug": "fazaa-dr-joy-dental-clinic",
+      "title": "Dr Joy Dental Clinic — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "DR JOY DENTAL CLINIC - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dr-joy-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "dubai-smile-dental-clinic",
+      "discount_slug": "fazaa-dubai-smile-dental-clinic",
+      "title": "Dubai Smile Dental Clinic — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Dubai Smile Dental Clinic - Exclusive discounts up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-smile-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "dr-omar-yahia-dental-clinic",
+      "discount_slug": "fazaa-dr-omar-yahia-dental-clinic",
+      "title": "Dr. Omar Yahia Dental Clinic — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Dr. Omar Yahia Dental Clinic - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dr-omar-yahia-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "pearly-white-dental-clinic",
+      "discount_slug": "fazaa-pearly-white-dental-clinic",
+      "title": "Pearly White Dental Clinic — 70% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 70,
+      "description": "PEARLY WHITE DENTAL CLINIC - Discount up to 70%",
+      "external_url": "https://www.fazaa.ae/offers/view/pearly-white-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "apex-medical-and-dental-clinics",
+      "discount_slug": "fazaa-apex-medical-and-dental-clinics",
+      "title": "Apex Medical and Dental Clinics — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Apex Medical and Dental Clinics - Discount up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/apex-medical-and-dental-clinics",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "revive-dental-clinic",
+      "discount_slug": "fazaa-revive-dental-clinic",
+      "title": "Revive Dental Clinic — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Revive Dental Clinic - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/revive-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "art-of-teeth-dental-clinic",
+      "discount_slug": "fazaa-art-of-teeth-dental-clinic",
+      "title": "Art Of Teeth Dental Clinic — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "ART OF TEETH DENTAL CLINIC - 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/art-of-teeth-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "lotus-dental-clinic",
+      "discount_slug": "fazaa-lotus-dental-clinic",
+      "title": "Lotus Dental Clinic — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "LOTUS DENTAL CLINIC - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/lotus-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "city-smile-dental-clinic",
+      "discount_slug": "fazaa-city-smile-dental-clinic",
+      "title": "City Smile Dental Clinic — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "City Smile Dental Clinic - up to 40% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/city-smile-dental-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "lucia-clinic",
+      "discount_slug": "fazaa-lucia-clinic",
+      "title": "Lucia Clinic — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Lucia Clinic - Discount up to 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/lucia-clinic",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "emirates-hospital-jumeirah",
+      "discount_slug": "fazaa-emirates-hospital-jumeirah",
+      "title": "Emirates Hospital, Jumeirah — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Emirates Hospital, Jumeirah - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/emirates-hospital-jumeirah",
+      "bucket": "medical"
+    },
+    {
+      "place_slug": "well-health-medical-center",
+      "discount_slug": "fazaa-well-health-medical-center",
+      "title": "Well Health Medical Center — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Well Health Medical Center - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/well-health-medical-center",
+      "bucket": "medical"
+    },
+    {
+      "place_slug": "kaya-skin-clinic",
+      "discount_slug": "fazaa-kaya-skin-clinic",
+      "title": "Kaya Skin Clinic — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Kaya Skin Clinic - Discounts up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/kaya-skin-clinic",
+      "bucket": "medical"
+    },
+    {
+      "place_slug": "gym-hub-men-body-fitness-club",
+      "discount_slug": "fazaa-gym-hub-men-body-fitness-club",
+      "title": "Gym Hub Men Body Fitness Club — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "Gym Hub Men Body Fitness Club - Discount 40%",
+      "external_url": "https://www.fazaa.ae/offers/view/gym-hub-men-body-fitness-club",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "strong-ladies-physical-fitness-gym",
+      "discount_slug": "fazaa-strong-ladies-physical-fitness-gym",
+      "title": "Strong Ladies Physical Fitness Gym — 47% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 47,
+      "description": "Strong Ladies Physical Fitness Gym - Up to 47% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/strong-ladies-physical-fitness-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "fitnation-gym",
+      "discount_slug": "fazaa-fitnation-gym",
+      "title": "Fitnation Gym — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "FITNATION GYM - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fitnation-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "fitness-zone",
+      "discount_slug": "fazaa-fitness-zone",
+      "title": "Fitness Zone — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Fitness Zone - City Walk - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fitness-zone",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "fitness-time",
+      "discount_slug": "fazaa-fitness-time",
+      "title": "Fitness Time — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "Fitness Time - 40% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fitness-time",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "go-fitness-gym",
+      "discount_slug": "fazaa-go-fitness-gym",
+      "title": "Go Fitness Gym — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "GO FITNESS GYM - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/go-fitness-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "body-mind-fitness-center",
+      "discount_slug": "fazaa-body-mind-fitness-center",
+      "title": "Body & Mind Fitness Center — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Body & Mind Fitness Center - Up to 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/bm-fitness",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "gymnation-uae",
+      "discount_slug": "fazaa-gymnation-uae",
+      "title": "GymNation UAE — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "GymNation UAE - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/gymnation-uae",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "body-factory-gym",
+      "discount_slug": "fazaa-body-factory-gym",
+      "title": "Body Factory Gym — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Body Factory Gym - 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/body-factory-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "the-dungeon-gym",
+      "discount_slug": "fazaa-the-dungeon-gym",
+      "title": "The Dungeon Gym — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "THE DUNGEON GYM - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/the-dungeon-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "super-gym",
+      "discount_slug": "fazaa-super-gym",
+      "title": "Super Gym — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Super Gym - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/super-gym",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "peak-fitness",
+      "discount_slug": "fazaa-peak-fitness",
+      "title": "Peak Fitness — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Peak Fitness - Discount up to 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/peak-fitness",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "movibes-fitness",
+      "discount_slug": "fazaa-movibes-fitness",
+      "title": "Movibes Fitness — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Movibes Fitness - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/movibes-fitness",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "nemo-diving-center",
+      "discount_slug": "fazaa-nemo-diving-center",
+      "title": "Nemo Diving Center — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Nemo Diving Center - up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/nemo-diving-center",
+      "bucket": "fitness"
+    },
+    {
+      "place_slug": "life-pharmacy",
+      "discount_slug": "fazaa-life-pharmacy",
+      "title": "Life Pharmacy — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Life Pharmacy - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/life-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "al-ain-pharmacy",
+      "discount_slug": "fazaa-al-ain-pharmacy",
+      "title": "Al Ain Pharmacy — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Al Ain Pharmacy - Up to 10% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/al-ain-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "bait-al-maqdes-pharmacy",
+      "discount_slug": "fazaa-bait-al-maqdes-pharmacy",
+      "title": "Bait Al Maqdes Pharmacy — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "BAIT AL MAQDES PHARMACY - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/bait-almaqdes-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "althiqa-pharmacy",
+      "discount_slug": "fazaa-althiqa-pharmacy",
+      "title": "Althiqa Pharmacy — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "ALTHIQA PHARMACY - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/althiqa-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "al-thiqa-al-almyiah-pharmacy",
+      "discount_slug": "fazaa-al-thiqa-al-almyiah-pharmacy",
+      "title": "Al Thiqa Al Almyiah Pharmacy — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Al Thiqa Al Almyiah Pharmacy - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/al-thiqa-al-almyiah-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "al-sana-pharmacy",
+      "discount_slug": "fazaa-al-sana-pharmacy",
+      "title": "Al Sana Pharmacy — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "AL SANA PHARMACY - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/alsana-pharmacy",
+      "bucket": "pharmacy"
+    },
+    {
+      "place_slug": "a-to-z-fashion",
+      "discount_slug": "fazaa-a-to-z-fashion",
+      "title": "A To Z Fashion — 75% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 75,
+      "description": "A TO Z FASHION - Up to 75% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/a-to-z-fashion",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "max",
+      "discount_slug": "fazaa-max",
+      "title": "Max — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Max - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/max",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "posh-fusion-fashion-clothing",
+      "discount_slug": "fazaa-posh-fusion-fashion-clothing",
+      "title": "Posh Fusion Fashion Clothing — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Posh Fusion Fashion Clothing - up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/posh-fusion-fashion-clothing",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "optifashion",
+      "discount_slug": "fazaa-optifashion",
+      "title": "Optifashion — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Optifashion - Discount up to 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/optifashion",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "athlete-s-co",
+      "discount_slug": "fazaa-athlete-s-co",
+      "title": "Athlete'S Co — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "ATHLETE'S CO - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/athletes-co",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "fragrance",
+      "discount_slug": "fazaa-fragrance",
+      "title": "Fragrance — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Fragrance - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fragrance",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "the-brand-zone",
+      "discount_slug": "fazaa-the-brand-zone",
+      "title": "The Brand Zone — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "The Brand Zone - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/the-brand-zone-gifts-and-giveaways",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "home-centre",
+      "discount_slug": "fazaa-home-centre",
+      "title": "Home Centre — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "HOME CENTRE - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/home-center",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "jumbo-electronics",
+      "discount_slug": "fazaa-jumbo-electronics",
+      "title": "Jumbo Electronics — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Jumbo Electronics - Discount up to 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/jumbo-electronics",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "megamart",
+      "discount_slug": "fazaa-megamart",
+      "title": "Megamart — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "MEGAMART - Up to 10% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/megamart",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "raico-trading",
+      "discount_slug": "fazaa-raico-trading",
+      "title": "Raico Trading — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "RAICO TRADING - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/raico-trading",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "the-villa-home-furnishings",
+      "discount_slug": "fazaa-the-villa-home-furnishings",
+      "title": "The Villa Home Furnishings — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "The Villa Home Furnishings - Up to 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/the-villa-home-furnishings",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "homes-r-us",
+      "discount_slug": "fazaa-homes-r-us",
+      "title": "Homes R Us — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Homes R Us - Fazaa offer",
+      "external_url": "https://www.fazaa.ae/offers/view/homes-r-us",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "pan-emirates-home-furnishings",
+      "discount_slug": "fazaa-pan-emirates-home-furnishings",
+      "title": "Pan Emirates Home Furnishings — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Pan Emirates Home Furnishings - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/pan-home",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "asghar-furniture",
+      "discount_slug": "fazaa-asghar-furniture",
+      "title": "Asghar Furniture — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Asghar Furniture - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/asghar-furniture",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "creative-furniture",
+      "discount_slug": "fazaa-creative-furniture",
+      "title": "Creative Furniture — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Creative Furniture - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/creative-furniture",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "united-furniture",
+      "discount_slug": "fazaa-united-furniture",
+      "title": "United Furniture — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "UNITED FURNITURE - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/united-furniture",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "home-box",
+      "discount_slug": "fazaa-home-box",
+      "title": "Home Box — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Home Box - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/home-box",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "the-home",
+      "discount_slug": "fazaa-the-home",
+      "title": "The Home — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "The Home - discount 35%",
+      "external_url": "https://www.fazaa.ae/offers/view/the-home",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "the-one",
+      "discount_slug": "fazaa-the-one",
+      "title": "THE One — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "THE One - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/the-one",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "maisons-du-monde",
+      "discount_slug": "fazaa-maisons-du-monde",
+      "title": "Maisons du Monde — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Maisons du Monde - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/maisons-du-monde",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "mattress-land",
+      "discount_slug": "fazaa-mattress-land",
+      "title": "Mattress Land — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "MATTRESS LAND - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/mattress-land",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "dwell",
+      "discount_slug": "fazaa-dwell",
+      "title": "Dwell — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "DWELL - Exclusive shopping 15% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dwell",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "bloomingdale-s-home",
+      "discount_slug": "fazaa-bloomingdale-s-home",
+      "title": "Bloomingdale's Home — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Bloomingdale's Home - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/bloomingdales-home",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "mall-mart",
+      "discount_slug": "fazaa-mall-mart",
+      "title": "Mall Mart — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "MALL MART - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/mall-mart",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "brands",
+      "discount_slug": "fazaa-brands",
+      "title": "Brands — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "BRANDS - Up to 15% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/brands",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "sharaf-dg",
+      "discount_slug": "fazaa-sharaf-dg",
+      "title": "Sharaf DG — 5% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 5,
+      "description": "Sharaf DG - Up to 5% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sharaf-dg",
+      "bucket": "electronics"
+    },
+    {
+      "place_slug": "a-s-two-electronics-trading",
+      "discount_slug": "fazaa-a-s-two-electronics-trading",
+      "title": "A S Two Electronics Trading — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "A S TWO ELECTRONICS TRADING - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/a-s-two-electronics-trading",
+      "bucket": "electronics"
+    },
+    {
+      "place_slug": "footlocker",
+      "discount_slug": "fazaa-footlocker",
+      "title": "Footlocker — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Footlocker - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/footlocker",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "thefaceshop",
+      "discount_slug": "fazaa-thefaceshop",
+      "title": "TheFaceShop — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "TheFaceShop - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/the-face-shop",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "skin-story-clean-beauty",
+      "discount_slug": "fazaa-skin-story-clean-beauty",
+      "title": "Skin Story Clean Beauty — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "SKIN STORY CLEAN BEAUTY - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/skin-story-clean-beauty",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "nlb-nail-lab-beauty",
+      "discount_slug": "fazaa-nlb-nail-lab-beauty",
+      "title": "NLB Nail Lab Beauty — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "NLB Nail Lab Beauty - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/nlb-nail-lab-beauty",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "face-room",
+      "discount_slug": "fazaa-face-room",
+      "title": "Face Room — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Face Room - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/face-room",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "the-nail-spa",
+      "discount_slug": "fazaa-the-nail-spa",
+      "title": "The Nail Spa — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "The Nail Spa - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/the-nail-spa",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "perfume-bay-boutique",
+      "discount_slug": "fazaa-perfume-bay-boutique",
+      "title": "Perfume Bay Boutique — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Perfume Bay Boutique - Exclusive shopping up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/perfume-bay-boutique",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "yateem-optician",
+      "discount_slug": "fazaa-yateem-optician",
+      "title": "Yateem Optician — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "YATEEM OPTICIAN - up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/yateem-optician",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "elegance-style-perfumes-and-gifts",
+      "discount_slug": "fazaa-elegance-style-perfumes-and-gifts",
+      "title": "Elegance Style Perfumes And Gifts — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "Elegance Style Perfumes And Gifts - Discount up to 40%",
+      "external_url": "https://www.fazaa.ae/offers/view/elegance-style-perfumes-and-gifts",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "11-11-perfumes",
+      "discount_slug": "fazaa-11-11-perfumes",
+      "title": "11:11 Perfumes — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "11:11 Perfumes - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/1111-perfumes",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "sa-perfume",
+      "discount_slug": "fazaa-sa-perfume",
+      "title": "Sa Perfume — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "SA PERFUME - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sa-perfume",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "coral-perfumes",
+      "discount_slug": "fazaa-coral-perfumes",
+      "title": "Coral Perfumes — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Coral Perfumes - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/coral-perfumes",
+      "bucket": "beauty"
+    },
+    {
+      "place_slug": "happy-journey-travel-tours-llc",
+      "discount_slug": "fazaa-happy-journey-travel-tours-llc",
+      "title": "Happy Journey Travel & Tours LLC — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Happy Journey Travel & Tours LLC - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/happy-journey-travel-tours-llc",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "hala-travel-management-llc",
+      "discount_slug": "fazaa-hala-travel-management-llc",
+      "title": "Hala Travel Management LLC — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Hala Travel Management LLC - Special discounts up to 15% on Etihad Airways tickets",
+      "external_url": "https://www.fazaa.ae/offers/view/hala-travel-management-llc",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "emirates-airlines",
+      "discount_slug": "fazaa-emirates-airlines",
+      "title": "Emirates Airlines — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Emirates Airlines - Fazaa offer",
+      "external_url": "https://www.fazaa.ae/offers/view/emirates-airlines",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "ski-dubai-slope-access",
+      "discount_slug": "fazaa-ski-dubai-slope-access",
+      "title": "Ski Dubai Slope Access — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Ski Dubai Slope Access - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ski-dubai",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "hatta-wadi-hub",
+      "discount_slug": "fazaa-hatta-wadi-hub",
+      "title": "Hatta Wadi Hub — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "HATTA WADI HUB - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/hatta-wadi-hub",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "adventure-sports",
+      "discount_slug": "fazaa-adventure-sports",
+      "title": "Adventure Sports — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Adventure Sports - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/adventure-sports",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "borders",
+      "discount_slug": "fazaa-borders",
+      "title": "Borders — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Borders - Exclusive 15% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/borders",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "enjoy-a-up-10-discount-on-emirates-holidays-packages",
+      "discount_slug": "fazaa-enjoy-a-up-10-discount-on-emirates-holidays-packages",
+      "title": "Enjoy a Up 10% discount on Emirates Holidays packages — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Enjoy a Up 10% discount on Emirates Holidays packages",
+      "external_url": "https://www.fazaa.ae/offers/view/emirates-holidays",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "auto-hub-car-surveying-evaluating-services",
+      "discount_slug": "fazaa-auto-hub-car-surveying-evaluating-services",
+      "title": "Auto Hub Car Surveying & Evaluating Services — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Auto Hub Car Surveying & Evaluating Services - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/auto-hub-car-surveying-evaluating-services",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "autotrust-automotive-service-center",
+      "discount_slug": "fazaa-autotrust-automotive-service-center",
+      "title": "Autotrust Automotive Service Center — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Autotrust Automotive Service Center - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/autotrust-automotive-service-center",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "ag-cars-services",
+      "discount_slug": "fazaa-ag-cars-services",
+      "title": "Ag Cars Services — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "AG CARS SERVICES - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ag-cars-services",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "dynatrade-auto-service",
+      "discount_slug": "fazaa-dynatrade-auto-service",
+      "title": "Dynatrade Auto Service — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "DYNATRADE AUTO SERVICE - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dynatrade-auto-service-",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "1885-car-services-center",
+      "discount_slug": "fazaa-1885-car-services-center",
+      "title": "1885 Car Services Center — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "1885 CAR SERVICES CENTER - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/1885-car-services-center",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "a-f-auto-repair",
+      "discount_slug": "fazaa-a-f-auto-repair",
+      "title": "A&F Auto Repair — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "A&F Auto Repair - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/a-and-f-auto-repair",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "car-dip-auto-care",
+      "discount_slug": "fazaa-car-dip-auto-care",
+      "title": "Car Dip Auto Care — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "CAR DIP AUTO CARE - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/car-dip-auto-care",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "royal-star-auto-services-car-washing",
+      "discount_slug": "fazaa-royal-star-auto-services-car-washing",
+      "title": "Royal Star Auto Services Car Washing — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Royal Star Auto Services Car Washing - Fazaa offer",
+      "external_url": "https://www.fazaa.ae/offers/view/royal-star-auto-services-car-washing",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "fasttrack-emarat",
+      "discount_slug": "fazaa-fasttrack-emarat",
+      "title": "Fasttrack Emarat — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Fasttrack Emarat - Discount up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/fasttrack-emarat",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "4all-rent-a-car",
+      "discount_slug": "fazaa-4all-rent-a-car",
+      "title": "4All Rent A Car — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "4All Rent A Car - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/4-all-rent-a-car",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "zofeur",
+      "discount_slug": "fazaa-zofeur",
+      "title": "Zofeur — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Zofeur - Discount 10%",
+      "external_url": "https://www.fazaa.ae/offers/view/zofeur",
+      "bucket": "auto"
+    },
+    {
+      "place_slug": "washnow",
+      "discount_slug": "fazaa-washnow",
+      "title": "Washnow — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Washnow - 24 hr laundry delivery - Discount 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/washnow-24-hr-laundry-delivery",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "e-r-laundry",
+      "discount_slug": "fazaa-e-r-laundry",
+      "title": "E R Laundry — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "E R Laundry - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/e-r-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "baba-express-laundry",
+      "discount_slug": "fazaa-baba-express-laundry",
+      "title": "Baba Express Laundry — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "BABA EXPRESS LAUNDRY - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/baba-express-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "royal-express-laundry",
+      "discount_slug": "fazaa-royal-express-laundry",
+      "title": "Royal Express Laundry — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "ROYAL EXPRESS LAUNDRY - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/royal-express-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "laundryheap",
+      "discount_slug": "fazaa-laundryheap",
+      "title": "laundryheap — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "laundryheap - Discount 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/laundryheap",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "zara-automatic-laundry",
+      "discount_slug": "fazaa-zara-automatic-laundry",
+      "title": "Zara Automatic Laundry — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Zara Automatic Laundry - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/zara-automatic-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "laundrybox",
+      "discount_slug": "fazaa-laundrybox",
+      "title": "Laundrybox — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "LAUNDRYBOX - Discount 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/diva-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "dobe-laundry",
+      "discount_slug": "fazaa-dobe-laundry",
+      "title": "Dobe Laundry — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "DOBE LAUNDRY - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dobe-laundry",
+      "bucket": "laundry"
+    },
+    {
+      "place_slug": "xline-dubai-marina",
+      "discount_slug": "fazaa-xline-dubai-marina",
+      "title": "Xline Dubai Marina — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Xline Dubai Marina - Discount 15%",
+      "external_url": "https://www.fazaa.ae/offers/view/xline-dubai-marina",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "xline-dubai-marina",
+      "discount_slug": "fazaa-xline-dubai-marina",
+      "title": "Xline Dubai Marina — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Xline Dubai Marina - Buy 1 Get 1 free",
+      "external_url": "https://www.fazaa.ae/offers/view/xline-dubai-summer-offer",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "aisha-dhow-cruise",
+      "discount_slug": "fazaa-aisha-dhow-cruise",
+      "title": "Aisha Dhow Cruise — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Aisha Dhow Cruise - Up to 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/destination-middleeast-aisha-dhow-cruise",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "sea-cloud-boat-rental",
+      "discount_slug": "fazaa-sea-cloud-boat-rental",
+      "title": "Sea Cloud Boat Rental — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "SEA CLOUD BOAT RENTAL - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sea-cloud-boat-rental",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "dubai-outlet-mall",
+      "discount_slug": "fazaa-dubai-outlet-mall",
+      "title": "Dubai Outlet Mall — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "DUBAI OUTLET MALL - Up to 50% additional discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-outlet-mall-back-to-school",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "dubai-outlet-mall",
+      "discount_slug": "fazaa-dubai-outlet-mall",
+      "title": "Dubai Outlet Mall — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "DUBAI OUTLET MALL - Up to 50% additional discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-outlet-mall",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "dubai-miracle-garden",
+      "discount_slug": "fazaa-dubai-miracle-garden",
+      "title": "Dubai Miracle Garden — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Dubai Miracle Garden - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-miracle-garden",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "dubai-parks-and-resorts",
+      "discount_slug": "fazaa-dubai-parks-and-resorts",
+      "title": "Dubai Parks and Resorts — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Dubai Parks and Resorts - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-parks-and-resorts",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "fashionbox",
+      "discount_slug": "fazaa-fashionbox",
+      "title": "Fashionbox — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "FASHIONBOX - Discount up to 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/fashiobbox",
+      "bucket": "fashion"
+    },
+    {
+      "place_slug": "arte-museum-dubai",
+      "discount_slug": "fazaa-arte-museum-dubai",
+      "title": "Arte Museum Dubai — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "ARTE MUSEUM DUBAI - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/arte-museum-dubai",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "dreamland-aqua-park",
+      "discount_slug": "fazaa-dreamland-aqua-park",
+      "title": "Dreamland Aqua Park — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Dreamland Aqua Park - 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dreamland-aquapark",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "fun-city",
+      "discount_slug": "fazaa-fun-city",
+      "title": "Fun City — 45% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 45,
+      "description": "Fun City - Discount up to 45%",
+      "external_url": "https://www.fazaa.ae/offers/view/fun-city",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "the-roxy-cinemas",
+      "discount_slug": "fazaa-the-roxy-cinemas",
+      "title": "The ROXY Cinemas — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "The ROXY Cinemas - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/the-roxy-cinemas",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "star-cinemas",
+      "discount_slug": "fazaa-star-cinemas",
+      "title": "Star Cinemas — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "STAR CINEMAS - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/star-cinemas",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "glowland",
+      "discount_slug": "fazaa-glowland",
+      "title": "Glowland — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "GLOWLAND - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/glowland",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "royal-cinemas",
+      "discount_slug": "fazaa-royal-cinemas",
+      "title": "Royal Cinemas — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Royal Cinemas - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/royal-cinemas",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "dubai-ice-rink",
+      "discount_slug": "fazaa-dubai-ice-rink",
+      "title": "Dubai Ice Rink — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Dubai Ice Rink - 25% Discount General Admission",
+      "external_url": "https://www.fazaa.ae/offers/view/dubai-ice-rink-dubai-mall",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "kids-hq-arcade",
+      "discount_slug": "fazaa-kids-hq-arcade",
+      "title": "Kids Hq Arcade — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "KIDS HQ ARCADE - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kids-hq-arcade-",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "friends-avenue",
+      "discount_slug": "fazaa-friends-avenue",
+      "title": "Friends Avenue — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "FRIENDS AVENUE - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/friends-avenue",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "makerspace-al-zeina",
+      "discount_slug": "fazaa-makerspace-al-zeina",
+      "title": "Makerspace Al Zeina — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Makerspace Al Zeina - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/makerspace-alzeina",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "global-feet",
+      "discount_slug": "fazaa-global-feet",
+      "title": "Global Feet — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Global Feet - Discount up to 25%",
+      "external_url": "https://www.fazaa.ae/offers/view/global-feet",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "al-forsan-international-sports-resort",
+      "discount_slug": "fazaa-al-forsan-international-sports-resort",
+      "title": "AL Forsan International Sports Resort — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "AL Forsan International Sports Resort - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/alforsan-international-sports-resort",
+      "bucket": "attraction"
+    },
+    {
+      "place_slug": "sugar",
+      "discount_slug": "fazaa-sugar",
+      "title": "Sugar — 40% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 40,
+      "description": "Sugar - Up to 40% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/sugar",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "little-rose-nursery",
+      "discount_slug": "fazaa-little-rose-nursery",
+      "title": "Little Rose Nursery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "LITTLE ROSE NURSERY - 20% Discount on Nursery Fees",
+      "external_url": "https://www.fazaa.ae/offers/view/little-rose-nursery-school",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "little-scholar-nursery",
+      "discount_slug": "fazaa-little-scholar-nursery",
+      "title": "Little Scholar Nursery — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "LITTLE SCHOLAR NURSERY - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/little-scholar-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "edu-fun-nursery",
+      "discount_slug": "fazaa-edu-fun-nursery",
+      "title": "Edu Fun Nursery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Edu Fun Nursery - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/edu-fun-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "little-smarties-nursery",
+      "discount_slug": "fazaa-little-smarties-nursery",
+      "title": "Little Smarties Nursery — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Little Smarties Nursery - Fazaa offer",
+      "external_url": "https://www.fazaa.ae/offers/view/little-smarties-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "playhouse-nursery",
+      "discount_slug": "fazaa-playhouse-nursery",
+      "title": "Playhouse Nursery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Playhouse Nursery - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/playhouse-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "blossom-nursery",
+      "discount_slug": "fazaa-blossom-nursery",
+      "title": "Blossom Nursery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Blossom Nursery - Up to 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/blossom-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "hummingbird-nursery",
+      "discount_slug": "fazaa-hummingbird-nursery",
+      "title": "Hummingbird Nursery — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "HUMMINGBIRD NURSERY - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/hummingbird-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "iq-kids-nursery",
+      "discount_slug": "fazaa-iq-kids-nursery",
+      "title": "IQ Kids Nursery — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "IQ Kids Nursery - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/iq-kids-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "fun-first-nursery",
+      "discount_slug": "fazaa-fun-first-nursery",
+      "title": "Fun First Nursery — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Fun First Nursery - 30% Discount on term fee",
+      "external_url": "https://www.fazaa.ae/offers/view/fun-first-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "alawail-nursery",
+      "discount_slug": "fazaa-alawail-nursery",
+      "title": "Alawail Nursery — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Alawail Nursery - Discount up to 50%",
+      "external_url": "https://www.fazaa.ae/offers/view/alawail-nursery",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "university-of-dubai",
+      "discount_slug": "fazaa-university-of-dubai",
+      "title": "University of Dubai — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "University of Dubai - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/university-dubai",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "ceeem",
+      "discount_slug": "fazaa-ceeem",
+      "title": "Ceeem — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "CEEEM - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/ceeem",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "makkah-daets",
+      "discount_slug": "fazaa-makkah-daets",
+      "title": "Makkah daets — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Makkah daets - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/makkah-daets",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "irtiqaa-for-talents-and-personal-competencies",
+      "discount_slug": "fazaa-irtiqaa-for-talents-and-personal-competencies",
+      "title": "Irtiqaa for talents and personal competencies — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Irtiqaa for talents and personal competencies - Discount up to 30%",
+      "external_url": "https://www.fazaa.ae/offers/view/irtiqaa-for-talents-and-personal-competencies",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "zabeel-international-institute",
+      "discount_slug": "fazaa-zabeel-international-institute",
+      "title": "Zabeel International Institute — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Zabeel International Institute - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/zabeel-international-institute",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "aafaq-human-resources-training-and-development-center",
+      "discount_slug": "fazaa-aafaq-human-resources-training-and-development-center",
+      "title": "Aafaq Human Resources Training and Development Center — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "AAFAQ HUMAN RESOURCES TRAINING AND DEVELOPMENT CENTER - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/aafaq-human-resources-training-development-center",
+      "bucket": "education"
+    },
+    {
+      "place_slug": "pure-gold-jewellers",
+      "discount_slug": "fazaa-pure-gold-jewellers",
+      "title": "Pure Gold Jewellers — 75% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 75,
+      "description": "Pure Gold Jewellers - Up to 75% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/pure-gold-jewellers-llc",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "gold-plus",
+      "discount_slug": "fazaa-gold-plus",
+      "title": "Gold Plus — 60% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 60,
+      "description": "GOLD PLUS - Up to 60% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/gold-plus",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "karat-world-gold-jewellery",
+      "discount_slug": "fazaa-karat-world-gold-jewellery",
+      "title": "Karat World Gold & Jewellery — 65% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 65,
+      "description": "Karat World Gold & Jewellery - Discount up to 65%",
+      "external_url": "https://www.fazaa.ae/offers/view/karat-world-gold-jewellery",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "lifestyle-fine-jewelry",
+      "discount_slug": "fazaa-lifestyle-fine-jewelry",
+      "title": "Lifestyle Fine Jewelry — 60% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 60,
+      "description": "LIFESTYLE FINE JEWELRY - Up to 60% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/lifestyle-fine-jewelry",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "al-romaizan-gold-jewellery",
+      "discount_slug": "fazaa-al-romaizan-gold-jewellery",
+      "title": "Al Romaizan Gold & Jewellery — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Al Romaizan Gold & Jewellery - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/al-romaizan-gold-jewellery",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "kalyan-jewellers",
+      "discount_slug": "fazaa-kalyan-jewellers",
+      "title": "Kalyan Jewellers — 35% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 35,
+      "description": "Kalyan Jewellers - 35% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kalyan-jewellers-exclusive",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "alliali-jewellery",
+      "discount_slug": "fazaa-alliali-jewellery",
+      "title": "Alliali Jewellery — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "ALLIALI JEWELLERY - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/alliali-jewellery",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "kalyan-jewellers",
+      "discount_slug": "fazaa-kalyan-jewellers",
+      "title": "Kalyan Jewellers — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Kalyan Jewellers - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kalyan-jewellers",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "joyalukkas",
+      "discount_slug": "fazaa-joyalukkas",
+      "title": "Joyalukkas — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "Joyalukkas - Up to 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/joyalukkas",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "arakkal-gold-diamonds",
+      "discount_slug": "fazaa-arakkal-gold-diamonds",
+      "title": "Arakkal Gold & Diamonds — 60% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 60,
+      "description": "Arakkal Gold & Diamonds - Up to 60% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/arakkal-gold-diamonds",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "marasea-restaurant",
+      "discount_slug": "fazaa-marasea-restaurant",
+      "title": "Marasea Restaurant — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Marasea Restaurant - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/marasea-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "sauce-wonder",
+      "discount_slug": "fazaa-sauce-wonder",
+      "title": "Sauce & Wonder — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Sauce & Wonder - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/sauce-wonder",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "kulcha-king",
+      "discount_slug": "fazaa-kulcha-king",
+      "title": "Kulcha King — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Kulcha King - Up to 25% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kulcha-king",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "chicken-tikka-inn",
+      "discount_slug": "fazaa-chicken-tikka-inn",
+      "title": "Chicken Tikka Inn — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Chicken Tikka Inn - Discount 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/chicken-tikka-inn",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "fajita-station-restaurant",
+      "discount_slug": "fazaa-fajita-station-restaurant",
+      "title": "Fajita station restaurant — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Fajita station restaurant - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fajita-station-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "galleria-restaurant-cafe",
+      "discount_slug": "fazaa-galleria-restaurant-cafe",
+      "title": "Galleria Restaurant Cafe — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Galleria Restaurant Cafe - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/galleria-rasturant-cafe",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "kcal-meal-plans",
+      "discount_slug": "fazaa-kcal-meal-plans",
+      "title": "Kcal Meal Plans — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Kcal Meal Plans - 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/kcal-meal-plans",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "jashanmal",
+      "discount_slug": "fazaa-jashanmal",
+      "title": "Jashanmal — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Jashanmal - 10% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/jashanmal",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "national-food-product-company",
+      "discount_slug": "fazaa-national-food-product-company",
+      "title": "National Food Product Company — 41% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 41,
+      "description": "National Food Product Company - Up to 41% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/national-food-product-company",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "fazaa-stores",
+      "discount_slug": "fazaa-fazaa-stores",
+      "title": "Fazaa Stores — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Fazaa Stores - Food products 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/fazaa-stores",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "burger-pit",
+      "discount_slug": "fazaa-burger-pit",
+      "title": "Burger Pit — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Burger Pit - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/burger-pit",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "bait-almandi-restaurants",
+      "discount_slug": "fazaa-bait-almandi-restaurants",
+      "title": "Bait Almandi Restaurants — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Bait Almandi Restaurants - Discount up to 20%",
+      "external_url": "https://www.fazaa.ae/offers/view/bait-almandi-restaurants",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "20four-eatery",
+      "discount_slug": "fazaa-20four-eatery",
+      "title": "20four Eatery — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "20four Eatery - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/20four-eatery",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "gala-restaurant",
+      "discount_slug": "fazaa-gala-restaurant",
+      "title": "Gala Restaurant — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "GALA RESTAURANT - 15% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/gala-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "tala-restaurant",
+      "discount_slug": "fazaa-tala-restaurant",
+      "title": "Tala Restaurant — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "Tala Restaurant - Exclusive Ramadan offer Iftar buffet 135 dirhams",
+      "external_url": "https://www.fazaa.ae/offers/view/tala-restaurant-exclusive-ramadan",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "grand-buffet-restaurant",
+      "discount_slug": "fazaa-grand-buffet-restaurant",
+      "title": "Grand Buffet Restaurant — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Grand Buffet Restaurant - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/grand-buffet-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "eggspectation-restaurant",
+      "discount_slug": "fazaa-eggspectation-restaurant",
+      "title": "Eggspectation restaurant — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "Eggspectation restaurant - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/eggspectation-restaurant",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "hurricane-s-grill",
+      "discount_slug": "fazaa-hurricane-s-grill",
+      "title": "Hurricane's Grill — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "Hurricane's Grill - Up to 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/hurricanes-grill",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "alloro-restaurants",
+      "discount_slug": "fazaa-alloro-restaurants",
+      "title": "Alloro Restaurants — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Alloro Restaurants - 20% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/alloro-restaurants",
+      "bucket": "restaurant"
+    },
+    {
+      "place_slug": "palm-avenue",
+      "discount_slug": "fazaa-palm-avenue",
+      "title": "Palm Avenue — 20% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 20,
+      "description": "Palm Avenue - 20% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/palm-avenue",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "dr-joy-dental-clinic",
+      "discount_slug": "fazaa-dr-joy-dental-clinic",
+      "title": "Dr Joy Dental Clinic — 25% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 25,
+      "description": "DR JOY DENTAL CLINIC - Up to 25% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dr-joy",
+      "bucket": "clinic"
+    },
+    {
+      "place_slug": "dream-center-for-people-of-determination",
+      "discount_slug": "fazaa-dream-center-for-people-of-determination",
+      "title": "Dream Center for People of Determination — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Dream Center for People of Determination - 50% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/dream-center-for-people-of-determination",
+      "bucket": "medical"
+    },
+    {
+      "place_slug": "jumeira-pest-control-services",
+      "discount_slug": "fazaa-jumeira-pest-control-services",
+      "title": "Jumeira Pest Control Services — 30% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 30,
+      "description": "JUMEIRA PEST CONTROL SERVICES - 30% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/jumeira-pest-control-services",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "air-arabia",
+      "discount_slug": "fazaa-air-arabia",
+      "title": "Air Arabia — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "Air Arabia - Enjoy 10% discount on Extra Bundle Bookings",
+      "external_url": "https://www.fazaa.ae/offers/view/air-arabia",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "flydubai",
+      "discount_slug": "fazaa-flydubai",
+      "title": "flydubai — 10% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 10,
+      "description": "flydubai - 10% discount on tickets",
+      "external_url": "https://www.fazaa.ae/offers/view/flydubai",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "du",
+      "discount_slug": "fazaa-du",
+      "title": "du — Fazaa offer",
+      "discount_type": "other",
+      "percentage": null,
+      "description": "du - Get up to 150GB",
+      "external_url": "https://www.fazaa.ae/offers/view/du",
+      "bucket": "retail"
+    },
+    {
+      "place_slug": "airlink-international-uae",
+      "discount_slug": "fazaa-airlink-international-uae",
+      "title": "Airlink international UAE — 50% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 50,
+      "description": "Airlink international UAE - Up to 50% discount",
+      "external_url": "https://www.fazaa.ae/offers/view/airlink-international-uae",
+      "bucket": "travel"
+    },
+    {
+      "place_slug": "rzr-real-estate",
+      "discount_slug": "fazaa-rzr-real-estate",
+      "title": "Rzr Real Estate — 15% off with Fazaa",
+      "discount_type": "percentage",
+      "percentage": 15,
+      "description": "RZR REAL ESTATE - 15% Discount",
+      "external_url": "https://www.fazaa.ae/offers/view/rzr-real-estate",
+      "bucket": "retail"
+    }
+  ],
+  "skipped_non_dubai": [
+    "verso-italian-restaurant-summer-offer"
+  ]
+}

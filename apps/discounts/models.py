@@ -11,6 +11,7 @@ class DiscountType(models.TextChoices):
     BOGO = "bogo", "Buy one get one (2-for-1)"
     FIXED_PRICE = "fixed_price", "Fixed price deal"
     PROMO_CODE = "promo_code", "Promo code / voucher"
+    OTHER = "other", "Special offer"
 
 
 class DiscountProgram(models.TextChoices):
