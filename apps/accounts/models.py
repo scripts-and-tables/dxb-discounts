@@ -7,6 +7,12 @@ from django.utils import timezone
 
 
 CODE_LIFETIME = timedelta(minutes=10)
+CODE_ISSUE_WINDOW = timedelta(hours=1)
+CODE_ISSUE_MAX_PER_WINDOW = 8
+
+
+class CodeRateLimitExceeded(Exception):
+    """Raised when too many EmailCodes have been issued for a (user, purpose) recently."""
 
 
 class EmailCodePurpose(models.TextChoices):
@@ -50,6 +56,13 @@ class EmailCode(models.Model):
 
     @classmethod
     def issue(cls, user, purpose: str) -> "EmailCode":
+        recent = cls.objects.filter(
+            user=user,
+            purpose=purpose,
+            created_at__gte=timezone.now() - CODE_ISSUE_WINDOW,
+        ).count()
+        if recent >= CODE_ISSUE_MAX_PER_WINDOW:
+            raise CodeRateLimitExceeded
         # Invalidate any prior outstanding codes for this user+purpose.
         cls.objects.filter(
             user=user, purpose=purpose, used_at__isnull=True

@@ -1,17 +1,20 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login, logout
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.http import require_GET, require_http_methods, require_POST
+from django_ratelimit.decorators import ratelimit
 
 from apps.discounts.models import Discount
 
 from .emails import send_code_email
 from .forms import CodeForm, LoginForm, SignupForm
-from .models import EmailCode, EmailCodePurpose, Favorite
+from .models import CodeRateLimitExceeded, EmailCode, EmailCodePurpose, Favorite
 
 
 User = get_user_model()
@@ -24,6 +27,7 @@ MAX_CODE_ATTEMPTS = 5
 
 @never_cache
 @require_http_methods(["GET", "POST"])
+@ratelimit(key="ip", rate="5/h", method="POST", block=True)
 def signup(request):
     if request.user.is_authenticated:
         return redirect("accounts:profile")
@@ -36,8 +40,11 @@ def signup(request):
             password=form.cleaned_data["password"],
             is_active=False,
         )
-        code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
-        send_code_email(to_email=email, code=code.code, purpose="signup")
+        try:
+            code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
+            send_code_email(to_email=email, code=code.code, purpose="signup")
+        except CodeRateLimitExceeded:
+            pass
         request.session[PENDING_KEY] = {"user_id": user.pk, "purpose": EmailCodePurpose.SIGNUP}
         return redirect("accounts:signup_verify")
     return render(request, "accounts/signup.html", {"form": form})
@@ -75,14 +82,18 @@ def signup_verify(request):
 
 
 @require_POST
+@ratelimit(key="user_or_ip", rate="3/h", block=True)
 def signup_resend(request):
     pending = request.session.get(PENDING_KEY)
     if not pending or pending.get("purpose") != EmailCodePurpose.SIGNUP:
         return redirect("accounts:signup")
     user = User.objects.filter(pk=pending["user_id"], is_active=False).first()
     if user:
-        code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
-        send_code_email(to_email=user.email, code=code.code, purpose="signup")
+        try:
+            code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
+            send_code_email(to_email=user.email, code=code.code, purpose="signup")
+        except CodeRateLimitExceeded:
+            pass
         messages.success(request, "We sent a new code.")
     return redirect("accounts:signup_verify")
 
@@ -91,14 +102,18 @@ def signup_resend(request):
 
 @never_cache
 @require_http_methods(["GET", "POST"])
+@ratelimit(key="ip", rate="10/h", method="POST", block=True)
 def login_view(request):
     if request.user.is_authenticated:
         return redirect("accounts:profile")
     form = LoginForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         user = form.cleaned_data["user"]
-        code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
-        send_code_email(to_email=user.email, code=code.code, purpose="login")
+        try:
+            code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
+            send_code_email(to_email=user.email, code=code.code, purpose="login")
+        except CodeRateLimitExceeded:
+            pass
         request.session[PENDING_KEY] = {
             "user_id": user.pk,
             "purpose": EmailCodePurpose.LOGIN,
@@ -141,14 +156,18 @@ def login_verify(request):
 
 
 @require_POST
+@ratelimit(key="user_or_ip", rate="3/h", block=True)
 def login_resend(request):
     pending = request.session.get(PENDING_KEY)
     if not pending or pending.get("purpose") != EmailCodePurpose.LOGIN:
         return redirect("accounts:login")
     user = User.objects.filter(pk=pending["user_id"], is_active=True).first()
     if user:
-        code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
-        send_code_email(to_email=user.email, code=code.code, purpose="login")
+        try:
+            code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
+            send_code_email(to_email=user.email, code=code.code, purpose="login")
+        except CodeRateLimitExceeded:
+            pass
         messages.success(request, "We sent a new code.")
     return redirect("accounts:login_verify")
 
@@ -202,6 +221,16 @@ def favorite_toggle(request, slug: str):
             "favorited": favorited,
         })
     return redirect(discount.get_absolute_url())
+
+
+# ------------- Password reset (rate-limited) -------------
+
+@method_decorator(
+    ratelimit(key="ip", rate="5/h", method="POST", block=True),
+    name="post",
+)
+class RateLimitedPasswordResetView(auth_views.PasswordResetView):
+    pass
 
 
 # ------------- Helpers -------------

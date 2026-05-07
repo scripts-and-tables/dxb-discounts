@@ -51,6 +51,8 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+SITE_DOMAIN = env("SITE_DOMAIN", default=(RAILWAY_DOMAIN or "localhost:8000"))
+SITE_NAME = env("SITE_NAME", default="DXB Discounts")
 
 MIDDLEWARE = [
     "apps.pages.middleware.HealthCheckMiddleware",
@@ -125,6 +127,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "accounts:profile"
 LOGOUT_REDIRECT_URL = "pages:home"
+PASSWORD_RESET_TIMEOUT = 60 * 60
 
 # Email — console in dev, Resend (via Anymail) in prod.
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="DXB Discounts <onboarding@resend.dev>")
