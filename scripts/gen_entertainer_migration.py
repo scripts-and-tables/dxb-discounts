@@ -5,8 +5,8 @@ import os
 from pathlib import Path
 
 TMP = Path(os.environ.get("TEMP", "/tmp"))
-SRC = TMP / "ent-parsed.json"
-DEST = Path("apps/discounts/migrations/0015_add_entertainer_venues.py")
+SRC = Path(os.environ.get("ENT_PARSED", str(TMP / "ent-parsed.json")))
+DEST = Path(os.environ.get("ENT_MIGRATION_OUT", "apps/discounts/migrations/0015_add_entertainer_venues.py"))
 
 
 def py_repr_list(lst, indent=0):

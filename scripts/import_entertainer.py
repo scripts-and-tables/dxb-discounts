@@ -19,9 +19,30 @@ import urllib.request
 from pathlib import Path
 
 TMP = Path(os.environ.get("TEMP", "/tmp"))
-URLS_PATH = TMP / "ent-dubai-onesper.txt"
-TITLES_PATH = TMP / "ent-titles.tsv"
-OUT_PATH = TMP / "ent-parsed.json"
+# Optionally override the URL list and the output filename via env vars so the
+# same script can fetch the full sitemap or a pre-filtered subset.
+URLS_PATH = Path(os.environ.get("ENT_URLS", str(TMP / "ent-all-urls.txt")))
+TITLES_PATH = Path(os.environ.get("ENT_TITLES", str(TMP / "ent-titles.tsv")))
+OUT_PATH = Path(os.environ.get("ENT_PARSED", str(TMP / "ent-parsed.json")))
+
+# Match an area string against Dubai. The check runs case-insensitively on
+# the area portion of the title, so "Downtown Dubai" or "JLT - Jumeirah Lake
+# Towers" both match.
+DUBAI_AREA_RE = re.compile(
+    r"\b(?:dubai|jumeirah|jbr|jlt|jvc|difc|downtown|marina|palm|business\s*bay|"
+    r"burj|barsha|quoz|sufouh|deira|mirdif|festival\s*city|silicon\s*oasis|"
+    r"sheikh\s*zayed|szr|bluewaters|la\s*mer|city\s*walk|hatta|al\s*mina|"
+    r"al\s*furjan|dubai\s*hills|town\s*square|al\s*madinat|emirates\s*hills|"
+    r"al\s*qasr|mina\s*a\s*salam|al\s*qudra|festival\s*plaza|the\s*greens|"
+    r"the\s*lakes|wafi|dubai\s*creek|creek\s*harbour|ras\s*al\s*khor|"
+    r"dubai\s*marina|al\s*mamzar|al\s*warqaa|al\s*mizhar|bur\s*dubai|"
+    r"al\s*sufouh|jumeirah\s*lake|jumeirah\s*village|al\s*nahda|"
+    r"meydan|nad\s*al\s*sheba|culture\s*village|festival\s*city|"
+    r"international\s*city|sports\s*city|knowledge\s*village|media\s*city|"
+    r"internet\s*city|healthcare\s*city|production\s*city|"
+    r"investment\s*park|outlet\s*village|expo)\b",
+    re.IGNORECASE,
+)
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 
@@ -98,6 +119,7 @@ def main():
     discount_specs = []
     skipped_no_title = 0
     skipped_dup = 0
+    skipped_not_dubai = 0
 
     for url, title, _desc in rows:
         if not title:
@@ -111,6 +133,10 @@ def main():
             continue
         venue, area = parsed
         if len(venue) < 2 or len(venue) > 200:
+            continue
+        # Filter by area: only keep merchants whose area looks like a Dubai location.
+        if not DUBAI_AREA_RE.search(area):
+            skipped_not_dubai += 1
             continue
         slug = make_slug_from_merchant(merchant)
         if slug in place_specs:
@@ -134,7 +160,7 @@ def main():
         "discounts": discount_specs,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"places: {len(place_specs)} | discounts: {len(discount_specs)} | "
-          f"skipped no-title: {skipped_no_title} | dup: {skipped_dup}")
+          f"skipped no-title: {skipped_no_title} | not-dubai: {skipped_not_dubai} | dup: {skipped_dup}")
     print(f"Wrote {OUT_PATH}")
 
 
