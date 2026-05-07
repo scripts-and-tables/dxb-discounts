@@ -26,6 +26,9 @@ class DiscountProgram(models.TextChoices):
     SHUKRAN = "shukran", "Shukran"
     SHARE_REWARDS = "share_rewards", "SHARE Rewards"
     EMIRATES_SKYWARDS = "emirates_skywards", "Emirates Skywards"
+    ATLANTIS_CIRCLE = "atlantis_circle", "Atlantis Circle"
+    U_BY_EMAAR = "u_by_emaar", "U By Emaar"
+    AL_FUTTAIM_BLUE = "al_futtaim_blue", "Blue (Al-Futtaim)"
 
 
 class Program(models.Model):
@@ -45,6 +48,14 @@ class Program(models.Model):
     eligibility = models.CharField(max_length=160, blank=True, help_text="e.g. 'UAE residents', 'Emirates Group employees'")
     is_published = models.BooleanField(default=True)
     sort_order = models.PositiveSmallIntegerField(default=100, help_text="Lower = higher up in the directory.")
+    tiers = models.JSONField(
+        default=list, blank=True,
+        help_text="List of {name, threshold, benefit} dicts shown as a table on the program detail page.",
+    )
+    expected_savings = models.CharField(
+        max_length=240, blank=True,
+        help_text="One-line summary of typical savings, shown under the tier table.",
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

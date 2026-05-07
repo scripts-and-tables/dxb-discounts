@@ -28,6 +28,12 @@ choices' display name automatically.
   {% include "places/_program_tile_inner.html" with header_class="bg-indigo-700" %}
 {% elif discount.source_program == "emirates_skywards" %}
   {% include "places/_program_tile_inner.html" with header_class="bg-sky-700" %}
+{% elif discount.source_program == "atlantis_circle" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-slate-900" %}
+{% elif discount.source_program == "u_by_emaar" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-purple-700" %}
+{% elif discount.source_program == "al_futtaim_blue" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-blue-700" %}
 {% else %}
   {% include "places/_program_tile_inner.html" with header_class="bg-slate-700" %}
 {% endif %}
