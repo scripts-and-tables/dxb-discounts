@@ -7,71 +7,164 @@
   <title>{% block title %}DXB Discounts — Save across Dubai{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}A directory of discounts across Dubai — restaurants, attractions, hotels, and more.{% endblock %}">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏷️%3C/text%3E%3C/svg%3E">
+  <script>
+    // Apply saved theme before render to avoid a white flash. localStorage
+    // overrides OS preference once the user has explicitly toggled.
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
   <script src="https://unpkg.com/htmx.org@2.0.4"></script>
   <style type="text/tailwindcss">
     @layer base {
-      body { @apply bg-slate-50 text-slate-900 antialiased; }
+      body { @apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 antialiased; }
       a { @apply transition-colors; }
     }
     @layer components {
       .btn { @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium; }
-      .btn-primary { @apply btn bg-amber-500 text-white hover:bg-amber-600; }
-      .btn-ghost { @apply btn bg-white border border-slate-200 hover:border-slate-300; }
-      .chip { @apply inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700; }
-      .chip-amber { @apply chip bg-amber-100 text-amber-900; }
-      .card { @apply rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow; }
-      .field { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500; }
+      .btn-primary { @apply btn bg-amber-500 text-white hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-500; }
+      .btn-ghost { @apply btn bg-white border border-slate-200 hover:border-slate-300 dark:bg-slate-900 dark:border-slate-700 dark:hover:border-slate-500 dark:text-slate-100; }
+      .chip { @apply inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300; }
+      .chip-amber { @apply chip bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200; }
+      .card { @apply rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow dark:bg-slate-900 dark:border-slate-800 dark:hover:border-slate-700; }
+      .field { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100 dark:placeholder-slate-400; }
+      .icon-btn { @apply inline-flex items-center justify-center w-9 h-9 rounded-md text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800; }
+      .nav-link { @apply px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800; }
+      .menu-link { @apply block py-3 text-2xl font-semibold text-slate-900 dark:text-slate-100; }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+  <header class="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="{% url 'pages:home' %}" class="flex items-center gap-2 text-lg font-bold text-slate-900 hover:text-amber-600">
+      <a href="{% url 'pages:home' %}" class="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-slate-100 hover:text-amber-600 dark:hover:text-amber-400">
         <span class="text-2xl">🏷️</span>
         <span>DXB Discounts</span>
       </a>
-      <nav class="flex items-center gap-1 text-sm">
-        <a href="{% url 'discounts:list' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Discounts</a>
-        <a href="{% url 'places:list' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Places</a>
-        <a href="{% url 'pages:about' %}" class="px-3 py-2 rounded-md hover:bg-slate-100 hidden sm:inline-block">About</a>
-        <span class="mx-1 h-6 w-px bg-slate-200 hidden sm:inline-block"></span>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm">
+        <a href="{% url 'discounts:list' %}" class="nav-link">Discounts</a>
+        <a href="{% url 'places:list' %}" class="nav-link">Places</a>
+        <a href="{% url 'pages:about' %}" class="nav-link">About</a>
+        <span class="mx-1 h-6 w-px bg-slate-200 dark:bg-slate-700"></span>
+        {% include "_theme_toggle.html" %}
+        <span class="mx-1 h-6 w-px bg-slate-200 dark:bg-slate-700"></span>
         {% if user.is_authenticated %}
           <details class="relative">
-            <summary class="list-none cursor-pointer ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full bg-amber-100 text-amber-900 font-semibold text-sm hover:bg-amber-200" title="{{ user.email|default:user.username }}">
+            <summary class="list-none cursor-pointer ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full bg-amber-100 text-amber-900 dark:bg-amber-900/50 dark:text-amber-200 font-semibold text-sm hover:bg-amber-200 dark:hover:bg-amber-900/70" title="{{ user.email|default:user.username }}">
               {{ user.email|default:user.username|slice:":1"|upper }}
             </summary>
-            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white border border-slate-200 shadow-lg py-1 z-40">
-              <div class="px-3 py-2 text-xs text-slate-500 truncate">{{ user.email|default:user.username }}</div>
-              <a href="{% url 'accounts:profile' %}" class="block px-3 py-2 text-sm hover:bg-slate-50">Profile & favorites</a>
-              {% if user.is_staff %}<a href="/admin/" class="block px-3 py-2 text-sm hover:bg-slate-50">Admin</a>{% endif %}
-              <form method="post" action="{% url 'accounts:logout' %}" class="border-t border-slate-100 mt-1 pt-1">
+            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-lg py-1 z-40">
+              <div class="px-3 py-2 text-xs text-slate-500 dark:text-slate-400 truncate">{{ user.email|default:user.username }}</div>
+              <a href="{% url 'accounts:profile' %}" class="block px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Profile & favorites</a>
+              {% if user.is_staff %}<a href="/admin/" class="block px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Admin</a>{% endif %}
+              <form method="post" action="{% url 'accounts:logout' %}" class="border-t border-slate-100 dark:border-slate-700 mt-1 pt-1">
                 {% csrf_token %}
-                <button type="submit" class="block w-full text-left px-3 py-2 text-sm hover:bg-slate-50">Sign out</button>
+                <button type="submit" class="block w-full text-left px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Sign out</button>
               </form>
             </div>
           </details>
         {% else %}
-          <a href="{% url 'accounts:login' %}" class="px-3 py-2 rounded-md hover:bg-slate-100">Sign in</a>
+          <a href="{% url 'accounts:login' %}" class="nav-link">Sign in</a>
           <a href="{% url 'accounts:signup' %}" class="btn-primary text-sm py-1.5 px-3 ml-1">Sign up</a>
         {% endif %}
       </nav>
+
+      <div class="md:hidden flex items-center gap-1">
+        {% include "_theme_toggle.html" %}
+        <button type="button" data-menu-toggle class="icon-btn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-slate-50 dark:bg-slate-900 md:hidden flex flex-col" aria-hidden="true">
+    <div class="border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="{% url 'pages:home' %}" class="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-slate-100">
+          <span class="text-2xl">🏷️</span>
+          <span>DXB Discounts</span>
+        </a>
+        <button type="button" data-menu-toggle class="icon-btn" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1">
+      <a href="{% url 'discounts:list' %}" class="menu-link">Discounts</a>
+      <a href="{% url 'places:list' %}" class="menu-link">Places</a>
+      <a href="{% url 'pages:about' %}" class="menu-link">About</a>
+      <hr class="my-4 border-slate-200 dark:border-slate-800">
+      {% if user.is_authenticated %}
+        <div class="text-xs text-slate-500 dark:text-slate-400 truncate mb-1">{{ user.email|default:user.username }}</div>
+        <a href="{% url 'accounts:profile' %}" class="menu-link">Profile & favorites</a>
+        {% if user.is_staff %}<a href="/admin/" class="menu-link">Admin</a>{% endif %}
+        <form method="post" action="{% url 'accounts:logout' %}" class="mt-2">
+          {% csrf_token %}
+          <button type="submit" class="btn-ghost w-full">Sign out</button>
+        </form>
+      {% else %}
+        <a href="{% url 'accounts:login' %}" class="menu-link">Sign in</a>
+        <a href="{% url 'accounts:signup' %}" class="btn-primary w-full mt-2">Sign up</a>
+      {% endif %}
+      <hr class="my-4 border-slate-200 dark:border-slate-800">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600 dark:text-slate-400">Theme</span>
+        {% include "_theme_toggle.html" %}
+      </div>
+    </nav>
+  </div>
 
   <main class="flex-1">
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="border-t border-slate-200 bg-white mt-12">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p>&copy; {% now "Y" %} DXB Discounts. Always confirm offer details with the venue.</p>
       <div class="flex gap-4">
-        <a href="{% url 'pages:about' %}" class="hover:text-slate-900">About</a>
-        <a href="/sitemap.xml" class="hover:text-slate-900">Sitemap</a>
+        <a href="{% url 'pages:about' %}" class="hover:text-slate-900 dark:hover:text-slate-200">About</a>
+        <a href="/sitemap.xml" class="hover:text-slate-900 dark:hover:text-slate-200">Sitemap</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var menu = document.getElementById('mobile-menu');
+      document.addEventListener('click', function (e) {
+        var theme = e.target.closest('[data-theme-toggle]');
+        if (theme) {
+          var next = document.documentElement.classList.toggle('dark') ? 'dark' : 'light';
+          localStorage.setItem('theme', next);
+          return;
+        }
+        var menuBtn = e.target.closest('[data-menu-toggle]');
+        if (menuBtn) {
+          var nowOpen = menu.classList.toggle('hidden') === false;
+          menu.setAttribute('aria-hidden', nowOpen ? 'false' : 'true');
+          document.body.classList.toggle('overflow-hidden', nowOpen);
+          return;
+        }
+        // Close menu when an in-menu link is clicked
+        if (e.target.closest('#mobile-menu a')) {
+          menu.classList.add('hidden');
+          menu.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('overflow-hidden');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ fallback when Clearbit 404s (no images stored locally). Caller passes:
 - size_class: Tailwind sizing for the wrapper (e.g. "w-10 h-10")
 {% endcomment %}
 {% if place.website %}
-<span class="{{ size_class }} shrink-0 rounded-md bg-white border border-slate-200 overflow-hidden inline-flex items-center justify-center">
+<span class="{{ size_class }} shrink-0 rounded-md bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 overflow-hidden inline-flex items-center justify-center">
   <img src="{{ place.logo_url }}"
        onerror="this.onerror=null;this.src='{{ place.favicon_url }}';this.classList.add('p-1.5');"
        alt="{{ place.name }} logo"

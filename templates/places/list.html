@@ -5,8 +5,8 @@
 {% block content %}
 <section class="max-w-6xl mx-auto px-4 py-8">
   <header class="mb-6">
-    <h1 class="text-3xl font-bold text-slate-900">Places</h1>
-    <p class="text-slate-600 mt-1">Venues across Dubai with active discounts.</p>
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Places</h1>
+    <p class="text-slate-600 dark:text-slate-400 mt-1">Venues across Dubai with active discounts.</p>
   </header>
 
   <form method="get" class="card p-4 mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -34,8 +34,8 @@
             <span class="chip">{{ place.get_category_display }}</span>
             {% if place.live_discount_count %}<span class="chip-amber">{{ place.live_discount_count }} offer{{ place.live_discount_count|pluralize }}</span>{% endif %}
           </div>
-          <h3 class="font-semibold text-slate-900 mb-1">{{ place.name }}</h3>
-          <p class="text-sm text-slate-500">{{ place.area }}</p>
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-1">{{ place.name }}</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">{{ place.area }}</p>
         </a>
       {% endfor %}
     </div>
@@ -45,14 +45,14 @@
         {% if page_obj.has_previous %}
           <a href="?{% for k, v in selected.items %}{% if v %}{{ k }}={{ v }}&{% endif %}{% endfor %}page={{ page_obj.previous_page_number }}" class="btn-ghost">← Previous</a>
         {% else %}<span></span>{% endif %}
-        <span class="text-slate-500">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        <span class="text-slate-500 dark:text-slate-400">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
         {% if page_obj.has_next %}
           <a href="?{% for k, v in selected.items %}{% if v %}{{ k }}={{ v }}&{% endif %}{% endfor %}page={{ page_obj.next_page_number }}" class="btn-ghost">Next →</a>
         {% else %}<span></span>{% endif %}
       </nav>
     {% endif %}
   {% else %}
-    <div class="card p-12 text-center text-slate-500">No places match those filters.</div>
+    <div class="card p-12 text-center text-slate-500 dark:text-slate-400">No places match those filters.</div>
   {% endif %}
 </section>
 {% endblock %}

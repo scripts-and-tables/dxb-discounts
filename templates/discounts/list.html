@@ -6,8 +6,8 @@
 {% block content %}
 <section class="max-w-6xl mx-auto px-4 py-8">
   <header class="mb-8">
-    <h1 class="text-3xl font-bold text-slate-900">UAE discount programs</h1>
-    <p class="text-slate-600 mt-1">Pick a program you have (or want), then see which Dubai venues accept it.</p>
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">UAE discount programs</h1>
+    <p class="text-slate-600 dark:text-slate-400 mt-1">Pick a program you have (or want), then see which Dubai venues accept it.</p>
   </header>
 
   {% if programs %}
@@ -16,7 +16,7 @@
         <a href="{{ p.get_absolute_url }}" class="card block p-5 hover:border-amber-300 group">
           <div class="flex items-start gap-3 mb-3">
             {% if p.logo_url %}
-              <span class="w-12 h-12 shrink-0 rounded-md bg-white border border-slate-200 overflow-hidden inline-flex items-center justify-center">
+              <span class="w-12 h-12 shrink-0 rounded-md bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 overflow-hidden inline-flex items-center justify-center">
                 <img src="{{ p.logo_url }}"
                      onerror="this.onerror=null;this.src='{{ p.favicon_url }}';this.classList.add('p-1.5');"
                      alt="{{ p.name }} logo"
@@ -25,16 +25,16 @@
               </span>
             {% endif %}
             <div class="min-w-0 flex-1">
-              <h3 class="font-semibold text-slate-900 group-hover:text-amber-700 truncate">{{ p.name }}</h3>
+              <h3 class="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-300 truncate">{{ p.name }}</h3>
               <div class="flex flex-wrap gap-1 mt-1">
                 {% if p.cost_summary %}<span class="chip text-[11px]">{{ p.cost_summary }}</span>{% endif %}
               </div>
             </div>
           </div>
-          <p class="text-sm text-slate-600 mb-3 line-clamp-3">{{ p.short_description }}</p>
-          <div class="text-xs text-slate-500">
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-3 line-clamp-3">{{ p.short_description }}</p>
+          <div class="text-xs text-slate-500 dark:text-slate-400">
             {% if p.eligibility %}<span>{{ p.eligibility }}</span> · {% endif %}
-            <span class="font-medium text-amber-700 group-hover:text-amber-900">
+            <span class="font-medium text-amber-700 group-hover:text-amber-900 dark:text-amber-400 dark:group-hover:text-amber-200">
               {{ p.venue_count }} venue{{ p.venue_count|pluralize }} →
             </span>
           </div>
@@ -42,7 +42,7 @@
       {% endfor %}
     </div>
   {% else %}
-    <div class="card p-12 text-center text-slate-500">No programs published yet.</div>
+    <div class="card p-12 text-center text-slate-500 dark:text-slate-400">No programs published yet.</div>
   {% endif %}
 </section>
 {% endblock %}

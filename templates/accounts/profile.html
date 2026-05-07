@@ -7,15 +7,15 @@
   {% if messages %}
     <div class="mb-4 space-y-2">
       {% for m in messages %}
-        <div class="rounded-md px-4 py-2 text-sm bg-emerald-50 text-emerald-900 border border-emerald-200">{{ m }}</div>
+        <div class="rounded-md px-4 py-2 text-sm bg-emerald-50 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800">{{ m }}</div>
       {% endfor %}
     </div>
   {% endif %}
 
   <header class="flex items-center justify-between mb-6">
     <div>
-      <h1 class="text-3xl font-bold text-slate-900">Your account</h1>
-      <p class="text-slate-600 mt-1">{{ user.email|default:user.username }}</p>
+      <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Your account</h1>
+      <p class="text-slate-600 dark:text-slate-400 mt-1">{{ user.email|default:user.username }}</p>
     </div>
     <form method="post" action="{% url 'accounts:logout' %}">
       {% csrf_token %}
@@ -24,17 +24,17 @@
   </header>
 
   <div class="card p-6 mb-6">
-    <h2 class="font-semibold text-slate-900 mb-2">Account</h2>
+    <h2 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Account</h2>
     <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-      <div><dt class="text-slate-500">Email</dt><dd class="text-slate-900">{{ user.email|default:"—" }}</dd></div>
-      <div><dt class="text-slate-500">Member since</dt><dd class="text-slate-900">{{ user.date_joined|date:"j M Y" }}</dd></div>
+      <div><dt class="text-slate-500 dark:text-slate-400">Email</dt><dd class="text-slate-900 dark:text-slate-100">{{ user.email|default:"—" }}</dd></div>
+      <div><dt class="text-slate-500 dark:text-slate-400">Member since</dt><dd class="text-slate-900 dark:text-slate-100">{{ user.date_joined|date:"j M Y" }}</dd></div>
     </dl>
     <div class="mt-4">
-      <a href="{% url 'accounts:password_reset' %}" class="text-sm text-amber-700 hover:text-amber-800">Reset password</a>
+      <a href="{% url 'accounts:password_reset' %}" class="text-sm text-amber-700 hover:text-amber-800 dark:text-amber-400 dark:hover:text-amber-300">Reset password</a>
     </div>
   </div>
 
-  <h2 class="text-xl font-bold text-slate-900 mb-3">Saved discounts</h2>
+  <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Saved discounts</h2>
   {% if favorites %}
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {% for fav in favorites %}
@@ -42,7 +42,7 @@
       {% endfor %}
     </div>
   {% else %}
-    <div class="card p-8 text-center text-slate-500">
+    <div class="card p-8 text-center text-slate-500 dark:text-slate-400">
       <p class="mb-2">No saved discounts yet.</p>
       <a href="{% url 'discounts:list' %}" class="btn-primary">Browse discounts</a>
     </div>
