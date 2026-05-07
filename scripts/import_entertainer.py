@@ -40,7 +40,14 @@ DUBAI_AREA_RE = re.compile(
     r"meydan|nad\s*al\s*sheba|culture\s*village|festival\s*city|"
     r"international\s*city|sports\s*city|knowledge\s*village|media\s*city|"
     r"internet\s*city|healthcare\s*city|production\s*city|"
-    r"investment\s*park|outlet\s*village|expo)\b",
+    r"investment\s*park|outlet\s*village|expo|"
+    # Round 2 — areas missed in the first pass
+    r"al\s*jaddaf|jebel\s*ali|al\s*wasl|oud\s*metha|al\s*karama|al\s*garhoud|"
+    r"umm\s*suqeim|umm\s*hurair|d3|design\s*district|tecom|emirates\s*living|"
+    r"motor\s*city|studio\s*city|impz|production\s*city|al\s*sufouh|"
+    r"al\s*safa|al\s*manara|al\s*jafiliya|jaddaf|jaffliya|"
+    r"emaar|sustainable\s*city|jumeira|nakheel|al\s*meydan|"
+    r"discovery\s*gardens|ibn\s*battuta|al\s*khail)\b",
     re.IGNORECASE,
 )
 
