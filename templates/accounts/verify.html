@@ -3,7 +3,7 @@
 {% block title %}Enter code — DXB Discounts{% endblock %}
 
 {% block content %}
-<section class="max-w-md mx-auto px-4 py-12">
+<section class="max-w-md mx-auto px-4 py-8 sm:py-12">
   {% if messages %}
     <div class="mb-4 space-y-2">
       {% for m in messages %}
@@ -11,7 +11,7 @@
       {% endfor %}
     </div>
   {% endif %}
-  <div class="card p-8">
+  <div class="card p-6 sm:p-8">
     <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1">Check your email</h1>
     <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
       We sent a 6-digit code to <strong>{{ email }}</strong>. It expires in 10 minutes.
