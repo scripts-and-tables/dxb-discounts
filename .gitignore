@@ -35,3 +35,6 @@ media/
 
 # OS
 Thumbs.db
+
+# Transient scrape/probe artifacts (underscore-prefixed)
+data/_*
