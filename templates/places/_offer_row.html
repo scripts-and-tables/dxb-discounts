@@ -1,0 +1,36 @@
+{% comment %}
+One offer rendered as a quiet text row inside a program group's body.
+No <details>, no colored band — the program color lives on the outer
+group header. Variables: discount.
+{% endcomment %}
+<article class="p-4 sm:p-5">
+  <div class="flex items-start gap-3 mb-2">
+    <h3 class="flex-1 min-w-0 font-semibold text-slate-900 dark:text-slate-100 break-words">{{ discount.title }}</h3>
+    {% if discount.discount_type != "other" %}
+      <span class="shrink-0 font-bold text-slate-900 dark:text-slate-100">{{ discount.headline }}</span>
+    {% endif %}
+    <div class="flex items-center gap-2 shrink-0">
+      {% include "accounts/_gem_button.html" with discount=discount %}
+      {% if user.is_authenticated %}
+        {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
+      {% endif %}
+    </div>
+  </div>
+  {% if discount.is_featured or discount.is_members_only %}
+    <div class="flex flex-wrap gap-2 mb-2">
+      {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900 dark:bg-rose-900/40 dark:text-rose-200">Featured</span>{% endif %}
+      {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200">Members</span>{% endif %}
+    </div>
+  {% endif %}
+  {% if discount.description %}
+    <p class="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-line mb-2">{{ discount.description }}</p>
+  {% endif %}
+  {% if discount.terms %}
+    <p class="text-xs text-slate-500 dark:text-slate-400 italic whitespace-pre-line mb-2">{{ discount.terms }}</p>
+  {% endif %}
+  {% if discount.external_url %}
+    <a href="{{ discount.external_url }}" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-amber-700 hover:text-amber-900 dark:text-amber-400 dark:hover:text-amber-200">
+      View full offer ↗
+    </a>
+  {% endif %}
+</article>
