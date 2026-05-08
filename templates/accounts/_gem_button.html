@@ -1,0 +1,23 @@
+{# Gem indicator. Variables: discount. Visible to all if marked; toggleable by staff. #}
+{% if user.is_staff %}
+  <form
+    method="post"
+    action="{% url 'accounts:gem_toggle' discount.slug %}"
+    hx-post="{% url 'accounts:gem_toggle' discount.slug %}"
+    hx-swap="outerHTML"
+    class="inline-block"
+  >
+    {% csrf_token %}
+    <button type="submit"
+            aria-label="{% if discount.is_gem %}Unmark as gem{% else %}Mark as gem{% endif %}"
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors {% if discount.is_gem %}bg-amber-100 text-amber-600 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:hover:bg-amber-900/60{% else %}bg-slate-100 text-slate-400 hover:bg-amber-50 hover:text-amber-500 dark:bg-slate-800 dark:text-slate-500 dark:hover:bg-amber-900/30 dark:hover:text-amber-400{% endif %}">
+      💎
+    </button>
+  </form>
+{% elif discount.is_gem %}
+  <span aria-label="Curator's gem"
+        title="Curator's gem"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-300">
+    💎
+  </span>
+{% endif %}

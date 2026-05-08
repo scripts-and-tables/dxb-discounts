@@ -7,9 +7,12 @@
       {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200">Members</span>{% endif %}
       {% if discount.source_program %}<span class="chip bg-sky-100 text-sky-900 dark:bg-sky-900/40 dark:text-sky-200">{{ discount.get_source_program_display }}</span>{% endif %}
     </div>
-    {% if user.is_authenticated %}
-      {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
-    {% endif %}
+    <div class="flex items-center gap-2 shrink-0">
+      {% include "accounts/_gem_button.html" with discount=discount %}
+      {% if user.is_authenticated %}
+        {% include "accounts/_favorite_button.html" with discount=discount favorited=discount.is_favorited %}
+      {% endif %}
+    </div>
   </div>
   <a href="{{ discount.get_absolute_url }}" class="block">
     <h3 class="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-300 line-clamp-2 mb-1">{{ discount.title }}</h3>

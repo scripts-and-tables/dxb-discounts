@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model, login, logout
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
@@ -220,6 +220,22 @@ def favorite_toggle(request, slug: str):
             "discount": discount,
             "favorited": favorited,
         })
+    return redirect(discount.get_absolute_url())
+
+
+# ------------- Gem toggle (admin-only) -------------
+
+@require_POST
+def gem_toggle(request, slug: str):
+    if not request.user.is_staff:
+        return HttpResponseForbidden()
+
+    discount = get_object_or_404(Discount, slug=slug, is_active=True, place__is_published=True)
+    discount.is_gem = not discount.is_gem
+    discount.save(update_fields=["is_gem", "updated_at"])
+
+    if request.headers.get("HX-Request"):
+        return render(request, "accounts/_gem_button.html", {"discount": discount})
     return redirect(discount.get_absolute_url())
 
 

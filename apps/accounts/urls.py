@@ -26,6 +26,9 @@ urlpatterns = [
     # Favorite toggle (HTMX-friendly)
     path("favorites/<slug:slug>/toggle/", views.favorite_toggle, name="favorite_toggle"),
 
+    # Gem toggle (admin-only, HTMX-friendly)
+    path("gems/<slug:slug>/toggle/", views.gem_toggle, name="gem_toggle"),
+
     # Password reset (Django built-ins, our templates)
     path(
         "password/reset/",

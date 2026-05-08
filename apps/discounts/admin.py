@@ -5,8 +5,8 @@ from .models import Discount, Program
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
-    list_display = ("title", "place", "discount_type", "source_program", "headline", "is_active", "is_featured", "is_members_only", "valid_until", "updated_at")
-    list_filter = ("discount_type", "source_program", "is_active", "is_featured", "is_members_only", "place__category")
+    list_display = ("title", "place", "discount_type", "source_program", "headline", "is_active", "is_featured", "is_gem", "is_members_only", "valid_until", "updated_at")
+    list_filter = ("discount_type", "source_program", "is_active", "is_featured", "is_gem", "is_members_only", "place__category")
     search_fields = ("title", "description", "place__name", "place__area")
     prepopulated_fields = {"slug": ("title",)}
     autocomplete_fields = ("place",)
@@ -19,7 +19,7 @@ class DiscountAdmin(admin.ModelAdmin):
             "fields": ("discount_type", "percentage", "fixed_price_aed", "promo_code"),
         }),
         ("Source, validity & visibility", {
-            "fields": ("source_program", "valid_from", "valid_until", "is_active", "is_featured", "is_members_only"),
+            "fields": ("source_program", "valid_from", "valid_until", "is_active", "is_featured", "is_gem", "is_members_only"),
         }),
     )
 
