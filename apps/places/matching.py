@@ -94,9 +94,14 @@ def _candidate_match(name: str, lat: float | None, lng: float | None,
                      radius_m: float = 150.0) -> int | None:
     """Returns the Place.id of the best match, or None.
 
-    A row matches when the normalized name equals the query AND coords are
-    within `radius_m`. If query coords are missing, name-equality alone is
-    accepted only for unique names (otherwise refuse to guess).
+    Tries three strategies in order, all gated on coord proximity when the
+    query has coords:
+      1. Exact normalized-name equality.
+      2. Token-prefix overlap (one name is a prefix of the other at a token
+         boundary). Rescues the case where an existing place is named for the
+         merchant brand ("Karma Kafé") and a new outlet adds the branch
+         ("Karma Kafé Al Barsha"), or vice versa.
+      3. No-coords fallback: accept exact name only if it's globally unique.
     """
     if _NAME_CACHE is None:
         prime_cache()
@@ -105,11 +110,9 @@ def _candidate_match(name: str, lat: float | None, lng: float | None,
         return None
 
     by_name = [r for r in _NAME_CACHE if r[1] == target]
-    if not by_name:
-        return None
 
-    if lat is not None and lng is not None:
-        # Filter to those within the radius; pick the closest.
+    # Strategy 1: exact name + coords within radius.
+    if by_name and lat is not None and lng is not None:
         candidates = []
         for pid, _, plat, plng in by_name:
             if plat is None or plng is None:
@@ -117,13 +120,26 @@ def _candidate_match(name: str, lat: float | None, lng: float | None,
             d = _haversine_m(lat, lng, plat, plng)
             if d <= radius_m:
                 candidates.append((d, pid))
-        if not candidates:
-            return None
-        candidates.sort()
-        return candidates[0][1]
+        if candidates:
+            candidates.sort()
+            return candidates[0][1]
 
-    # No query coords — only safe to match if there's exactly one same-name row.
-    if len(by_name) == 1:
+    # Strategy 2: token-prefix overlap + coords within radius.
+    if lat is not None and lng is not None:
+        candidates = []
+        for pid, cname, plat, plng in _NAME_CACHE:
+            if plat is None or plng is None or cname == target or not cname:
+                continue
+            if cname.startswith(target + " ") or target.startswith(cname + " "):
+                d = _haversine_m(lat, lng, plat, plng)
+                if d <= radius_m:
+                    candidates.append((d, pid))
+        if candidates:
+            candidates.sort()
+            return candidates[0][1]
+
+    # Strategy 3: no query coords — only safe if there's exactly one same-name row.
+    if by_name and lat is None and lng is None and len(by_name) == 1:
         return by_name[0][0]
     return None
 
