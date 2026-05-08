@@ -11,13 +11,21 @@
     <button type="submit"
             aria-label="{% if discount.is_gem %}Unmark as gem{% else %}Mark as gem{% endif %}"
             class="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors {% if discount.is_gem %}bg-amber-100 text-amber-600 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:hover:bg-amber-900/60{% else %}bg-slate-100 text-slate-400 hover:bg-amber-50 hover:text-amber-500 dark:bg-slate-800 dark:text-slate-500 dark:hover:bg-amber-900/30 dark:hover:text-amber-400{% endif %}">
-      💎
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="{% if discount.is_gem %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 3h12l4 6-10 13L2 9Z"/>
+        <path d="M11 3 8 9l4 13 4-13-3-6"/>
+        <path d="M2 9h20"/>
+      </svg>
     </button>
   </form>
 {% elif discount.is_gem %}
   <span aria-label="Curator's gem"
         title="Curator's gem"
         class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-300">
-    💎
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 3h12l4 6-10 13L2 9Z"/>
+      <path d="M11 3 8 9l4 13 4-13-3-6"/>
+      <path d="M2 9h20"/>
+    </svg>
   </span>
 {% endif %}

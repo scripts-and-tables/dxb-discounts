@@ -10,6 +10,8 @@
   <button type="submit"
           aria-label="{% if favorited %}Remove from favorites{% else %}Save to favorites{% endif %}"
           class="inline-flex items-center justify-center w-8 h-8 rounded-full transition-colors {% if favorited %}bg-rose-100 text-rose-600 hover:bg-rose-200 dark:bg-rose-900/40 dark:text-rose-300 dark:hover:bg-rose-900/60{% else %}bg-slate-100 text-slate-400 hover:bg-rose-50 hover:text-rose-500 dark:bg-slate-800 dark:text-slate-500 dark:hover:bg-rose-900/30 dark:hover:text-rose-400{% endif %}">
-    {% if favorited %}♥{% else %}♡{% endif %}
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="{% if favorited %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
   </button>
 </form>
