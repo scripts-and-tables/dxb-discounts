@@ -4,6 +4,8 @@
   action="{% url 'accounts:favorite_toggle' discount.slug %}"
   hx-post="{% url 'accounts:favorite_toggle' discount.slug %}"
   hx-swap="outerHTML"
+  hx-on:htmx:before-request="var s=this.querySelector('svg'); s.setAttribute('fill', s.getAttribute('fill')==='none' ? 'currentColor' : 'none')"
+  hx-on:htmx:response-error="var s=this.querySelector('svg'); s.setAttribute('fill', s.getAttribute('fill')==='none' ? 'currentColor' : 'none')"
   class="inline-block"
 >
   {% csrf_token %}
