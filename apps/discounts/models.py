@@ -21,6 +21,7 @@ class DiscountProgram(models.TextChoices):
     ENTERTAINER = "entertainer", "Entertainer"
     ZOMATO = "zomato", "Zomato Pro / Gold"
     REPEAT = "repeat", "Repeat"
+    PLAYBOOK = "playbook", "Playbook"
     ELITE_CLUB = "elite_club", "Elite Club"
     SUPPER_CLUB = "supper_club", "Supper Club ME"
     EMIRATES_PLATINUM = "emirates_platinum", "Emirates Platinum"
@@ -146,6 +147,7 @@ class Discount(models.Model):
 
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=False)
+    is_gem = models.BooleanField(default=False, help_text="Curator pick highlighted with a diamond icon to all users.")
     is_members_only = models.BooleanField(default=False, help_text="Hidden from anonymous visitors; visible to signed-in users.")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

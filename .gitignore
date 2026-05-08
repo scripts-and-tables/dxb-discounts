@@ -38,3 +38,8 @@ Thumbs.db
 
 # Transient scrape/probe artifacts (underscore-prefixed)
 data/_*
+
+# Refresh-skill outputs — regeneratable via scripts/fetch_*+filter_*+enrich_*.py
+data/entertainer_outlets_*.json
+data/fazaa_search_*.json
+data/playbook_search_*.json

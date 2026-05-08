@@ -16,6 +16,8 @@ choices' display name automatically.
   {% include "places/_program_tile_inner.html" with header_class="bg-rose-600" %}
 {% elif discount.source_program == "repeat" %}
   {% include "places/_program_tile_inner.html" with header_class="bg-violet-700" %}
+{% elif discount.source_program == "playbook" %}
+  {% include "places/_program_tile_inner.html" with header_class="bg-cyan-700" %}
 {% elif discount.source_program == "elite_club" %}
   {% include "places/_program_tile_inner.html" with header_class="bg-stone-700" %}
 {% elif discount.source_program == "supper_club" %}

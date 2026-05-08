@@ -29,9 +29,9 @@
   {% endif %}
 
   <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Discount programs</h2>
-  {% if discounts %}
+  {% if discount_groups %}
     <div class="space-y-3">
-      {% for discount in discounts %}{% include "places/_program_tile.html" %}{% endfor %}
+      {% for group in discount_groups %}{% include "places/_program_group.html" %}{% endfor %}
     </div>
   {% else %}
     <div class="card p-8 text-center text-slate-500 dark:text-slate-400">No active offers right now.</div>

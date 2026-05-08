@@ -34,6 +34,8 @@ class Place(models.Model):
     category = models.CharField(max_length=20, choices=Category.choices)
     area = models.CharField(max_length=120, help_text="e.g. Dubai Marina, Downtown, JBR")
     address = models.TextField(blank=True)
+    lat = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    lng = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     phone = models.CharField(max_length=40, blank=True)
     website = models.URLField(blank=True)
     description = models.TextField(blank=True)
@@ -52,6 +54,7 @@ class Place(models.Model):
             models.Index(fields=["category"]),
             models.Index(fields=["area"]),
             models.Index(fields=["is_published"]),
+            models.Index(fields=["lat", "lng"]),
         ]
 
     def __str__(self) -> str:
