@@ -13,13 +13,14 @@ from django_ratelimit.decorators import ratelimit
 from apps.discounts.models import Discount
 
 from .emails import EmailDeliveryFailed, send_code_email
-from .forms import CodeForm, LoginForm, SignupForm
+from .forms import CodeForm, LoginForm, PasswordResetForm, SignupForm
 from .models import CodeRateLimitExceeded, EmailCode, EmailCodePurpose, Favorite
 
 
 EMAIL_FAILURE_MESSAGE = (
-    "We couldn't send the verification email right now. Please try again in a moment."
+    "We couldn't send the email right now. Please try again in a moment."
 )
+RATE_LIMIT_MESSAGE = "Too many code requests. Try again in an hour."
 
 
 User = get_user_model()
@@ -49,7 +50,9 @@ def signup(request):
             code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
             send_code_email(to_email=email, code=code.code, purpose="signup")
         except CodeRateLimitExceeded:
-            pass
+            user.delete()
+            messages.error(request, RATE_LIMIT_MESSAGE)
+            return render(request, "accounts/signup.html", {"form": form})
         except EmailDeliveryFailed:
             user.delete()
             messages.error(request, EMAIL_FAILURE_MESSAGE)
@@ -98,16 +101,18 @@ def signup_resend(request):
         return redirect("accounts:signup")
     user = User.objects.filter(pk=pending["user_id"], is_active=False).first()
     if user:
-        sent = True
+        status = "ok"
         try:
             code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
             send_code_email(to_email=user.email, code=code.code, purpose="signup")
         except CodeRateLimitExceeded:
-            pass
+            status = "rate_limited"
         except EmailDeliveryFailed:
-            sent = False
-        if sent:
+            status = "delivery_failed"
+        if status == "ok":
             messages.success(request, "We sent a new code.")
+        elif status == "rate_limited":
+            messages.error(request, RATE_LIMIT_MESSAGE)
         else:
             messages.error(request, EMAIL_FAILURE_MESSAGE)
     return redirect("accounts:signup_verify")
@@ -128,7 +133,11 @@ def login_view(request):
             code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
             send_code_email(to_email=user.email, code=code.code, purpose="login")
         except CodeRateLimitExceeded:
-            pass
+            messages.error(request, RATE_LIMIT_MESSAGE)
+            return render(request, "accounts/login.html", {
+                "form": form,
+                "next": request.GET.get("next", ""),
+            })
         except EmailDeliveryFailed:
             messages.error(request, EMAIL_FAILURE_MESSAGE)
             return render(request, "accounts/login.html", {
@@ -184,16 +193,18 @@ def login_resend(request):
         return redirect("accounts:login")
     user = User.objects.filter(pk=pending["user_id"], is_active=True).first()
     if user:
-        sent = True
+        status = "ok"
         try:
             code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
             send_code_email(to_email=user.email, code=code.code, purpose="login")
         except CodeRateLimitExceeded:
-            pass
+            status = "rate_limited"
         except EmailDeliveryFailed:
-            sent = False
-        if sent:
+            status = "delivery_failed"
+        if status == "ok":
             messages.success(request, "We sent a new code.")
+        elif status == "rate_limited":
+            messages.error(request, RATE_LIMIT_MESSAGE)
         else:
             messages.error(request, EMAIL_FAILURE_MESSAGE)
     return redirect("accounts:login_verify")
@@ -273,7 +284,14 @@ def gem_toggle(request, slug: str):
     name="post",
 )
 class RateLimitedPasswordResetView(auth_views.PasswordResetView):
-    pass
+    form_class = PasswordResetForm
+
+    def form_valid(self, form):
+        try:
+            return super().form_valid(form)
+        except EmailDeliveryFailed:
+            messages.error(self.request, EMAIL_FAILURE_MESSAGE)
+            return self.form_invalid(form)
 
 
 # ------------- Helpers -------------

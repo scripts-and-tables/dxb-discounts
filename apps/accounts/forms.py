@@ -1,9 +1,15 @@
+import logging
+
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.forms import PasswordResetForm as DjangoPasswordResetForm
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
+from .emails import EmailDeliveryFailed, _notify_admin_send_failure
 
+
+logger = logging.getLogger("apps.accounts.emails")
 User = get_user_model()
 
 
@@ -48,6 +54,23 @@ class LoginForm(forms.Form):
                 raise ValidationError("This account is inactive.")
             cleaned["user"] = user
         return cleaned
+
+
+class PasswordResetForm(DjangoPasswordResetForm):
+    """Wrap Django's send_mail so a Resend rejection lands in admin alerts + logs
+    instead of 500-ing the request."""
+
+    def send_mail(self, subject_template_name, email_template_name, context,
+                  from_email, to_email, html_email_template_name=None):
+        try:
+            super().send_mail(
+                subject_template_name, email_template_name, context,
+                from_email, to_email, html_email_template_name=html_email_template_name,
+            )
+        except Exception as exc:
+            logger.exception("password_reset send_mail failed: to=%s", to_email)
+            _notify_admin_send_failure(to_email=to_email, purpose="password reset", exc=exc)
+            raise EmailDeliveryFailed(str(exc)) from exc
 
 
 class CodeForm(forms.Form):

@@ -7,7 +7,7 @@ from django.core.cache import cache
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
-from .models import EmailCode, EmailCodePurpose
+from .models import CodeRateLimitExceeded, EmailCode, EmailCodePurpose
 from .views import PENDING_KEY
 
 User = get_user_model()
@@ -80,13 +80,27 @@ class SignupTests(AuthBaseTest):
                 {"email": "alice@example.com", "password": "rosebud-spaniel-7"},
             )
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, "send the verification email")
+        self.assertContains(resp, "couldn", html=False)
         self.assertFalse(User.objects.filter(email="alice@example.com").exists())
         self.assertNotIn(PENDING_KEY, self.client.session)
         # Admin alert was queued via mail_admins() — check the locmem outbox.
         admin_alerts = [m for m in mail.outbox if "tverdohleb.alex@gmail.com" in m.to]
         self.assertEqual(len(admin_alerts), 1)
         self.assertIn("alice@example.com", admin_alerts[0].body)
+
+    def test_signup_rate_limit_shows_message_and_does_not_create_pending_session(self):
+        with patch(
+            "apps.accounts.models.EmailCode.issue",
+            side_effect=CodeRateLimitExceeded(),
+        ):
+            resp = self.client.post(
+                reverse("accounts:signup"),
+                {"email": "alice@example.com", "password": "rosebud-spaniel-7"},
+            )
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "Too many code requests")
+        self.assertFalse(User.objects.filter(email="alice@example.com").exists())
+        self.assertNotIn(PENDING_KEY, self.client.session)
 
     def test_wrong_code_blocks_after_max_attempts(self):
         self.client.post(
@@ -150,11 +164,53 @@ class LoginTests(AuthBaseTest):
                 {"email": "bob@example.com", "password": "hunter22-xy-grape"},
             )
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, "send the verification email")
+        self.assertContains(resp, "couldn", html=False)
         self.assertNotIn(PENDING_KEY, self.client.session)
         admin_alerts = [m for m in mail.outbox if "tverdohleb.alex@gmail.com" in m.to]
         self.assertEqual(len(admin_alerts), 1)
         self.assertIn("bob@example.com", admin_alerts[0].body)
+
+
+    def test_login_rate_limit_shows_message_and_does_not_redirect_to_verify(self):
+        user = User.objects.create_user(
+            username="bob@example.com", email="bob@example.com", password="hunter22-xy-grape"
+        )
+        user.is_active = True
+        user.save(update_fields=["is_active"])
+        with patch(
+            "apps.accounts.models.EmailCode.issue",
+            side_effect=CodeRateLimitExceeded(),
+        ):
+            resp = self.client.post(
+                reverse("accounts:login"),
+                {"email": "bob@example.com", "password": "hunter22-xy-grape"},
+            )
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "Too many code requests")
+        self.assertNotIn(PENDING_KEY, self.client.session)
+
+
+class PasswordResetFailureTests(AuthBaseTest):
+    def test_password_reset_email_failure_shows_error_and_alerts_admin(self):
+        User.objects.create_user(
+            username="alice@example.com", email="alice@example.com", password="rosebud-spaniel-7"
+        )
+        from django.contrib.auth.forms import PasswordResetForm as DjangoPasswordResetForm
+
+        with patch.object(
+            DjangoPasswordResetForm,
+            "send_mail",
+            side_effect=Exception("simulated resend failure"),
+        ):
+            resp = self.client.post(
+                reverse("accounts:password_reset"), {"email": "alice@example.com"}
+            )
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "couldn", html=False)
+        admin_alerts = [m for m in mail.outbox if "tverdohleb.alex@gmail.com" in m.to]
+        self.assertEqual(len(admin_alerts), 1)
+        self.assertIn("alice@example.com", admin_alerts[0].body)
+        self.assertIn("password reset", admin_alerts[0].subject)
 
 
 class RateLimitTests(AuthBaseTest):
