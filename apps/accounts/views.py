@@ -12,9 +12,14 @@ from django_ratelimit.decorators import ratelimit
 
 from apps.discounts.models import Discount
 
-from .emails import send_code_email
+from .emails import EmailDeliveryFailed, send_code_email
 from .forms import CodeForm, LoginForm, SignupForm
 from .models import CodeRateLimitExceeded, EmailCode, EmailCodePurpose, Favorite
+
+
+EMAIL_FAILURE_MESSAGE = (
+    "We couldn't send the verification email right now. Please try again in a moment."
+)
 
 
 User = get_user_model()
@@ -45,6 +50,10 @@ def signup(request):
             send_code_email(to_email=email, code=code.code, purpose="signup")
         except CodeRateLimitExceeded:
             pass
+        except EmailDeliveryFailed:
+            user.delete()
+            messages.error(request, EMAIL_FAILURE_MESSAGE)
+            return render(request, "accounts/signup.html", {"form": form})
         request.session[PENDING_KEY] = {"user_id": user.pk, "purpose": EmailCodePurpose.SIGNUP}
         return redirect("accounts:signup_verify")
     return render(request, "accounts/signup.html", {"form": form})
@@ -89,12 +98,18 @@ def signup_resend(request):
         return redirect("accounts:signup")
     user = User.objects.filter(pk=pending["user_id"], is_active=False).first()
     if user:
+        sent = True
         try:
             code = EmailCode.issue(user, EmailCodePurpose.SIGNUP)
             send_code_email(to_email=user.email, code=code.code, purpose="signup")
         except CodeRateLimitExceeded:
             pass
-        messages.success(request, "We sent a new code.")
+        except EmailDeliveryFailed:
+            sent = False
+        if sent:
+            messages.success(request, "We sent a new code.")
+        else:
+            messages.error(request, EMAIL_FAILURE_MESSAGE)
     return redirect("accounts:signup_verify")
 
 
@@ -114,6 +129,12 @@ def login_view(request):
             send_code_email(to_email=user.email, code=code.code, purpose="login")
         except CodeRateLimitExceeded:
             pass
+        except EmailDeliveryFailed:
+            messages.error(request, EMAIL_FAILURE_MESSAGE)
+            return render(request, "accounts/login.html", {
+                "form": form,
+                "next": request.GET.get("next", ""),
+            })
         request.session[PENDING_KEY] = {
             "user_id": user.pk,
             "purpose": EmailCodePurpose.LOGIN,
@@ -163,12 +184,18 @@ def login_resend(request):
         return redirect("accounts:login")
     user = User.objects.filter(pk=pending["user_id"], is_active=True).first()
     if user:
+        sent = True
         try:
             code = EmailCode.issue(user, EmailCodePurpose.LOGIN)
             send_code_email(to_email=user.email, code=code.code, purpose="login")
         except CodeRateLimitExceeded:
             pass
-        messages.success(request, "We sent a new code.")
+        except EmailDeliveryFailed:
+            sent = False
+        if sent:
+            messages.success(request, "We sent a new code.")
+        else:
+            messages.error(request, EMAIL_FAILURE_MESSAGE)
     return redirect("accounts:login_verify")
 
 

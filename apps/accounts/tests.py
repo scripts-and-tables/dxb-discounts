@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 from django.core import mail
@@ -6,6 +8,7 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from .models import EmailCode, EmailCodePurpose
+from .views import PENDING_KEY
 
 User = get_user_model()
 
@@ -67,6 +70,24 @@ class SignupTests(AuthBaseTest):
         self.assertTrue(user.is_active)
         self.assertRedirects(resp, reverse("accounts:profile"))
 
+    def test_signup_email_failure_shows_error_and_does_not_create_pending_session(self):
+        with patch(
+            "apps.accounts.emails.send_mail",
+            side_effect=Exception("simulated resend failure"),
+        ):
+            resp = self.client.post(
+                reverse("accounts:signup"),
+                {"email": "alice@example.com", "password": "rosebud-spaniel-7"},
+            )
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "send the verification email")
+        self.assertFalse(User.objects.filter(email="alice@example.com").exists())
+        self.assertNotIn(PENDING_KEY, self.client.session)
+        # Admin alert was queued via mail_admins() — check the locmem outbox.
+        admin_alerts = [m for m in mail.outbox if "tverdohleb.alex@gmail.com" in m.to]
+        self.assertEqual(len(admin_alerts), 1)
+        self.assertIn("alice@example.com", admin_alerts[0].body)
+
     def test_wrong_code_blocks_after_max_attempts(self):
         self.client.post(
             reverse("accounts:signup"),
@@ -112,6 +133,28 @@ class LoginTests(AuthBaseTest):
             reverse("accounts:login_verify"), {"code": code_obj.code}
         )
         self.assertEqual(resp.status_code, 302)
+
+
+    def test_login_email_failure_shows_error_and_does_not_redirect_to_verify(self):
+        user = User.objects.create_user(
+            username="bob@example.com", email="bob@example.com", password="hunter22-xy-grape"
+        )
+        user.is_active = True
+        user.save(update_fields=["is_active"])
+        with patch(
+            "apps.accounts.emails.send_mail",
+            side_effect=Exception("simulated resend failure"),
+        ):
+            resp = self.client.post(
+                reverse("accounts:login"),
+                {"email": "bob@example.com", "password": "hunter22-xy-grape"},
+            )
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "send the verification email")
+        self.assertNotIn(PENDING_KEY, self.client.session)
+        admin_alerts = [m for m in mail.outbox if "tverdohleb.alex@gmail.com" in m.to]
+        self.assertEqual(len(admin_alerts), 1)
+        self.assertIn("bob@example.com", admin_alerts[0].body)
 
 
 class RateLimitTests(AuthBaseTest):

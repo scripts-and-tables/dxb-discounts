@@ -134,15 +134,43 @@ LOGOUT_REDIRECT_URL = "pages:home"
 PASSWORD_RESET_TIMEOUT = 60 * 60
 
 # Email — console in dev, Resend (via Anymail) in prod.
-DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="DXB Discounts <onboarding@resend.dev>")
+DEFAULT_FROM_EMAIL = env(
+    "DEFAULT_FROM_EMAIL",
+    default="DXB Discounts <noreply-dxb-discounts@devapp24.com>",
+)
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 RESEND_API_KEY = env("RESEND_API_KEY", default="")
+
+# Recipients for mail_admins() — used for email-send failure alerts.
+ADMINS = [("DXB Discounts Admin", "tverdohleb.alex@gmail.com")]
+MANAGERS = ADMINS
 
 if DEBUG or not RESEND_API_KEY:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 else:
     EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
     ANYMAIL = {"RESEND_API_KEY": RESEND_API_KEY}
+
+
+# Logging — write to stderr so Railway captures it. Keep minimal: no file
+# handler, no JSON formatter.
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {"format": "[%(asctime)s] %(levelname)s %(name)s: %(message)s"},
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "loggers": {
+        "apps.accounts.emails": {"handlers": ["console"], "level": "INFO", "propagate": False},
+        "django.request": {"handlers": ["console"], "level": "WARNING", "propagate": False},
+    },
+}
 
 
 # Production hardening
