@@ -7,6 +7,7 @@ from django.views.decorators.http import require_GET
 from apps.accounts.selectors import attach_favorited
 from apps.discounts.models import Discount, DiscountProgram
 
+from .matching import normalize_name
 from .models import Category, Place
 
 
@@ -89,15 +90,42 @@ def place_detail(request, slug: str):
     place = get_object_or_404(Place, slug=slug, is_published=True)
     if place.is_members_only and not request.user.is_authenticated:
         raise Http404
+    place_q = Q(place=place)
+    if place.aggregates_branches:
+        # Brand-rollup: include Discounts from sibling Places whose normalized
+        # name starts with this Place's name (e.g. "Jones the Grocer" rolls up
+        # "Jones the Grocer — JBR", "Jones the Grocer (Dusit Thani)", etc.).
+        brand_norm = normalize_name(place.name)
+        if brand_norm:
+            sibling_ids = [
+                p.id for p in Place.objects.filter(is_published=True).exclude(pk=place.pk).only("id", "name")
+                if (n := normalize_name(p.name)) and n.startswith(brand_norm + " ")
+            ]
+            if sibling_ids:
+                place_q |= Q(place_id__in=sibling_ids)
     discounts_qs = (
         Discount.objects
         .live()
-        .filter(place=place)
+        .filter(place_q)
+        .select_related("place")
         .order_by("-is_featured", "-created_at")
     )
     if not request.user.is_authenticated:
         discounts_qs = discounts_qs.filter(is_members_only=False)
     discounts = attach_favorited(discounts_qs, request.user)
+    # Annotate aggregated rows with a branch label (the part of the sibling
+    # Place's name after the brand) so the template can render a chip.
+    brand_lower = place.name.lower()
+    for d in discounts:
+        if place.aggregates_branches and d.place_id != place.id:
+            sibling_name = d.place.name
+            if sibling_name.lower().startswith(brand_lower):
+                tail = sibling_name[len(brand_lower):].strip(" -—–·()[]")
+                d.branch_label = tail or sibling_name
+            else:
+                d.branch_label = sibling_name
+        else:
+            d.branch_label = ""
 
     # Group by source_program. In-house first; remaining groups by descending
     # offer count (so the program with the most offers shows up high in the list).

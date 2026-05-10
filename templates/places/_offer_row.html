@@ -16,10 +16,11 @@ group header. Variables: discount.
       {% endif %}
     </div>
   </div>
-  {% if discount.is_featured or discount.is_members_only %}
+  {% if discount.is_featured or discount.is_members_only or discount.branch_label %}
     <div class="flex flex-wrap gap-2 mb-2">
       {% if discount.is_featured %}<span class="chip bg-rose-100 text-rose-900 dark:bg-rose-900/40 dark:text-rose-200">Featured</span>{% endif %}
       {% if discount.is_members_only %}<span class="chip bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200">Members</span>{% endif %}
+      {% if discount.branch_label %}<span class="chip bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">{{ discount.branch_label }}</span>{% endif %}
     </div>
   {% endif %}
   {% if discount.description %}

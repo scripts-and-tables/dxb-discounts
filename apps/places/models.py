@@ -42,6 +42,15 @@ class Place(models.Model):
     description = models.TextField(blank=True)
     is_published = models.BooleanField(default=True)
     is_members_only = models.BooleanField(default=False, help_text="Hidden from anonymous visitors; visible to signed-in users.")
+    aggregates_branches = models.BooleanField(
+        default=False,
+        help_text=(
+            "When True, this Place's detail page rolls up Discount rows from "
+            "sibling Places whose name starts with this Place's name. Used for "
+            "brand-level Places (e.g. 'Jones the Grocer') that share branding "
+            "with multiple branch Places."
+        ),
+    )
     experiences = models.ManyToManyField(
         Experience, blank=True, related_name="places",
         help_text="What kind of visit this place supports — used as a home-page filter.",

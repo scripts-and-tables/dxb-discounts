@@ -18,8 +18,10 @@ This command:
      entertainer-* discounts onto the old Place (preserving its slug/URL),
      fills any empty fields from the duplicate, deletes the duplicate, and
      deletes the old generic.
-  3. Ambiguous (multi-branch brand) and no-match cases are left alone — the
-     old generic survives as a brand-level fallback discount.
+  3. Multi-branch ambiguous → set Place.aggregates_branches=True and delete
+     the generic. The Place detail view rolls up Discounts from sibling
+     branch Places by name prefix. No-match cases are left alone — the old
+     generic survives as a brand-level fallback discount.
 
 Usage:
   python manage.py consolidate_legacy_offers --dry-run   # inspect
@@ -56,7 +58,7 @@ class Command(BaseCommand):
         merged = 0
         moved_discounts = 0
         deleted_target_places = 0
-        skipped_ambiguous = 0
+        flagged_aggregator = 0
         skipped_no_match = 0
 
         # Cache of (id, name, normalized_name) for every Place that has at least
@@ -134,7 +136,15 @@ class Command(BaseCommand):
                         new_index = [r for r in new_index if r[0] != target_id]
                     merged += 1
                 elif len(matches) > 1:
-                    skipped_ambiguous += 1
+                    # Multi-branch ambiguous: flag the legacy Place as a
+                    # brand aggregator so its detail page rolls up Discount
+                    # rows from sibling branch Places. Drop the now-redundant
+                    # generic ent-* row.
+                    if not place.aggregates_branches:
+                        place.aggregates_branches = True
+                        place.save(update_fields=["aggregates_branches"])
+                    d.delete()
+                    flagged_aggregator += 1
                 else:
                     skipped_no_match += 1
 
@@ -148,7 +158,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  merged (old place absorbed new):    {merged}")
         self.stdout.write(f"  discounts moved to old places:      {moved_discounts}")
         self.stdout.write(f"  empty new places deleted:           {deleted_target_places}")
-        self.stdout.write(f"  skipped — ambiguous (multi-branch): {skipped_ambiguous}")
+        self.stdout.write(f"  flagged as brand aggregator:        {flagged_aggregator}")
         self.stdout.write(f"  skipped — no match in new ingest:   {skipped_no_match}")
         if dry_run:
             self.stdout.write(self.style.WARNING("DRY RUN — no changes committed."))
