@@ -11,6 +11,7 @@ class DiscountType(models.TextChoices):
     BOGO = "bogo", "Buy one get one (2-for-1)"
     FIXED_PRICE = "fixed_price", "Fixed price deal"
     PROMO_CODE = "promo_code", "Promo code / voucher"
+    REFERRAL = "referral", "Refer a friend"
     OTHER = "other", "Special offer"
 
 
@@ -31,6 +32,7 @@ class DiscountProgram(models.TextChoices):
     ATLANTIS_CIRCLE = "atlantis_circle", "Atlantis Circle"
     U_BY_EMAAR = "u_by_emaar", "U By Emaar"
     AL_FUTTAIM_BLUE = "al_futtaim_blue", "Blue (Al-Futtaim)"
+    REFERRAL = "referral", "Refer & Earn"
 
 
 class Program(models.Model):
@@ -173,6 +175,8 @@ class Discount(models.Model):
             raise ValidationError({"fixed_price_aed": "Required when discount type is Fixed price."})
         if self.discount_type == DiscountType.PROMO_CODE and not self.promo_code:
             raise ValidationError({"promo_code": "Required when discount type is Promo code."})
+        if self.discount_type == DiscountType.REFERRAL and not self.external_url:
+            raise ValidationError({"external_url": "Required when discount type is Refer a friend — link to the brand's referral page."})
         if self.valid_from and self.valid_until and self.valid_from > self.valid_until:
             raise ValidationError({"valid_until": "Must be on or after Valid from."})
 
@@ -203,4 +207,6 @@ class Discount(models.Model):
             return f"AED {self.fixed_price_aed:g}"
         if self.discount_type == DiscountType.PROMO_CODE and self.promo_code:
             return f"Code: {self.promo_code}"
+        if self.discount_type == DiscountType.REFERRAL:
+            return "Refer & Earn"
         return self.get_discount_type_display()

@@ -10,6 +10,7 @@ class Category(models.TextChoices):
     ATTRACTION = "attraction", "Attractions & Entertainment"
     HOTEL = "hotel", "Hotels & Staycations"
     RETAIL = "retail", "Retail, Beauty & Services"
+    SERVICE = "service", "Online & At-Home Services"
 
 
 class Experience(models.Model):
@@ -32,7 +33,7 @@ class Place(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True, blank=True)
     category = models.CharField(max_length=20, choices=Category.choices)
-    area = models.CharField(max_length=120, help_text="e.g. Dubai Marina, Downtown, JBR")
+    area = models.CharField(max_length=120, blank=True, help_text="e.g. Dubai Marina, Downtown, JBR. Leave blank for online/UAE-wide services.")
     address = models.TextField(blank=True)
     lat = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     lng = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)

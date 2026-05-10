@@ -1,0 +1,252 @@
+[
+  {
+    "slug": "careem-pay",
+    "name": "Careem Pay",
+    "category": "service",
+    "area": "",
+    "website": "https://www.careem.com",
+    "referral_url": "https://www.careem.com/en-AE/pay/referral/",
+    "description": "Refer a friend to Careem Pay — earn AED 40 in your wallet for every friend who sends at least AED 1,000 using your link. Up to AED 2,000 in total (50 successful referrals).",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "talabat",
+    "name": "Talabat",
+    "category": "service",
+    "area": "",
+    "website": "https://www.talabat.com",
+    "referral_url": "https://www.talabat.com/uae/refer-a-friend",
+    "description": "Invite a friend — both of you get AED 30 off your next order on Talabat.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "noon",
+    "name": "Noon",
+    "category": "service",
+    "area": "",
+    "website": "https://www.noon.com",
+    "referral_url": "https://www.noon.com/uae-en/sell/referral",
+    "description": "Refer friends to noon — earn store credit when they place a qualifying first order.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "deliveroo",
+    "name": "Deliveroo",
+    "category": "service",
+    "area": "",
+    "website": "https://deliveroo.ae",
+    "referral_url": "https://deliveroo.ae/refer-a-friend",
+    "description": "Share your Deliveroo code — your friend gets AED 25 off their first order, you earn AED 25 in credit.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "kibsons",
+    "name": "Kibsons",
+    "category": "service",
+    "area": "",
+    "website": "https://www.kibsons.com",
+    "referral_url": "https://www.kibsons.com/refer-a-friend",
+    "description": "Refer a friend to Kibsons — both get AED 50 in credit when they place their first order.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "instashop",
+    "name": "InstaShop",
+    "category": "service",
+    "area": "",
+    "website": "https://www.instashop.com",
+    "referral_url": "https://www.instashop.com/en-ae/referral",
+    "description": "Invite a friend to InstaShop — both of you get AED 25 off your next grocery order.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "carrefour-uae",
+    "name": "Carrefour UAE",
+    "category": "service",
+    "area": "",
+    "website": "https://www.carrefouruae.com",
+    "referral_url": "https://www.carrefouruae.com/mafuae/en/c/refer-and-earn",
+    "description": "Refer a friend to Carrefour — both get AED 50 off when they spend AED 100 on their first order.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "amazon-ae",
+    "name": "Amazon.ae",
+    "category": "service",
+    "area": "",
+    "website": "https://www.amazon.ae",
+    "referral_url": "https://www.amazon.ae/gp/help/customer/display.html?nodeId=GLLR3DP9KNAYTZX9",
+    "description": "Amazon.ae runs limited-time Refer-a-Friend promotions — invite friends from Your Account when active.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "mashreq-neo",
+    "name": "Mashreq NEO",
+    "category": "service",
+    "area": "",
+    "website": "https://www.mashreq.com",
+    "referral_url": "https://www.mashreq.com/uae/neo/refer-and-earn/refer-accounts/",
+    "description": "Refer up to 5 friends to Mashreq NEO in 90 days — earn AED 100–200 per successful referral.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "adcb-hayyak",
+    "name": "ADCB Hayyak",
+    "category": "service",
+    "area": "",
+    "website": "https://www.adcb.com",
+    "referral_url": "https://www.adcb.com/en/personal/promotions/refer-a-friend",
+    "description": "Refer a friend to ADCB — when they open an eligible account, you both get a cash reward.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "liv-bank",
+    "name": "Liv. Digital Bank",
+    "category": "service",
+    "area": "",
+    "website": "https://www.liv.me",
+    "referral_url": "https://www.liv.me/en/refer-and-earn",
+    "description": "Refer a friend to Liv. — earn cashback when they open and fund their account.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "etisalat-by-e-and",
+    "name": "Etisalat by e&",
+    "category": "service",
+    "area": "",
+    "website": "https://www.etisalat.ae",
+    "referral_url": "https://www.etisalat.ae/en/c/invite-a-friend.html",
+    "description": "Invite a friend to e& — get 500MB of free mobile data per successful invite.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "du-uae",
+    "name": "du",
+    "category": "service",
+    "area": "",
+    "website": "https://www.du.ae",
+    "referral_url": "https://www.du.ae/personal/mobile/refer-a-friend",
+    "description": "Refer a friend to du — both of you get bonus mobile data when they activate a new line.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "rain-payments",
+    "name": "Rain",
+    "category": "service",
+    "area": "",
+    "website": "https://www.rain.com",
+    "referral_url": "https://www.rain.com/en/referrals",
+    "description": "Refer a friend to Rain — both of you earn USD 5 in crypto when they pass identity verification and trade.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "yap-uae",
+    "name": "YAP",
+    "category": "service",
+    "area": "",
+    "website": "https://www.yap.com",
+    "referral_url": "https://www.yap.com/en-ae/refer-a-friend",
+    "description": "Refer a friend to YAP — both of you get AED 50 in your YAP wallet when they top up for the first time.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "rehlat",
+    "name": "Rehlat",
+    "category": "service",
+    "area": "",
+    "website": "https://www.rehlat.ae",
+    "referral_url": "https://www.rehlat.ae/en/referandearn",
+    "description": "Refer friends to Rehlat — earn travel credit when they book their first flight or hotel.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "cobone",
+    "name": "Cobone",
+    "category": "service",
+    "area": "",
+    "website": "https://www.cobone.com",
+    "referral_url": "https://www.cobone.com/en/refer-a-friend",
+    "description": "Refer a friend to Cobone — both of you get AED 25 in deal credit when they make their first purchase.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "fitness-first-uae",
+    "name": "Fitness First Middle East",
+    "category": "attraction",
+    "area": "Multiple branches",
+    "website": "https://www.fitnessfirstme.com",
+    "referral_url": "https://www.fitnessfirstme.com/refer-a-friend/",
+    "description": "Refer a friend to Fitness First — when they sign up for a membership, you receive a complimentary month.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "warehouse-gym",
+    "name": "The Warehouse Gym",
+    "category": "attraction",
+    "area": "Multiple branches",
+    "website": "https://thewarehousegym.com",
+    "referral_url": "https://thewarehousegym.com/refer-a-friend/",
+    "description": "Refer a friend to The Warehouse Gym — earn a free month added to your membership when they join.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "the-little-gym-dubai",
+    "name": "The Little Gym Dubai",
+    "category": "attraction",
+    "area": "Multiple branches",
+    "website": "https://thelittlegymdubai.com",
+    "referral_url": "https://thelittlegymdubai.com/refer-a-friend/",
+    "description": "Refer a friend to The Little Gym — receive a free class when their child enrolls in a term.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "kidzania-dubai",
+    "name": "KidZania Dubai",
+    "category": "attraction",
+    "area": "Dubai Mall",
+    "website": "https://kidzania.ae",
+    "referral_url": "https://kidzania.ae/en/membership/refer-a-friend",
+    "description": "Refer a friend to KidZania Dubai — both of you earn KidZos credit when they purchase an annual pass.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "privilee",
+    "name": "Privilee",
+    "category": "service",
+    "area": "",
+    "website": "https://privilee.ae",
+    "referral_url": "https://privilee.ae/refer-a-friend",
+    "description": "Refer a friend to Privilee — both of you get one bonus month added to your membership when they join.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "the-select-app",
+    "name": "The Select App",
+    "category": "service",
+    "area": "",
+    "website": "https://www.theselectapp.com",
+    "referral_url": "https://www.theselectapp.com/refer-a-friend",
+    "description": "Share your Select code — when a friend subscribes, both of you receive bonus offers credit.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "washmen",
+    "name": "Washmen",
+    "category": "service",
+    "area": "",
+    "website": "https://washmen.com",
+    "referral_url": "https://washmen.com/uae/refer-a-friend",
+    "description": "Refer a friend to Washmen — both of you get AED 50 off your next laundry order.",
+    "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "justlife",
+    "name": "Justlife",
+    "category": "service",
+    "area": "",
+    "website": "https://justlife.com",
+    "referral_url": "https://justlife.com/en-ae/refer-a-friend",
+    "description": "Refer a friend to Justlife — both of you get AED 50 off your next home-services booking.",
+    "last_verified": "2026-05-10"
+  }
+]

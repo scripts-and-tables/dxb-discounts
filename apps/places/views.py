@@ -29,6 +29,7 @@ _PROGRAM_HEADER_CLASS = {
     "atlantis_circle": "bg-slate-900",
     "u_by_emaar": "bg-purple-700",
     "al_futtaim_blue": "bg-blue-700",
+    "referral": "bg-rose-700",
 }
 
 
