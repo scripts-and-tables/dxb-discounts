@@ -13,7 +13,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
         {% for place in category_places %}
-          <a href="{{ place.get_absolute_url }}" class="card p-3 flex items-center gap-3 hover:border-amber-300 group">
+          <a href="{{ place.get_absolute_url }}" class="card p-3 flex gap-3 hover:border-amber-300 group">
             {% include "places/_logo.html" with place=place size_class="w-11 h-11" %}
             <div class="min-w-0 flex-1">
               <h4 class="font-semibold text-sm text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-300 truncate">{{ place.name }}</h4>
@@ -22,13 +22,12 @@
                 {% if place.area and place.offer_count %} · {% endif %}
                 {% if place.offer_count %}{{ place.offer_count }} offer{{ place.offer_count|pluralize }}{% endif %}
               </p>
+              {% if place.programs %}
+                <div class="flex flex-wrap gap-1 mt-1.5">
+                  {% for prog in place.programs %}{% include "places/_program_chip_sm.html" with program=prog %}{% endfor %}
+                </div>
+              {% endif %}
             </div>
-            {% if place.programs %}
-              <div class="flex items-center gap-1 shrink-0">
-                {% for prog in place.programs|slice:":6" %}{% include "places/_program_dot.html" with program=prog %}{% endfor %}
-                {% if place.programs|length > 6 %}<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 ml-0.5">+{{ place.programs|length|add:"-6" }}</span>{% endif %}
-              </div>
-            {% endif %}
           </a>
         {% endfor %}
       </div>
