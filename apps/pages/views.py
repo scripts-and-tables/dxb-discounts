@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
 from apps.discounts.models import Discount, DiscountProgram
-from apps.places.models import Experience, Place
+from apps.places.models import Category, Experience, Place
 
 
 @require_GET
@@ -71,9 +71,20 @@ def home(request):
                     "value": d.source_program,
                     "label": d.get_source_program_display(),
                 })
+        place.offer_count = len(place.visible_discounts)
+
+    # Group places by category, preserving Category.choices order so the home
+    # page reads top-to-bottom: restaurants → attractions → hotels → retail → services.
+    by_cat: dict[str, list[Place]] = {value: [] for value, _ in Category.choices}
+    for p in places:
+        by_cat.setdefault(p.category, []).append(p)
+    places_by_category = [
+        (label, by_cat[value]) for value, label in Category.choices if by_cat.get(value)
+    ]
 
     context = {
         "places": places,
+        "places_by_category": places_by_category,
         "selected": {
             "q": q,
             "programs": selected_programs,

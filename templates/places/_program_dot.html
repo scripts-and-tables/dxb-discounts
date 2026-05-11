@@ -1,0 +1,21 @@
+{% comment %}
+Compact colored dot for a discount program — used in dense list rows
+where labeled chips would be too noisy. Color table mirrors
+_program_bubble.html. Expects: program (dict with .value and .label).
+{% endcomment %}
+{% if program.value == "fazaa" %}<span class="w-2 h-2 rounded-full bg-red-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "esaad" %}<span class="w-2 h-2 rounded-full bg-teal-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "in_house" %}<span class="w-2 h-2 rounded-full bg-amber-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "entertainer" %}<span class="w-2 h-2 rounded-full bg-blue-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "zomato" %}<span class="w-2 h-2 rounded-full bg-rose-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "repeat" %}<span class="w-2 h-2 rounded-full bg-violet-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "elite_club" %}<span class="w-2 h-2 rounded-full bg-stone-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "supper_club" %}<span class="w-2 h-2 rounded-full bg-emerald-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "emirates_platinum" %}<span class="w-2 h-2 rounded-full bg-zinc-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "shukran" %}<span class="w-2 h-2 rounded-full bg-orange-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "share_rewards" %}<span class="w-2 h-2 rounded-full bg-indigo-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "emirates_skywards" %}<span class="w-2 h-2 rounded-full bg-sky-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "atlantis_circle" %}<span class="w-2 h-2 rounded-full bg-slate-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "u_by_emaar" %}<span class="w-2 h-2 rounded-full bg-purple-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% elif program.value == "al_futtaim_blue" %}<span class="w-2 h-2 rounded-full bg-blue-500" title="{{ program.label }}" aria-label="{{ program.label }}"></span>
+{% else %}<span class="w-2 h-2 rounded-full bg-slate-400" title="{{ program.label }}" aria-label="{{ program.label }}"></span>{% endif %}
