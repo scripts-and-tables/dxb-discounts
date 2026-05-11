@@ -38,5 +38,15 @@
     "referral_url": "https://www.etisalat.ae/en/c/invite-a-friend.html",
     "description": "Invite a friend to e& — get 500MB of free mobile data per successful invite.",
     "last_verified": "2026-05-10"
+  },
+  {
+    "slug": "du-pay",
+    "name": "du Pay",
+    "category": "service",
+    "area": "",
+    "website": "https://dupay.ae",
+    "referral_url": "https://dupay.ae/en/help/articles/invite-and-earn",
+    "description": "Invite friends to du Pay — they enter your code at sign-up via the \"Got a referral code?\" screen, and both of you earn rewards once they complete their first qualifying transaction.",
+    "last_verified": "2026-05-11"
   }
 ]

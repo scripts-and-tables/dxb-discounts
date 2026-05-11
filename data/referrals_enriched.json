@@ -8,11 +8,11 @@
     "referral_url": "https://www.careem.com/en-AE/pay/referral/",
     "description": "Refer a friend to Careem Pay — earn AED 40 in your wallet for every friend who sends at least AED 1,000 using your link. Up to AED 2,000 in total (50 successful referrals).",
     "last_verified": "2026-05-10",
-    "fetch_status": 200,
-    "fetch_error": null,
-    "page_text_snippet": "Referral Terms and Conditions | Careem Pay Services Go Eat Get Pay Rides Taxi Bike CarRental SchoolRides Food DineOut Quik Quik Electronics Supermarkets Box Home Services Pharmacy Flowers Pay Donations Send money Partners Careem for Business Restaurant delivery B2B delivery DineOut partner Become a supplier Careem for Business Careem Plus About us About us Our social impact Engineering at Careem C",
-    "needs_review": false,
-    "review_reason": "ok"
+    "fetch_status": null,
+    "fetch_error": "URLError: <urlopen error [Errno 11004] getaddrinfo failed>",
+    "page_text_snippet": "",
+    "needs_review": true,
+    "review_reason": "fetch failed"
   },
   {
     "slug": "mashreq-neo",
@@ -56,6 +56,21 @@
     "fetch_status": 200,
     "fetch_error": null,
     "page_text_snippet": "e& (etisalat and ) UAE | Invite a friend to My Etisalat UAE app Consumer Business Carrier & Wholesale e& group Find Us Accessibility Accessibility icon-outline-close-white Created with Sketch. Accessibility Statement Etisalat is committed to making this website accessible to the broadest possible audience, regardless of technology or physical capability. Learn more TEXT SIZE : STANDARD Aa Aa COLOU",
+    "needs_review": false,
+    "review_reason": "ok"
+  },
+  {
+    "slug": "du-pay",
+    "name": "du Pay",
+    "category": "service",
+    "area": "",
+    "website": "https://dupay.ae",
+    "referral_url": "https://dupay.ae/en/help/articles/invite-and-earn",
+    "description": "Invite friends to du Pay — they enter your code at sign-up via the \"Got a referral code?\" screen, and both of you earn rewards once they complete their first qualifying transaction.",
+    "last_verified": "2026-05-11",
+    "fetch_status": 200,
+    "fetch_error": null,
+    "page_text_snippet": "du Pay About Us Contact Us Download App About Us Contact Us FAQ Download App FAQ Account How do I send money with Du pay Navigate our app in six language; Arabic, English, Hindi, Malayalam, Tagalog, and Bangla Content Not Available Your money , your way Home About Us Contact Us Terms and Conditions Fee and Limits (Key Fact Statement) FAQ Download du Pay",
     "needs_review": false,
     "review_reason": "ok"
   }
