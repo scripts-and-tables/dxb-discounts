@@ -945,9 +945,9 @@
     "name": "Le Fournil",
     "category": "restaurant",
     "area": "Dubai Marina",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://lefournil.cl",
+    "logo_domain": "lefournil.cl",
+    "has_website": true
   },
   {
     "id": 109,
@@ -1185,9 +1185,9 @@
     "name": "Gold's Yacht",
     "category": "restaurant",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://yachtrentaldubai.com",
+    "logo_domain": "yachtrentaldubai.com",
+    "has_website": true
   },
   {
     "id": 134,
@@ -1265,9 +1265,9 @@
     "name": "Kraken",
     "category": "restaurant",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://kraken.com",
+    "logo_domain": "kraken.com",
+    "has_website": true
   },
   {
     "id": 142,
@@ -2535,9 +2535,9 @@
     "name": "MOTIONGATE™ Dubai",
     "category": "restaurant",
     "area": "Jebel Ali",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://motiongatedubai.com",
+    "logo_domain": "motiongatedubai.com",
+    "has_website": true
   },
   {
     "id": 406,
@@ -4085,9 +4085,9 @@
     "name": "Cherki",
     "category": "restaurant",
     "area": "Marina Bay",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://cherki.sg",
+    "logo_domain": "cherki.sg",
+    "has_website": true
   },
   {
     "id": 562,
@@ -4465,9 +4465,9 @@
     "name": "Duck Donuts",
     "category": "restaurant",
     "area": "Cairo Festival City",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://duckdonuts.com",
+    "logo_domain": "duckdonuts.com",
+    "has_website": true
   },
   {
     "id": 601,
@@ -4745,9 +4745,9 @@
     "name": "Fiko",
     "category": "restaurant",
     "area": "Msheireb Downtown",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://fiko.no",
+    "logo_domain": "fiko.no",
+    "has_website": true
   },
   {
     "id": 629,
@@ -5695,9 +5695,9 @@
     "name": "Le Colonial",
     "category": "restaurant",
     "area": "Msheireb Downtown",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://lecolonial.com",
+    "logo_domain": "lecolonial.com",
+    "has_website": true
   },
   {
     "id": 725,
@@ -6545,9 +6545,9 @@
     "name": "Palettes",
     "category": "restaurant",
     "area": "Al Furjan",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://palett.es",
+    "logo_domain": "palett.es",
+    "has_website": true
   },
   {
     "id": 811,
@@ -6745,9 +6745,9 @@
     "name": "Profiles",
     "category": "restaurant",
     "area": "Msheireb Downtown",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://careerprofiles.com",
+    "logo_domain": "careerprofiles.com",
+    "has_website": true
   },
   {
     "id": 831,
@@ -6825,9 +6825,9 @@
     "name": "Ramen Restaurant",
     "category": "restaurant",
     "area": "Msheireb Downtown",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://ramenqatar.com",
+    "logo_domain": "ramenqatar.com",
+    "has_website": true
   },
   {
     "id": 839,
@@ -6995,9 +6995,9 @@
     "name": "Royal Garden",
     "category": "restaurant",
     "area": "Al Nahda",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://royalgardencroydon.com",
+    "logo_domain": "royalgardencroydon.com",
+    "has_website": true
   },
   {
     "id": 856,
@@ -7005,9 +7005,9 @@
     "name": "Saasna",
     "category": "restaurant",
     "area": "Msheireb Downtown",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://saasnaqatar.com",
+    "logo_domain": "saasnaqatar.com",
+    "has_website": true
   },
   {
     "id": 857,
@@ -7175,9 +7175,9 @@
     "name": "Singapore Island Cruise",
     "category": "restaurant",
     "area": "Marina Bay",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://islandcruise.com.sg",
+    "logo_domain": "islandcruise.com.sg",
+    "has_website": true
   },
   {
     "id": 874,
@@ -7945,9 +7945,9 @@
     "name": "The Sportsman's Arms",
     "category": "restaurant",
     "area": "Zayed Sports City",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://sportsmanszsc.com",
+    "logo_domain": "sportsmanszsc.com",
+    "has_website": true
   },
   {
     "id": 951,
@@ -7955,9 +7955,9 @@
     "name": "The Spot",
     "category": "restaurant",
     "area": "Marina Bay",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://thespotforpardot.com",
+    "logo_domain": "thespotforpardot.com",
+    "has_website": true
   },
   {
     "id": 952,
@@ -8015,9 +8015,9 @@
     "name": "The Vermilion House",
     "category": "restaurant",
     "area": "Marina Bay",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://thevermilionhouse.com",
+    "logo_domain": "thevermilionhouse.com",
+    "has_website": true
   },
   {
     "id": 958,
@@ -9555,9 +9555,9 @@
     "name": "Be Healthy Restaurant",
     "category": "restaurant",
     "area": "UAE",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://behealthydxb.com",
+    "logo_domain": "behealthydxb.com",
+    "has_website": true
   },
   {
     "id": 1112,
@@ -9585,9 +9585,9 @@
     "name": "GAZEBO Restaurant",
     "category": "restaurant",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://gazebo.ae",
+    "logo_domain": "gazebo.ae",
+    "has_website": true
   },
   {
     "id": 1115,
@@ -10095,9 +10095,9 @@
     "name": "The Retreat Palm Dubai MGallery By Sofitel",
     "category": "hotel",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://theretreatpalmdubai.com",
+    "logo_domain": "theretreatpalmdubai.com",
+    "has_website": true
   },
   {
     "id": 1166,
@@ -10485,9 +10485,9 @@
     "name": "Sisters Beauty Lounge",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://sistersbeautylounge.com",
+    "logo_domain": "sistersbeautylounge.com",
+    "has_website": true
   },
   {
     "id": 1205,
@@ -10795,9 +10795,9 @@
     "name": "Life Pharmacy",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://lifepharmacy.com",
+    "logo_domain": "lifepharmacy.com",
+    "has_website": true
   },
   {
     "id": 1236,
@@ -10805,9 +10805,9 @@
     "name": "Al Ain Pharmacy",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://alain-pharmacy.com",
+    "logo_domain": "alain-pharmacy.com",
+    "has_website": true
   },
   {
     "id": 1237,
@@ -10935,9 +10935,9 @@
     "name": "Jumbo Electronics",
     "category": "retail",
     "area": "UAE",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://jumboqatar.com",
+    "logo_domain": "jumboqatar.com",
+    "has_website": true
   },
   {
     "id": 1250,
@@ -11075,9 +11075,9 @@
     "name": "Dwell",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://dwell.com",
+    "logo_domain": "dwell.com",
+    "has_website": true
   },
   {
     "id": 1264,
@@ -11135,9 +11135,9 @@
     "name": "Footlocker",
     "category": "retail",
     "area": "UAE",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://footlocker.com",
+    "logo_domain": "footlocker.com",
+    "has_website": true
   },
   {
     "id": 1270,
@@ -11445,9 +11445,9 @@
     "name": "Washnow",
     "category": "retail",
     "area": "UAE",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://washnow.me",
+    "logo_domain": "washnow.me",
+    "has_website": true
   },
   {
     "id": 1301,
@@ -11575,9 +11575,9 @@
     "name": "Dubai Parks and Resorts",
     "category": "attraction",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://dubaiparksandresorts.com",
+    "logo_domain": "dubaiparksandresorts.com",
+    "has_website": true
   },
   {
     "id": 1314,
@@ -11605,9 +11605,9 @@
     "name": "Dreamland Aqua Park",
     "category": "attraction",
     "area": "Umm Al Quawain",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://dreamlanduae.com",
+    "logo_domain": "dreamlanduae.com",
+    "has_website": true
   },
   {
     "id": 1317,
@@ -11815,9 +11815,9 @@
     "name": "University of Dubai",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://ud.ac.ae",
+    "logo_domain": "ud.ac.ae",
+    "has_website": true
   },
   {
     "id": 1338,
@@ -11915,9 +11915,9 @@
     "name": "Al Romaizan Gold & Jewellery",
     "category": "retail",
     "area": "Dubai",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://alromaizan.com",
+    "logo_domain": "alromaizan.com",
+    "has_website": true
   },
   {
     "id": 1348,
@@ -12165,9 +12165,9 @@
     "name": "flydubai",
     "category": "attraction",
     "area": "UAE",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://flydubai.com",
+    "logo_domain": "flydubai.com",
+    "has_website": true
   },
   {
     "id": 1373,
@@ -41985,9 +41985,9 @@
     "name": "Habtoor Grand Resort",
     "category": "restaurant",
     "area": "",
-    "website": "",
-    "logo_domain": "",
-    "has_website": false
+    "website": "https://marriott.com",
+    "logo_domain": "marriott.com",
+    "has_website": true
   },
   {
     "id": 4839,

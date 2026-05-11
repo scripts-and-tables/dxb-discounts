@@ -2,6 +2,7 @@
 
 Rules:
 - source=entertainer       -> set Place.logo_url_override (direct CDN URL).
+- source=fazaa             -> set Place.logo_url_override (direct CDN URL).
 - source=playbook          -> backfill Place.website from `suggested_website`
                               when it's empty. No override needed: the new
                               `logo_url` property will derive icon.horse
@@ -49,7 +50,7 @@ def decide(row: dict) -> dict | None:
     sug_site = (row.get("suggested_website") or "").strip()
     sug_logo = (row.get("suggested_logo_url") or "").strip()
 
-    if source == "entertainer":
+    if source in ("entertainer", "fazaa"):
         return {"logo_url_override": sug_logo} if sug_logo else None
 
     if source == "playbook":

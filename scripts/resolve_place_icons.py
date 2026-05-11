@@ -47,8 +47,13 @@ from scripts.lib.name_match import normalize  # noqa: E402
 
 AUDIT = ROOT / "data" / "place_icons_audit.json"
 ENTERTAINER = ROOT / "data" / "entertainer_outlets_enriched.json"
+FAZAA = ROOT / "data" / "fazaa_search_enriched.json"
 PLAYBOOK = ROOT / "data" / "playbook_search_enriched.json"
 DEST = ROOT / "data" / "place_icons_enriched.json"
+
+# Fazaa serves partner logos from its API host. The enriched JSON stores
+# relative paths like "/upload/partners/celio-...jpeg" — prepend this base.
+FAZAA_CDN = "https://api.fazaa.ae"
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 HEADERS = {"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "gzip"}
@@ -88,7 +93,7 @@ def head_image_ok(url: str, timeout: float = 8.0, retries: int = 1) -> bool:
                     return False
                 ct = (resp.getheader("Content-Type") or "").lower()
                 return ct.startswith("image/")
-        except (urllib.error.URLError, TimeoutError, ConnectionError, ValueError, OSError) as e:
+        except Exception as e:  # noqa: BLE001 - network/URL edge cases vary; any failure -> next tier
             last_err = e
             if attempt < retries:
                 import time
@@ -216,6 +221,45 @@ def load_entertainer_index() -> dict[str, str]:
     return out
 
 
+def load_fazaa_index() -> dict[str, str]:
+    """Map normalized partner name -> absolute partnerLogoUri.
+
+    Skips entries whose logo path doesn't look like an image (e.g. some
+    clinics store a .pdf brochure in `partnerLogoUri`). The HEAD check in
+    the resolver would catch these anyway, but filtering up front saves
+    network round-trips.
+    """
+    if not FAZAA.exists():
+        return {}
+    rows = json.loads(FAZAA.read_text(encoding="utf-8"))
+    out: dict[str, str] = {}
+    for r in rows:
+        partner = ((r.get("detail") or {}).get("partner") or {})
+        name = partner.get("partnerName") or r.get("partnerName")
+        path = partner.get("partnerLogoUri") or ""
+        key = normalize(name)
+        if not key or not path:
+            continue
+        # Drop obvious non-image payloads stored in the logo slot.
+        if path.lower().endswith((".pdf", ".doc", ".docx", ".zip")):
+            continue
+        # Fazaa uses /upload/partners/no-partner.png as the literal "no logo"
+        # placeholder. Skip — the HEAD validator would catch it anyway, but
+        # filtering up front spares 100+ wasted round-trips per run.
+        if path.endswith("/no-partner.png") or path == "no-partner.png":
+            continue
+        # Fazaa stores some logos with spaces or other unsafe characters in
+        # the filename. Percent-encode the path so urllib can issue requests.
+        if not path.startswith("http"):
+            safe_path = urllib.parse.quote(path, safe="/:%")
+            url = f"{FAZAA_CDN}{safe_path}"
+        else:
+            url = path
+        if key not in out:
+            out[key] = url
+    return out
+
+
 def load_playbook_index() -> dict[str, tuple[str, str]]:
     """Map normalized venue name -> (website_url, first_image_url)."""
     if not PLAYBOOK.exists():
@@ -236,7 +280,8 @@ def load_playbook_index() -> dict[str, tuple[str, str]]:
 
 # ---------- the cascade ----------
 
-def resolve_one(row: dict, ent_idx: dict[str, str], pb_idx: dict[str, tuple[str, str]],
+def resolve_one(row: dict, ent_idx: dict[str, str], fz_idx: dict[str, str],
+                pb_idx: dict[str, tuple[str, str]],
                 use_clearbit: bool, use_html: bool) -> dict:
     out = dict(row)
     out.update({
@@ -263,7 +308,23 @@ def resolve_one(row: dict, ent_idx: dict[str, str], pb_idx: dict[str, tuple[str,
             return out
         out["notes"] = "entertainer match found but logo HEAD failed"
 
-    # 2) Playbook - prefer detail.WebsiteUrl as a domain hint.
+    # 2) Fazaa partnerLogoUri - direct image from Fazaa's CDN. Similar
+    # confidence to Entertainer (brand-curated), but quality varies more
+    # (some partners upload storefront photos instead of clean logos).
+    if key in fz_idx:
+        logo = fz_idx[key]
+        if head_image_ok(logo):
+            out.update(
+                suggested_logo_url=logo,
+                source="fazaa",
+                confidence="high",
+                validation_status="ok",
+            )
+            return out
+        prev = out.get("notes") or ""
+        out["notes"] = f"{prev}; fazaa match found but logo HEAD failed".lstrip("; ")
+
+    # 3) Playbook - prefer detail.WebsiteUrl as a domain hint.
     if key in pb_idx:
         site, _img = pb_idx[key]
         domain = _extract_domain(site)
@@ -279,7 +340,7 @@ def resolve_one(row: dict, ent_idx: dict[str, str], pb_idx: dict[str, tuple[str,
                 )
                 return out
 
-    # 3) Clearbit Autocomplete - free-text brand -> domain.
+    # 4) Clearbit Autocomplete - free-text brand -> domain.
     if use_clearbit and not row.get("has_website"):
         sugg = clearbit_suggest(name)
         if sugg:
@@ -297,7 +358,7 @@ def resolve_one(row: dict, ent_idx: dict[str, str], pb_idx: dict[str, tuple[str,
                 )
                 return out
 
-    # 4) HTML parse of existing website (for places that have one).
+    # 5) HTML parse of existing website (for places that have one).
     if use_html and row.get("has_website"):
         parsed = parse_html_icons(row["website"])
         if parsed and head_image_ok(parsed):
@@ -309,7 +370,7 @@ def resolve_one(row: dict, ent_idx: dict[str, str], pb_idx: dict[str, tuple[str,
             )
             return out
 
-    # 5) icon.horse fallback when we have *any* domain.
+    # 6) icon.horse fallback when we have *any* domain.
     fallback_domain = _extract_domain(out["suggested_website"]) or row.get("logo_domain") or ""
     if fallback_domain:
         cand = f"https://icon.horse/icon/{fallback_domain}"
@@ -350,14 +411,16 @@ def main() -> int:
 
     print(f"loading source indexes...")
     ent_idx = load_entertainer_index()
+    fz_idx = load_fazaa_index()
     pb_idx = load_playbook_index()
     print(f"  entertainer brands: {len(ent_idx)}")
+    print(f"  fazaa partners:     {len(fz_idx)}")
     print(f"  playbook venues:    {len(pb_idx)}")
     print(f"resolving {len(audit_rows)} places with {args.workers} workers...")
 
     resolved: list[dict] = []
     with cf.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = [pool.submit(resolve_one, r, ent_idx, pb_idx,
+        futures = [pool.submit(resolve_one, r, ent_idx, fz_idx, pb_idx,
                                not args.no_clearbit, not args.no_html) for r in audit_rows]
         for i, fut in enumerate(cf.as_completed(futures), start=1):
             resolved.append(fut.result())
@@ -374,7 +437,7 @@ def main() -> int:
     total = len(resolved)
     print(f"\nwrote {DEST}")
     print(f"  total resolved rows: {total}")
-    for src in ("entertainer", "playbook", "clearbit_autocomplete", "html_parse", "icon_horse", "none"):
+    for src in ("entertainer", "fazaa", "playbook", "clearbit_autocomplete", "html_parse", "icon_horse", "none"):
         n = by_source.get(src, 0)
         pct = n * 100 // total if total else 0
         print(f"  {src:<22} {n:>5} ({pct}%)")
