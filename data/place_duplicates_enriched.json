@@ -1,0 +1,1269 @@
+[
+  {
+    "cluster_id": "al habtoor polo resort",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 45,
+        "slug": "al-habtoor-polo-resort-dubai",
+        "name": "Al Habtoor Polo Resort Dubai",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": 25.080454,
+        "lng": 55.367997,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://www.habtoorhotels.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 123,
+        "slug": "al-habtoor-polo-resort",
+        "name": "Al Habtoor Polo Resort",
+        "discount_count": 3,
+        "source_programs": [
+          "elite_club",
+          "fazaa",
+          "supper_club"
+        ],
+        "lat": 25.080454,
+        "lng": 55.367997,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://www.habtoorhotels.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 123,
+    "notes": ""
+  },
+  {
+    "cluster_id": "alloro",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 466,
+        "slug": "alloro",
+        "name": "Alloro",
+        "discount_count": 3,
+        "source_programs": [
+          "entertainer"
+        ],
+        "lat": 25.069239,
+        "lng": 55.128467,
+        "area": "Dubai Marina",
+        "address": "",
+        "website": "",
+        "logo_url_override": "https://offerengine.theentertainerme.com/alloro-x23407047/merchant_primary_logo_%28retina%29_-_merchant.jpg"
+      },
+      {
+        "id": 1367,
+        "slug": "alloro-restaurants",
+        "name": "Alloro Restaurants",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.069239,
+        "lng": 55.128467,
+        "area": "Dubai",
+        "address": "Wyndham Dubai Marina 394 Al Seba St – Dubai 04 407 8888 / +971582318741",
+        "website": "https://restaurants.thefirstgroup.com/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/alloro-restaurants-1717659016627.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 466,
+    "notes": ""
+  },
+  {
+    "cluster_id": "china tang",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 6380,
+        "slug": "china-tang",
+        "name": "China Tang",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.187977,
+        "lng": 55.287894,
+        "area": "",
+        "address": "",
+        "website": "https://chinatang.com/china-tang-dubai/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20260416124215_CHINA%20TANG%20HEROretouched.jpg"
+      },
+      {
+        "id": 8340,
+        "slug": "china-tang-dubai",
+        "name": "China Tang Dubai",
+        "discount_count": 4,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.191221,
+        "lng": 55.287557,
+        "area": "Business Bay",
+        "address": "Marasi Dr · Business Bay",
+        "website": "https://chinatang.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 362.3,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 8340,
+    "notes": ""
+  },
+  {
+    "cluster_id": "ja hatta fort hotel",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 117,
+        "slug": "ja-hatta-fort-hotel-dubai",
+        "name": "JA Hatta Fort Hotel Dubai",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": 24.82022,
+        "lng": 56.13559,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://www.jaresorts.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 1076,
+        "slug": "ja-hatta-fort-hotel",
+        "name": "JA Hatta Fort Hotel",
+        "discount_count": 2,
+        "source_programs": [
+          "elite_club",
+          "fazaa"
+        ],
+        "lat": 24.82022,
+        "lng": 56.13559,
+        "area": "Dubai",
+        "address": "",
+        "website": "www.jaresortshotels.com",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/ja-hatta-fort-hotel-1606110747086.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 1076,
+    "notes": ""
+  },
+  {
+    "cluster_id": "kanpai",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 90,
+        "slug": "kanpai-dubai",
+        "name": "Kanpai Dubai",
+        "discount_count": 9,
+        "source_programs": [
+          "entertainer",
+          "fazaa",
+          "supper_club"
+        ],
+        "lat": 25.194786,
+        "lng": 55.276397,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://www.kanpai.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20241210061014_IMG_4516.JPG"
+      },
+      {
+        "id": 127,
+        "slug": "kanpai",
+        "name": "Kanpai",
+        "discount_count": 8,
+        "source_programs": [
+          "playbook",
+          "supper_club"
+        ],
+        "lat": 25.194786,
+        "lng": 55.276397,
+        "area": "Dubai",
+        "address": "Souk Al Bahar · Downtown",
+        "website": "https://www.kanpai.ae/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/kanpai-x111556/merchant_primary_logo_%28retina%29_-_merchant.png"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 90,
+    "notes": ""
+  },
+  {
+    "cluster_id": "kata",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 6177,
+        "slug": "kata-restaurant",
+        "name": "KATA restaurant",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.197436,
+        "lng": 55.276244,
+        "area": "",
+        "address": "",
+        "website": "https://www.kata.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/kata-restaurant-1695114796835.jpg"
+      },
+      {
+        "id": 8211,
+        "slug": "kata",
+        "name": "KATA",
+        "discount_count": 2,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.198765,
+        "lng": 55.279606,
+        "area": "Downtown",
+        "address": "The Dubai Mall · Downtown",
+        "website": "https://www.kata.ae/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 369.1,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 8211,
+    "notes": ""
+  },
+  {
+    "cluster_id": "lobby",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 54,
+        "slug": "lobby-lounge",
+        "name": "Lobby Lounge",
+        "discount_count": 3,
+        "source_programs": [
+          "fazaa",
+          "supper_club"
+        ],
+        "lat": 25.261596,
+        "lng": 55.313859,
+        "area": "Anantara Downtown",
+        "address": "",
+        "website": "https://www.anantara.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 55,
+        "slug": "the-lobby-lounge",
+        "name": "The Lobby Lounge",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": 25.261596,
+        "lng": 55.313859,
+        "area": "Dusit Thani Dubai",
+        "address": "",
+        "website": "https://www.dusit.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/the-lobby-lounge-x23956381/merchant_primary_logo_%28retina%29_-_merchant2025010231118.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 54,
+    "notes": ""
+  },
+  {
+    "cluster_id": "lotus",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 76,
+        "slug": "lotus-lounge",
+        "name": "Lotus Lounge",
+        "discount_count": 5,
+        "source_programs": [
+          "entertainer",
+          "supper_club"
+        ],
+        "lat": 25.129345,
+        "lng": 55.153062,
+        "area": "Anantara the Palm",
+        "address": "",
+        "website": "https://www.anantara.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 940,
+        "slug": "the-lotus-lounge",
+        "name": "The Lotus Lounge",
+        "discount_count": 3,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.129345,
+        "lng": 55.153062,
+        "area": "The Palm Jumeirah",
+        "address": "Anantara The Palm Dubai · Palm Jumeirah",
+        "website": "https://www.jumeirah.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/lotus-lounge%2C-the-x22132823/merchant_primary_logo_%28retina%29_-_merchant.png"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 76,
+    "notes": ""
+  },
+  {
+    "cluster_id": "media one hotel",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 762,
+        "slug": "media-one-hotel",
+        "name": "Media One Hotel",
+        "discount_count": 3,
+        "source_programs": [
+          "entertainer"
+        ],
+        "lat": 25.089836,
+        "lng": 55.152599,
+        "area": "Dubai",
+        "address": "",
+        "website": "",
+        "logo_url_override": "https://offerengine.theentertainerme.com/media-one-hotel-x036867/merchant_primary_logo_%28retina%29_-_merchant.png"
+      },
+      {
+        "id": 1145,
+        "slug": "media-one-hotel-dubai",
+        "name": "Media One Hotel Dubai",
+        "discount_count": 2,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.089836,
+        "lng": 55.152599,
+        "area": "Dubai",
+        "address": "Plot No.1 Al Falak St - Al SufouhAl Sufouh 2 - Dubai",
+        "website": "https://www.mediaonehotel.com",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/media-one-hotel-dubai-1621931197175.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 762,
+    "notes": ""
+  },
+  {
+    "cluster_id": "millennium plaza downtown hotel",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 1087,
+        "slug": "millennium-plaza-downtown-hotel",
+        "name": "Millennium Plaza Downtown Hotel",
+        "discount_count": 1,
+        "source_programs": [
+          "elite_club"
+        ],
+        "lat": 25.229344,
+        "lng": 55.281179,
+        "area": "Dubai",
+        "address": "",
+        "website": "",
+        "logo_url_override": ""
+      },
+      {
+        "id": 1152,
+        "slug": "millennium-plaza-downtown-hotel-dubai",
+        "name": "Millennium Plaza Downtown Hotel Dubai",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.229344,
+        "lng": 55.281179,
+        "area": "Dubai",
+        "address": "Millennium Plaza Downtown Hotel  Shaikh Zayed Road",
+        "website": "https://www.millenniumhotels.com",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/millennium-plaza-downtown-hotel-dubai-1684297425060.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 1152,
+    "notes": ""
+  },
+  {
+    "cluster_id": "planet terra",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 145,
+        "slug": "planet-terra",
+        "name": "Planet Terra",
+        "discount_count": 5,
+        "source_programs": [
+          "playbook",
+          "supper_club"
+        ],
+        "lat": 25.08848,
+        "lng": 55.172727,
+        "area": "The Greens",
+        "address": "Panorama Building · The Greens",
+        "website": "https://planetterra.life/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 1119,
+        "slug": "planet-terra-restaurant",
+        "name": "Planet Terra Restaurant",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.08848,
+        "lng": 55.172727,
+        "area": "Dubai",
+        "address": ", Panorama Building - 6th St - The Greens - Dubai",
+        "website": "https://planetterra.life/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/planet-terra-restaurant-1692607842209.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": true,
+      "address_overlap_tokens": 4,
+      "complementary_sources": true
+    },
+    "confidence": "high",
+    "auto_merge": true,
+    "suggested_canonical_id": 145,
+    "notes": ""
+  },
+  {
+    "cluster_id": "44",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 914,
+        "slug": "the-44",
+        "name": "The 44",
+        "discount_count": 8,
+        "source_programs": [
+          "entertainer",
+          "playbook"
+        ],
+        "lat": 25.184314,
+        "lng": 55.255199,
+        "area": "SZR - Sheikh Zayed Road",
+        "address": "Hilton Dubai · Al Habtoor City",
+        "website": "https://www.alhabtoorcity.com/hotels//en-us/hilton/dining/the-44",
+        "logo_url_override": "https://offerengine.theentertainerme.com/the-44-x23877326/merchant_primary_logo_%28retina%29_-_merchant.jpg"
+      },
+      {
+        "id": 8971,
+        "slug": "bar-44",
+        "name": "Bar 44",
+        "discount_count": 1,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.085836,
+        "lng": 55.143859,
+        "area": "Dubai Marina",
+        "address": "Grosvenor House · Dubai Marina",
+        "website": "https://www.bar44-dubai.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 15669.4,
+      "same_website_domain": false,
+      "address_overlap_tokens": 1,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 914,
+    "notes": ""
+  },
+  {
+    "cluster_id": "armani",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 7332,
+        "slug": "armani",
+        "name": "Armani",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.216536,
+        "lng": 55.407333,
+        "area": "",
+        "address": "",
+        "website": "https://www.armanibeauty.ae/en/home?utm_campaign=eid_al_adha_june&utm_medium=fazaa&utm_source=website",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/armani-1717995447012.jpg"
+      },
+      {
+        "id": 8167,
+        "slug": "armanilounge",
+        "name": "Armani/Lounge",
+        "discount_count": 1,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.197528,
+        "lng": 55.274872,
+        "area": "Downtown",
+        "address": "Armani Hotel · Downtown",
+        "website": "https://www.armanihotels.com/en/restaurant/armani-lounge/?hotel=armani-hotel-dubai",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 13493.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 8167,
+    "notes": ""
+  },
+  {
+    "cluster_id": "awani",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 4420,
+        "slug": "awani-restaurant",
+        "name": "Awani Restaurant",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.204286,
+        "lng": 55.274967,
+        "area": "",
+        "address": "",
+        "website": "https://awani.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20260421081807_DSC00627.jpg"
+      },
+      {
+        "id": 9089,
+        "slug": "awani",
+        "name": "Awani",
+        "discount_count": 3,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.077691,
+        "lng": 55.131275,
+        "area": "Downtown",
+        "address": "The Dubai Mall · Downtown",
+        "website": "https://awani.ae/en/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 20183.3,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 9089,
+    "notes": ""
+  },
+  {
+    "cluster_id": "beach",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 50,
+        "slug": "the-beach-house",
+        "name": "The Beach House",
+        "discount_count": 3,
+        "source_programs": [
+          "playbook",
+          "supper_club"
+        ],
+        "lat": 25.130092,
+        "lng": 55.151961,
+        "area": "Anantara The Palm",
+        "address": "Anantara The Palm Dubai · Palm Jumeirah",
+        "website": "https://www.anantara.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/the-beach-house-x152488/merchant_primary_logo_%28retina%29_-_merchant.png"
+      },
+      {
+        "id": 129,
+        "slug": "beach-bar-and-grill",
+        "name": "Beach Bar and Grill",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": 25.130092,
+        "lng": 55.151961,
+        "area": "One&Only Royal Mirage",
+        "address": "",
+        "website": "https://www.oneandonlyresorts.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 915,
+        "slug": "the-beach-grill",
+        "name": "The Beach Grill",
+        "discount_count": 3,
+        "source_programs": [
+          "fazaa",
+          "playbook"
+        ],
+        "lat": 25.130092,
+        "lng": 55.151961,
+        "area": "JBR - Jumeirah Beach Residence",
+        "address": "Address Beach Resort · Jumeirah Beach Residence (JBR)",
+        "website": "https://www.jumeirah.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/the-beach-grill-x23930555/merchant_primary_logo_%28retina%29_-_merchant202301171338.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 50,
+    "notes": "cluster has 3 places; auto-merge disabled"
+  },
+  {
+    "cluster_id": "boudoir",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 6284,
+        "slug": "boudoir",
+        "name": "BOUDOIR",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.19219,
+        "lng": 55.28159,
+        "area": "",
+        "address": "",
+        "website": "https://www.fazaa.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/boudoir-1669790569694.jpeg"
+      },
+      {
+        "id": 8501,
+        "slug": "club-boudoir",
+        "name": "Club Boudoir",
+        "discount_count": 1,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.234118,
+        "lng": 55.262482,
+        "area": "Jumeirah",
+        "address": "Dubai Marine Beach Resort & Spa · Jumeirah",
+        "website": "https://boudoirdubai.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 5042.9,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 8501,
+    "notes": ""
+  },
+  {
+    "cluster_id": "coco",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 572,
+        "slug": "coco-lounge",
+        "name": "Coco Lounge",
+        "discount_count": 8,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.089899,
+        "lng": 55.152383,
+        "area": "DMC - Dubai Media City",
+        "address": "Media One Hotel · Media City",
+        "website": "https://www.mediaonehotel.com/venues/coco-lounge",
+        "logo_url_override": "https://offerengine.theentertainerme.com/coco-lounge-x23439504/merchant_primary_logo_%28retina%29_-_merchant2019010221513.jpg"
+      },
+      {
+        "id": 6225,
+        "slug": "coco-grill-and-lounge-dubai",
+        "name": "Coco Grill and Lounge Dubai",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.20261,
+        "lng": 55.276024,
+        "area": "",
+        "address": "",
+        "website": "https://coco-restaurants.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20241224090023_Arabian%20Dream%202.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 17662.3,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 572,
+    "notes": ""
+  },
+  {
+    "cluster_id": "fountain",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 41,
+        "slug": "the-fountain-cafe-restaurant",
+        "name": "The Fountain Cafe & Restaurant",
+        "discount_count": 7,
+        "source_programs": [
+          "entertainer",
+          "playbook",
+          "supper_club"
+        ],
+        "lat": 25.234152,
+        "lng": 55.311922,
+        "area": "Movenpick Bur",
+        "address": "Mövenpick Hotel & Apartments Bur Dubai · Oud Mehta",
+        "website": "https://www.movenpick.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 74,
+        "slug": "the-fountain",
+        "name": "The Fountain",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": 25.234152,
+        "lng": 55.311922,
+        "area": "Movenpick Bur",
+        "address": "",
+        "website": "https://www.movenpick.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 1016,
+        "slug": "fountain",
+        "name": "Fountain",
+        "discount_count": 0,
+        "source_programs": [],
+        "lat": 25.234152,
+        "lng": 55.311922,
+        "area": "Oud Metha",
+        "address": "",
+        "website": "",
+        "logo_url_override": "https://offerengine.theentertainerme.com/fountain-x036961/merchant_primary_logo_%28retina%29_-_merchant.png"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 41,
+    "notes": "cluster has 3 places; auto-merge disabled"
+  },
+  {
+    "cluster_id": "h",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 125,
+        "slug": "the-h-dubai",
+        "name": "The H Dubai",
+        "discount_count": 2,
+        "source_programs": [
+          "elite_club",
+          "supper_club"
+        ],
+        "lat": 25.230386,
+        "lng": 55.287181,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://www.h-hotel.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 162,
+        "slug": "h-bar",
+        "name": "H Bar",
+        "discount_count": 5,
+        "source_programs": [
+          "playbook",
+          "supper_club"
+        ],
+        "lat": 25.230386,
+        "lng": 55.287181,
+        "area": "The H",
+        "address": "H Hotel · SZR",
+        "website": "https://www.h-hotel.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 0.0,
+      "same_website_domain": true,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 162,
+    "notes": ""
+  },
+  {
+    "cluster_id": "la patisserie",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 1504,
+        "slug": "la-patisserie-lounge",
+        "name": "La Patisserie Lounge",
+        "discount_count": 2,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.199973,
+        "lng": 55.269158,
+        "area": "Downtown",
+        "address": "Sofitel Dubai Downtown · Downtown",
+        "website": "https://www.sofitel-dubai-downtown.com/restaurants-bar/la-patisserie-lounge/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 4657,
+        "slug": "la-patisserie",
+        "name": "La Patisserie",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 24.959925,
+        "lng": 55.149831,
+        "area": "",
+        "address": "",
+        "website": "https://fazaa.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/la-patisserie-1641899247151.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 29272.7,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 1504,
+    "notes": ""
+  },
+  {
+    "cluster_id": "o",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 6195,
+        "slug": "o-cafe",
+        "name": "O Cafe",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.199316,
+        "lng": 55.276328,
+        "area": "",
+        "address": "",
+        "website": "https://ocaferoastery.ae/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20241113044354_unnamed%20%282%29.jpg"
+      },
+      {
+        "id": 8430,
+        "slug": "o-dubai-lounge-club",
+        "name": "O Dubai - Lounge & Club",
+        "discount_count": 9,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.223577,
+        "lng": 55.282189,
+        "area": "SZR",
+        "address": "Voco Hotel · SZR",
+        "website": "https://oloungedubai.com",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 2761.4,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 8430,
+    "notes": ""
+  },
+  {
+    "cluster_id": "retreat palm mgallery sofitel",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 1096,
+        "slug": "the-retreat-palm-mgallery-by-sofitel",
+        "name": "The Retreat Palm MGallery by Sofitel",
+        "discount_count": 1,
+        "source_programs": [
+          "elite_club"
+        ],
+        "lat": null,
+        "lng": null,
+        "area": "Dubai",
+        "address": "",
+        "website": "",
+        "logo_url_override": ""
+      },
+      {
+        "id": 1165,
+        "slug": "the-retreat-palm-dubai-mgallery-by-sofitel",
+        "name": "The Retreat Palm Dubai MGallery By Sofitel",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": null,
+        "lng": null,
+        "area": "Dubai",
+        "address": "",
+        "website": "https://theretreatpalmdubai.com",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": null,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 1096,
+    "notes": ""
+  },
+  {
+    "cluster_id": "revo",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 139,
+        "slug": "revo-caf",
+        "name": "Revo Café",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": null,
+        "lng": null,
+        "area": "NH Collection Dubai The Palm",
+        "address": "",
+        "website": "https://www.nh-collection.com/",
+        "logo_url_override": ""
+      },
+      {
+        "id": 843,
+        "slug": "revo-cafe",
+        "name": "Revo Cafe",
+        "discount_count": 1,
+        "source_programs": [
+          "entertainer"
+        ],
+        "lat": 25.111534,
+        "lng": 55.138584,
+        "area": "The Palm Jumeirah",
+        "address": "",
+        "website": "https://www.jumeirah.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/revo-cafe-x23932842/merchant_primary_logo_%28retina%29_-_merchant202304050938.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": null,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 843,
+    "notes": ""
+  },
+  {
+    "cluster_id": "urban",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 4787,
+        "slug": "urban-lounge",
+        "name": "Urban Lounge",
+        "discount_count": 4,
+        "source_programs": [
+          "fazaa",
+          "playbook"
+        ],
+        "lat": 25.079143,
+        "lng": 55.137883,
+        "area": "",
+        "address": "InterContinental Dubai Marina, an IHG Hotel · Dubai Marina",
+        "website": "https://www.intercontinentaldubaimarina.com/",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/20250320054655_Urban%20Lounge_2.jpg"
+      },
+      {
+        "id": 8945,
+        "slug": "the-urban-bar",
+        "name": "The Urban Bar",
+        "discount_count": 4,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.222183,
+        "lng": 55.44156,
+        "area": "Mirdif",
+        "address": "Millennium Place Mirdif Hotel · Mirdif",
+        "website": "https://www.millenniumhotels.com/en/dubai/millennium-place-mirdif-hotel/the-urban-bar/#/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 34456.6,
+      "same_website_domain": false,
+      "address_overlap_tokens": 1,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 4787,
+    "notes": ""
+  },
+  {
+    "cluster_id": "warehouse",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 7608,
+        "slug": "kitchen-warehouse",
+        "name": "Kitchen Warehouse",
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
+        "lat": 25.292902,
+        "lng": 55.429798,
+        "area": "",
+        "address": "",
+        "website": "www.kitchenwarehouse.ae",
+        "logo_url_override": "https://api.fazaa.ae/upload/partners/kitchen-warehouse-1634535321313.jpeg"
+      },
+      {
+        "id": 8645,
+        "slug": "warehouse",
+        "name": "Warehouse",
+        "discount_count": 7,
+        "source_programs": [
+          "playbook"
+        ],
+        "lat": 25.247346,
+        "lng": 55.346627,
+        "area": "Garhoud",
+        "address": "Le Méridien Dubai Hotel & Conference Centre · Garhoud",
+        "website": "https://www.warehouse-dubai.com/",
+        "logo_url_override": ""
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": 9777.7,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 8645,
+    "notes": ""
+  },
+  {
+    "cluster_id": "ziya",
+    "kind": "cross_source",
+    "places": [
+      {
+        "id": 164,
+        "slug": "ziya",
+        "name": "Ziya",
+        "discount_count": 1,
+        "source_programs": [
+          "supper_club"
+        ],
+        "lat": null,
+        "lng": null,
+        "area": "Anantara Downtown",
+        "address": "",
+        "website": "https://www.anantara.com/",
+        "logo_url_override": "https://offerengine.theentertainerme.com/ziya-x131263/merchant_primary_logo_%28retina%29_-_merchant2025120100956.jpg"
+      },
+      {
+        "id": 795,
+        "slug": "nine7one",
+        "name": "ZIYA",
+        "discount_count": 3,
+        "source_programs": [
+          "entertainer"
+        ],
+        "lat": 25.185802,
+        "lng": 55.263607,
+        "area": "Downtown Dubai",
+        "address": "",
+        "website": "",
+        "logo_url_override": "https://offerengine.theentertainerme.com/ziya-x131263/merchant_primary_logo_%28retina%29_-_merchant2025120100956.jpg"
+      }
+    ],
+    "match_signals": {
+      "normalized_name_match": true,
+      "coord_proximity_m": null,
+      "same_website_domain": false,
+      "address_overlap_tokens": 0,
+      "complementary_sources": true
+    },
+    "confidence": "medium",
+    "auto_merge": false,
+    "suggested_canonical_id": 795,
+    "notes": ""
+  }
+]
