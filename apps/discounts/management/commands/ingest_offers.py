@@ -23,6 +23,7 @@ diff is real (not a transient API blip).
 from __future__ import annotations
 
 import json
+import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime, date
 from decimal import Decimal, InvalidOperation
@@ -64,6 +65,31 @@ def _parse_iso_date(value) -> date | None:
         return datetime.fromisoformat(s).date()
     except (ValueError, TypeError):
         return None
+
+
+def _clean_website(url: str | None) -> str:
+    """Fit a URL into Place.website's URLField(max_length=200).
+
+    Long URLs (tracking-laden marketing links from Fazaa partnerLink, etc.)
+    blow up under Postgres' strict varchar check even though SQLite tolerates
+    them. When the URL is too long, fall back to just its origin
+    (scheme://host/), which is a valid URL and usually points at the brand
+    homepage. As a last resort, return "" rather than silently truncating
+    to a broken path.
+    """
+    if not url:
+        return ""
+    url = url.strip()
+    if len(url) <= 200:
+        return url
+    try:
+        p = urllib.parse.urlparse(url)
+        if p.netloc:
+            origin = f"{p.scheme or 'https'}://{p.netloc}/"
+            return origin if len(origin) <= 200 else ""
+    except ValueError:
+        pass
+    return ""
 
 
 def _decimal(value) -> Decimal | None:
@@ -243,7 +269,7 @@ def ingest_fazaa(*, dry_run: bool, limit: int | None) -> IngestStats:
         else:
             place, created = find_or_create_place(
                 name=place_name, lat=lat, lng=lng, category=category,
-                defaults={"website": (detail.get("partner") or {}).get("partnerLink", "")},
+                defaults={"website": _clean_website((detail.get("partner") or {}).get("partnerLink"))},
             )
         if created:
             stats.places_created += 1
