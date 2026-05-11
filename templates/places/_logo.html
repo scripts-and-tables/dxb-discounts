@@ -1,13 +1,17 @@
 {% comment %}
-Brand logo for a Place, hot-linked from Clearbit with a Google favicon
-fallback when Clearbit 404s (no images stored locally). Caller passes:
+Brand logo for a Place. Caller passes:
 - place: the Place
 - size_class: Tailwind sizing for the wrapper (e.g. "w-10 h-10")
+
+Logo source comes from `place.logo_url`, which prefers `logo_url_override`
+(set by the refresh-icons backfill — e.g. an Entertainer CDN URL) and
+otherwise falls back to icon.horse derived from `website`. The onerror
+handler points at Google's S2 favicon as a final cosmetic fallback.
 {% endcomment %}
-{% if place.website %}
+{% if place.logo_url %}
 <span class="{{ size_class }} shrink-0 rounded-md bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 overflow-hidden inline-flex items-center justify-center">
   <img src="{{ place.logo_url }}"
-       onerror="this.onerror=null;this.src='{{ place.favicon_url }}';this.classList.add('p-1.5');"
+       {% if place.favicon_url %}onerror="this.onerror=null;this.src='{{ place.favicon_url }}';this.classList.add('p-1.5');"{% endif %}
        alt="{{ place.name }} logo"
        loading="lazy"
        class="max-w-full max-h-full object-contain">

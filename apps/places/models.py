@@ -51,6 +51,14 @@ class Place(models.Model):
             "with multiple branch Places."
         ),
     )
+    logo_url_override = models.CharField(
+        max_length=500,
+        blank=True,
+        help_text=(
+            "Direct image URL for the brand logo (e.g. an Entertainer CDN URL). "
+            "Takes precedence over the domain-derived icon.horse URL when set."
+        ),
+    )
     experiences = models.ManyToManyField(
         Experience, blank=True, related_name="places",
         help_text="What kind of visit this place supports — used as a home-page filter.",
@@ -94,8 +102,17 @@ class Place(models.Model):
 
     @property
     def logo_url(self) -> str:
-        """Brand logo via Clearbit. Returns "" if no website is set."""
-        return f"https://logo.clearbit.com/{self.logo_domain}" if self.logo_domain else ""
+        """Best brand logo URL. Prefers `logo_url_override` (set by the
+        refresh-icons backfill, e.g. an Entertainer CDN logo); falls back to
+        icon.horse derived from the website domain. Returns "" if neither
+        path produces a candidate.
+
+        (Clearbit's Logo API was retired in 2023 — its old subdomain no longer
+        resolves — which is why we use icon.horse for the auto-derived case.)
+        """
+        if self.logo_url_override:
+            return self.logo_url_override
+        return f"https://icon.horse/icon/{self.logo_domain}" if self.logo_domain else ""
 
     @property
     def favicon_url(self) -> str:
