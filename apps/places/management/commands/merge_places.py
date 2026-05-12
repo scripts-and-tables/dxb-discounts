@@ -129,6 +129,46 @@ def _merge_brand_with_branches(cluster: dict, places_by_id: dict, dry_run: bool,
     return summary
 
 
+def _synth_brand_name(branches: list, fallback_normalized: str) -> str:
+    """Pick a human-readable brand name for a synthesized Place.
+
+    Computes the character-level longest common prefix of all branches'
+    *original* names (case-preserving), strips trailing separator chars,
+    and uses that. For "Adventure Zone by Adventure HQ – Branch A" +
+    "Adventure Zone by Adventure HQ – Branch B" this returns
+    "Adventure Zone by Adventure HQ" — not the normalized
+    "Adventure Zone Adventure" that the old title-case logic produced.
+
+    Falls back to the title-cased normalized form when the char-LCP is
+    too short or contains only whitespace.
+    """
+    names = [b.name for b in branches]
+    # Char-level LCP, case-insensitive comparison but preserve case from
+    # the first name. Limit to len of shortest name.
+    lcp_len = 0
+    if names:
+        ref = names[0]
+        n = min(len(s) for s in names)
+        for i in range(n):
+            ch = ref[i].lower()
+            if all(s[i].lower() == ch for s in names):
+                lcp_len = i + 1
+            else:
+                break
+    candidate = names[0][:lcp_len] if lcp_len else ""
+    # Strip trailing separators: whitespace, em/en/horizontal dash, hyphen,
+    # bullet, colon, comma, slash, and the literal word "by " left at the end.
+    candidate = candidate.rstrip(" \t-–—―•·:,.;/|")
+    # Drop a trailing " by" (e.g. when one branch is "Brand by Owner X" and
+    # another is "Brand by Owner Y" the LCP keeps "by" but it's not a brand
+    # boundary — strip it).
+    if candidate.lower().endswith(" by"):
+        candidate = candidate[: -3].rstrip()
+    if len(candidate) >= 3:
+        return candidate
+    return " ".join(t.capitalize() for t in fallback_normalized.split())
+
+
 def _merge_synthesizable_branches(cluster: dict, places_by_id: dict, dry_run: bool, stdout) -> dict:
     """No brand row exists; synthesize one named after the cluster prefix,
     then merge all branches into it."""
@@ -139,8 +179,7 @@ def _merge_synthesizable_branches(cluster: dict, places_by_id: dict, dry_run: bo
     if not branches:
         return {"skipped_missing": 1}
 
-    # Title-case the cluster prefix. e.g. "acai luv" -> "Acai Luv".
-    synth_name = " ".join(t.capitalize() for t in cluster["cluster_id"].split())
+    synth_name = _synth_brand_name(branches, cluster["cluster_id"])
 
     if dry_run:
         # Don't actually create; report what we would do.
