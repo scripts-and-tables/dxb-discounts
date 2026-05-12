@@ -31,8 +31,8 @@ group header. Variables: discount.
   {% if discount.terms %}
     <p class="text-xs text-slate-500 dark:text-slate-400 italic whitespace-pre-line mb-2">{{ discount.terms|clean_html }}</p>
   {% endif %}
-  {% if discount.external_url %}
-    <a href="{{ discount.external_url }}" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-amber-700 hover:text-amber-900 dark:text-amber-400 dark:hover:text-amber-200">
+  {% if discount.verify_url %}
+    <a href="{{ discount.verify_url }}" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-amber-700 hover:text-amber-900 dark:text-amber-400 dark:hover:text-amber-200">
       View full offer ↗
     </a>
   {% endif %}

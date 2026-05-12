@@ -197,6 +197,45 @@ class Discount(models.Model):
         return self.place.get_absolute_url()
 
     @property
+    def verify_url(self) -> str:
+        """Best public URL where the user can verify or redeem this offer.
+
+        Falls back to a per-source-program derived URL when `external_url`
+        wasn't populated at ingest time (Entertainer especially — the
+        ingest never set external_url but the slug carries the merchant
+        and outlet ids needed to construct the official detail link).
+
+        Returns "" if no link can be constructed.
+        """
+        if self.external_url:
+            return self.external_url
+        slug_parts = (self.slug or "").split("-")
+        if self.source_program == DiscountProgram.ENTERTAINER:
+            # Slug format: 'entertainer-{merchant_id}-{outlet_id}-{offer_id}'
+            # Also handle legacy 'ent-{...}' prefix from earlier seeds.
+            prefix = slug_parts[0] if slug_parts else ""
+            if prefix in {"entertainer", "ent"} and len(slug_parts) >= 3:
+                try:
+                    merchant_id = int(slug_parts[1])
+                    outlet_id = int(slug_parts[2])
+                except ValueError:
+                    return ""
+                # The URL slug segment is ignored by the server — only m/o
+                # matter (see refresh-entertainer skill notes).
+                return (
+                    f"https://www.theentertainerme.com/outlets/x/detail"
+                    f"?m={merchant_id}&o={outlet_id}"
+                )
+        if self.source_program == DiscountProgram.FAZAA:
+            # Fazaa slug format: 'fazaa-{slug}'. Fall back to their public
+            # offer page (slug may not always resolve cleanly, but it's
+            # better than no link).
+            if slug_parts and slug_parts[0] == "fazaa" and len(slug_parts) >= 2:
+                fazaa_slug = "-".join(slug_parts[1:])
+                return f"https://www.fazaa.ae/offers/view/{fazaa_slug}"
+        return ""
+
+    @property
     def headline(self) -> str:
         """Short human label for the deal, e.g. '25% off' or '2-for-1' or 'AED 99'."""
         if self.discount_type == DiscountType.PERCENTAGE and self.percentage:
