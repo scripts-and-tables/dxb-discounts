@@ -243,14 +243,17 @@ def audit(include_low: bool = False) -> int:
         for br in branches:
             branch_src |= br._source_programs
 
-        # Auto-merge rules: exactly one brand row AND branches are 100%
-        # Entertainer. The brand row's sources don't matter — Entertainer
-        # branches always collapse safely into a single canonical (per-outlet
-        # ingest noise is the cause).
+        # Auto-merge rules: exactly one brand row AND branches come from
+        # sources that ingest per-outlet (Entertainer, Fazaa) — those two
+        # are the only sources that legitimately produce N rows per chain.
+        # 1-token brand names are still strict (entertainer-only) since
+        # they could coincidentally match unrelated venues.
         single_brand = len(brand_places) == 1
-        branches_entertainer_only = bool(branch_src) and branch_src.issubset({"entertainer"})
+        brand_token_count = len(prefix.split())
+        per_outlet_sources = {"entertainer", "fazaa"} if brand_token_count >= 2 else {"entertainer"}
+        branches_safe = bool(branch_src) and branch_src.issubset(per_outlet_sources)
 
-        if single_brand and branches_entertainer_only:
+        if single_brand and branches_safe:
             confidence, auto_merge = "high", True
         else:
             confidence, auto_merge = "medium", False
@@ -309,12 +312,12 @@ def audit(include_low: bool = False) -> int:
         initial_groups[first].append(p)
 
     syn_groups: dict[str, list] = defaultdict(list)
-    for prefix2, members in initial_groups.items():
+    for first_token, members in initial_groups.items():
         if len(members) < 2:
             continue
         token_lists = [normalize_name(p.name).split() for p in members]
-        # Find LCP: max k such that all members agree on first k tokens AND
-        # each member has at least k+1 tokens (so a suffix exists).
+        # Find LCP across ALL members: max k such that they agree on first k
+        # tokens AND each member has at least k+1 tokens (so a suffix exists).
         max_k = min(len(tl) - 1 for tl in token_lists)
         lcp_k = 0
         for k in range(1, max_k + 1):
@@ -322,19 +325,40 @@ def audit(include_low: bool = False) -> int:
                 lcp_k = k
             else:
                 break
-        if lcp_k == 0:
-            continue
-        # Require either:
-        #   - 2+ LCP tokens (specific brand like "All You Can Keto"), OR
-        #   - 1 LCP token that's distinctive (>=6 chars) AND 3+ members.
-        # 1-token + 2 members is too risky (might be coincidental).
-        if lcp_k == 1:
-            if len(token_lists[0][0]) < 6 or len(members) < 3:
+
+        if lcp_k >= 2:
+            # All members align on 2+ tokens (e.g. "All You Can Keto X" vs Y).
+            # Treat as one cluster — high signal, brand is multi-token.
+            lcp = " ".join(token_lists[0][:lcp_k])
+            if lcp in buckets and buckets[lcp]:
                 continue
-        lcp = " ".join(token_lists[0][:lcp_k])
-        if lcp in buckets and buckets[lcp]:
-            continue  # actually a brand-with-branches case; claimed earlier
-        syn_groups[lcp].extend(members)
+            syn_groups[lcp].extend(members)
+            continue
+
+        # LCP collapses to just the first token because 2nd tokens vary —
+        # the bucket is heterogeneous. Sub-bucket by 2nd token to detect
+        # *specific* brand groups (e.g. "Adventure Island ×2" hidden inside
+        # the broader "Adventure ×9" bucket).
+        by_2nd: dict[str, list] = defaultdict(list)
+        for tl, m in zip(token_lists, members):
+            if len(tl) >= 2:
+                by_2nd[tl[1]].append(m)
+        emitted_sub = False
+        for second_tok, sub_members in by_2nd.items():
+            if len(sub_members) < 2:
+                continue
+            two_tok = f"{first_token} {second_tok}"
+            if two_tok in buckets and buckets[two_tok]:
+                continue
+            syn_groups[two_tok].extend(sub_members)
+            emitted_sub = True
+
+        # Fallback: if no 2-token sub-cluster formed AND the first token is
+        # distinctive (>=6 chars) AND there are 3+ members, emit a 1-token
+        # cluster as a last resort (Pastaria-style with all-different 2nds).
+        if not emitted_sub and len(first_token) >= 6 and len(members) >= 3:
+            if first_token not in buckets or not buckets[first_token]:
+                syn_groups[first_token].extend(members)
 
     # Merge in the refined-synthesizable from pass 1 (Places that were
     # attributed to a too-short brand but really need a synthesized brand).
@@ -352,11 +376,16 @@ def audit(include_low: bool = False) -> int:
     # multiple pre-trim prefixes can collapse to the same trimmed prefix.
     # Words that almost always start a *location* (city, mall, festival) but
     # almost never end a *brand name*. Trim them off the LCP tail.
+    # Words that almost always start a location (City Walk, Mall of …,
+    # Festival Plaza) and rarely end a real brand name. Ambiguous words
+    # — "island" (Adventure Island), "park" (Adventure Park), "village",
+    # "beach" (Beach House), "gallery" — are intentionally NOT included
+    # because they can be part of a brand name and stripping them loses
+    # a useful cluster.
     LOCATION_SUFFIX_WORDS = {
-        "city", "mall", "centre", "center", "walk", "festival", "plaza",
-        "square", "bay", "downtown", "marina", "beach", "souk", "park",
-        "gallery", "hills", "lakes", "towers", "residence", "residences",
-        "village", "island", "promenade", "courtyard", "boulevard",
+        "mall", "centre", "center", "plaza", "square", "souk",
+        "downtown", "marina", "promenade", "courtyard", "boulevard",
+        "lakes", "towers", "residence", "residences",
     }
     trimmed_syn_groups: dict[str, list] = defaultdict(list)
     for prefix, members in syn_groups.items():
@@ -389,10 +418,15 @@ def audit(include_low: bool = False) -> int:
         branch_src: set[str] = set()
         for m in members:
             branch_src |= m._source_programs
-        branches_entertainer_only = bool(branch_src) and branch_src.issubset({"entertainer"})
+        # 2+ token LCPs (e.g. "adventure island") are specific enough to
+        # allow {entertainer, fazaa} mixes — both ingest per-outlet so the
+        # combination is the chain-noise signature. 1-token LCPs stay
+        # strict (entertainer-only) to avoid false positives.
+        per_outlet_sources = {"entertainer", "fazaa"} if len(prefix_tokens) >= 2 else {"entertainer"}
+        branches_safe = bool(branch_src) and branch_src.issubset(per_outlet_sources)
 
-        confidence = "high" if branches_entertainer_only else "medium"
-        auto_merge = branches_entertainer_only
+        confidence = "high" if branches_safe else "medium"
+        auto_merge = branches_safe
 
         cluster = {
             "cluster_id": prefix,

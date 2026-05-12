@@ -127,6 +127,38 @@ def place_detail(request, slug: str):
         else:
             d.branch_label = ""
 
+    # Collapse identical offers that came from per-outlet ingest. After the
+    # dedup-places merges, a brand-level Place often holds N Discount rows
+    # with identical (title, headline, description, terms, type) — one per
+    # original branch outlet. Showing 35 copies of "3 Bottles of Grapes — 2-
+    # for-1" is unhelpful; collapse to one row and stash a count.
+    deduped: list[Discount] = []
+    seen: dict[tuple, Discount] = {}
+    for d in discounts:
+        sig = (
+            d.source_program or "",
+            d.title.strip(),
+            (d.description or "").strip(),
+            (d.terms or "").strip(),
+            d.discount_type,
+            d.percentage,
+            d.fixed_price_aed,
+        )
+        keeper = seen.get(sig)
+        if keeper is None:
+            d.branch_count = 1
+            seen[sig] = d
+            deduped.append(d)
+        else:
+            keeper.branch_count += 1
+            # Promote `is_featured` and `is_favorited` to the keeper if any
+            # of the duplicates carried them — surface the strongest signal.
+            if d.is_featured and not keeper.is_featured:
+                keeper.is_featured = True
+            if getattr(d, "is_favorited", False) and not getattr(keeper, "is_favorited", False):
+                keeper.is_favorited = True
+    discounts = deduped
+
     # Group by source_program. In-house first; remaining groups by descending
     # offer count (so the program with the most offers shows up high in the list).
     by_program: dict[str, list[Discount]] = {}
