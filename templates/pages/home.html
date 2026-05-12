@@ -23,17 +23,18 @@
       hx-push-url="true"
       hx-indicator="#filter-spinner"
     >
-      <div class="flex flex-col sm:flex-row gap-2">
-        <input type="search" name="q" value="{{ selected.q }}" placeholder="Search places, areas, brands…" class="field flex-1" aria-label="Search places">
+      <div class="flex flex-row gap-2">
+        <input type="search" name="q" value="{{ selected.q }}" placeholder="Search places, areas, brands…" class="field flex-1 min-w-0" aria-label="Search places">
 
         <details class="relative" id="filter-panel">
-          <summary class="btn-ghost cursor-pointer list-none select-none w-full sm:w-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <summary class="btn-ghost cursor-pointer list-none select-none relative px-3 sm:px-4" aria-label="Filters">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-4 sm:h-4 sm:mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/>
               <line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/>
               <line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="18" r="2"/>
             </svg>
-            Filters{% if active_filter_count %} <span class="ml-1 inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-amber-500 text-white text-xs font-bold">{{ active_filter_count }}</span>{% endif %}
+            <span class="sr-only sm:not-sr-only">Filters</span>
+            {% if active_filter_count %}<span class="absolute -top-1 -right-1 inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1 rounded-full bg-amber-500 text-white text-xs font-bold leading-none">{{ active_filter_count }}</span>{% endif %}
           </summary>
           <div class="absolute left-0 right-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-96 card p-5 z-20 max-h-[70vh] overflow-y-auto text-left shadow-lg">
             <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Discount programs</h3>
@@ -69,7 +70,12 @@
           </div>
         </details>
 
-        <button type="submit" class="btn-primary">Search</button>
+        <button type="submit" class="btn-primary px-3 sm:px-4" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span class="sr-only sm:not-sr-only">Search</span>
+        </button>
       </div>
       <span id="filter-spinner" class="htmx-indicator text-xs text-slate-400 mt-2 inline-block">Updating…</span>
     </form>
