@@ -5,14 +5,15 @@ one Place via apps.places.matching.find_or_create_place. Idempotent — safe
 to re-run on a schedule (uses stable per-source slugs and update_or_create).
 
 Usage:
-  python manage.py ingest_offers --source {entertainer,fazaa,playbook,all}
+  python manage.py ingest_offers --source {entertainer,fazaa,all}
   python manage.py ingest_offers --source all --dry-run
-  python manage.py ingest_offers --source playbook --limit 50
+  python manage.py ingest_offers --source fazaa --limit 50
 
 Inputs (produced by the refresh-* skills):
   data/entertainer_outlets_enriched.json
   data/fazaa_search_enriched.json
-  data/playbook_search_enriched.json
+  data/playbook_search_enriched.json  (read by backfill only; not ingested
+                                       as discounts — see note below)
 
 The command never deletes anything. It upserts Discounts by stable slug
 (e.g. 'entertainer-12345-67890-99'), so re-running with newer JSON updates
@@ -31,7 +32,6 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from django.utils.text import slugify
 
 from apps.discounts.models import Discount, DiscountProgram, DiscountType
 from apps.places.matching import find_or_create_place, prime_cache
@@ -326,78 +326,20 @@ def ingest_fazaa(*, dry_run: bool, limit: int | None) -> IngestStats:
 
 
 def ingest_playbook(*, dry_run: bool, limit: int | None) -> IngestStats:
-    stats = IngestStats(source="playbook")
-    path = DATA / "playbook_search_enriched.json"
-    rows = json.loads(path.read_text(encoding="utf-8"))
-    if limit:
-        rows = rows[:limit]
-    for row in rows:
-        venue_id = row.get("Id")
-        if not venue_id:
-            stats.skipped += 1
-            continue
-        detail = row.get("detail") or {}
-        if not detail or detail.get("StatusCode"):
-            stats.skipped += 1
-            continue
-        place_name = (row.get("Name") or "").strip()
-        if not place_name:
-            stats.skipped += 1
-            continue
-        lat = row.get("Lat")
-        lng = row.get("Lng")
-        area = row.get("AreaName") or ""
-        building = row.get("BuildingName") or ""
-        address = " · ".join(p for p in [building, area] if p)
-        if dry_run:
-            place, created = None, False
-        else:
-            place, created = find_or_create_place(
-                name=place_name, lat=lat, lng=lng, area=area,
-                category=Category.RESTAURANT,
-                defaults={
-                    "address": address,
-                    "phone": detail.get("Phone", ""),
-                    "website": detail.get("WebsiteUrl", "")[:200] if detail.get("WebsiteUrl") else "",
-                    "description": detail.get("About", ""),
-                },
-            )
-        if created:
-            stats.places_created += 1
-        else:
-            stats.places_matched += 1
+    """No-op kept for historical migration compatibility.
 
-        external_url = f"https://www.my-playbook.com/venue/{venue_id}/{slugify(place_name)}"
-        for hl in detail.get("Highlights") or []:
-            hl_id = hl.get("Id")
-            if not hl_id:
-                continue
-            title = (hl.get("Name") or "Playbook Offer")[:200]
-            general = (hl.get("GeneralDescription") or "").strip()
-            detailed = (hl.get("DetailedDescription") or "").strip()
-            description = "\n\n".join(p for p in [general, detailed] if p)
-            defaults = {
-                "place": place,
-                "title": title,
-                "discount_type": DiscountType.OTHER,
-                "description": description,
-                "terms": "",
-                "external_url": external_url[:500],
-                "source_program": DiscountProgram.PLAYBOOK,
-                "is_members_only": False,
-                "is_active": True,
-            }
-            if dry_run:
-                stats.discounts_created += 1
-                continue
-            _, was_created = Discount.objects.update_or_create(
-                slug=f"playbook-{venue_id}-{hl_id}", defaults=defaults,
-            )
-            if was_created:
-                stats.discounts_created += 1
-            else:
-                stats.discounts_updated += 1
-    return stats
+    Playbook (my-playbook.com) turned out to be a venue-discovery app, not
+    a discount program — its "Highlights" were marketing events (Ladies
+    Night, Afternoon Tea, …), not offers. The real ingest function was
+    removed; migration 0015_remove_playbook_data deleted all rows it had
+    created. We keep this stub so migration 0012 (already applied on prod)
+    still runs cleanly on a fresh-from-scratch dev DB.
+
+    data/playbook_search_enriched.json is still kept and used by
+    backfill_existing_place_coords() and the refresh-icons skill for
+    venue logos/website hints.
+    """
+    return IngestStats(source="playbook")
 
 
 # ---------- backfill --------------------------------------------------------
@@ -461,8 +403,12 @@ def backfill_existing_place_coords() -> int:
 SOURCE_FNS = {
     "entertainer": ingest_entertainer,
     "fazaa": ingest_fazaa,
-    "playbook": ingest_playbook,
+    "playbook": ingest_playbook,  # no-op; kept so migration 0012 still works
 }
+
+# Sources actually included by `--source all`. Playbook is dropped because
+# its ingest is a no-op (the program isn't really a discount program).
+ALL_SOURCES = ["entertainer", "fazaa"]
 
 
 class Command(BaseCommand):
@@ -490,7 +436,7 @@ class Command(BaseCommand):
         # Prime the matcher cache once after backfill.
         prime_cache()
 
-        sources = list(SOURCE_FNS.keys()) if source == "all" else [source]
+        sources = list(ALL_SOURCES) if source == "all" else [source]
         all_stats: list[IngestStats] = []
         for src in sources:
             self.stdout.write(f"\nIngesting {src}...")

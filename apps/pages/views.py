@@ -91,7 +91,11 @@ def home(request):
             "experiences": selected_experiences,
             "gems": only_gems,
         },
-        "all_programs": DiscountProgram.choices,
+        # Playbook is excluded: it's a venue-discovery app, not a discount
+        # program — its "Highlights" (Ladies Night, Afternoon Tea, …) were
+        # marketing events, not offers. Removed from the filter panel so the
+        # checkbox doesn't return zero results.
+        "all_programs": [(v, lbl) for v, lbl in DiscountProgram.choices if v != "playbook"],
         "all_experiences": list(Experience.objects.filter(is_active=True).order_by("sort_order", "label")),
         "active_filter_count": len(selected_programs) + len(selected_experiences) + (1 if only_gems else 0),
     }

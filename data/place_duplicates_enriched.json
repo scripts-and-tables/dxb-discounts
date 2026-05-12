@@ -749,10 +749,8 @@
         "id": 2065,
         "slug": "anantara-the-palm-dubai-resort-dubai-uae",
         "name": "Anantara the Palm Dubai Resort — Dubai, UAE",
-        "discount_count": 1,
-        "source_programs": [
-          "fazaa"
-        ],
+        "discount_count": 0,
+        "source_programs": [],
         "lat": 25.129478,
         "lng": 55.153145,
         "area": "",
@@ -1590,8 +1588,10 @@
         "id": 488,
         "slug": "asil-step-into-the-orient",
         "name": "Asil Step into the Orient",
-        "discount_count": 0,
-        "source_programs": [],
+        "discount_count": 1,
+        "source_programs": [
+          "fazaa"
+        ],
         "lat": 25.080734,
         "lng": 55.135395,
         "area": "JBR - Jumeirah Beach Residence",
@@ -1604,10 +1604,9 @@
         "id": 3935,
         "slug": "asil-step-into-the-orient-rixos-premium-dubai-jbr",
         "name": "Asil Step into the Orient — Rixos Premium Dubai, JBR",
-        "discount_count": 10,
+        "discount_count": 9,
         "source_programs": [
           "entertainer",
-          "fazaa",
           "playbook"
         ],
         "lat": 25.080734,
@@ -5957,9 +5956,8 @@
         "id": 8340,
         "slug": "china-tang-dubai",
         "name": "China Tang Dubai",
-        "discount_count": 5,
+        "discount_count": 4,
         "source_programs": [
-          "fazaa",
           "playbook"
         ],
         "lat": 25.191221,
@@ -26751,9 +26749,7 @@
       4345,
       4346
     ],
-    "brand_source_programs": [
-      "fazaa"
-    ],
+    "brand_source_programs": [],
     "branch_source_programs": [
       "entertainer"
     ],
@@ -26762,10 +26758,8 @@
         "id": 318,
         "slug": "tgi-fridays-dubai",
         "name": "TGI Fridays",
-        "discount_count": 1,
-        "source_programs": [
-          "fazaa"
-        ],
+        "discount_count": 0,
+        "source_programs": [],
         "lat": 24.91983,
         "lng": 55.009172,
         "area": "Jumeirah",
