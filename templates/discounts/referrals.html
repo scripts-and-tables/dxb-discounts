@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Refer-and-earn programs in the UAE — DXB Discounts{% endblock %}
+{% block meta_description %}UAE refer-and-earn programs that pay you a bonus for inviting friends — banks, telcos, fintech wallets and ride-hailing apps. Each link is verified.{% endblock %}
+
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Refer &amp; earn programs</h1>
+    <p class="text-slate-600 dark:text-slate-400 mt-1">Invite a friend, pocket a bonus. Each program is verified against its public referral page.</p>
+  </header>
+
+  {% if referrals %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for r in referrals %}
+        <a href="{{ r.referral_url }}" target="_blank" rel="noopener" class="card block p-5 hover:border-amber-300 group">
+          <div class="flex items-start gap-3 mb-3">
+            {% if r.logo_url %}
+              <span class="w-12 h-12 shrink-0 rounded-md bg-white dark:bg-slate-100 border border-slate-200 dark:border-slate-700 overflow-hidden inline-flex items-center justify-center">
+                <img src="{{ r.logo_url }}"
+                     onerror="this.onerror=null;this.src='{{ r.favicon_url }}';this.classList.add('p-1.5');"
+                     alt="{{ r.name }} logo"
+                     loading="lazy"
+                     class="max-w-full max-h-full object-contain">
+              </span>
+            {% endif %}
+            <div class="min-w-0 flex-1">
+              <h3 class="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-300 truncate">{{ r.name }}</h3>
+              {% if r.status_label %}
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <span class="{{ r.status_class }} text-[11px]">{{ r.status_label }}</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">{{ r.description }}</p>
+          <div class="text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between">
+            {% if r.last_verified %}<span>Verified {{ r.last_verified }}</span>{% else %}<span></span>{% endif %}
+            <span class="font-medium text-amber-700 group-hover:text-amber-900 dark:text-amber-400 dark:group-hover:text-amber-200">Open referral page →</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <p class="text-xs text-slate-500 dark:text-slate-400 mt-6">
+      We are not affiliated with any of these brands. Bonus amounts change without notice — double-check on the brand's page before signing up.
+    </p>
+  {% else %}
+    <div class="card p-12 text-center text-slate-500 dark:text-slate-400">No referral programs available yet.</div>
+  {% endif %}
+</section>
+{% endblock %}
