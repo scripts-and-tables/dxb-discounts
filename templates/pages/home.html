@@ -18,7 +18,7 @@
       class="max-w-2xl mx-auto"
       role="search"
       hx-get="{% url 'pages:home' %}"
-      hx-trigger="change from:input[type=checkbox], submit, keyup changed delay:300ms from:input[name=q]"
+      hx-trigger="change from:input[type=checkbox], change from:input[type=radio], submit, keyup changed delay:300ms from:input[name=q]"
       hx-target="#filter-results"
       hx-push-url="true"
       hx-indicator="#filter-spinner"
@@ -57,6 +57,30 @@
               {% endfor %}
             </div>
 
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 pt-2 border-t border-slate-100 dark:border-slate-800">Discount type</h3>
+            <div class="space-y-1 mb-4">
+              {% for value, label in all_types %}
+                <label class="flex items-center gap-2 text-sm py-1 cursor-pointer">
+                  <input type="checkbox" name="types" value="{{ value }}" {% if value in selected.types %}checked{% endif %} class="rounded border-slate-300 dark:border-slate-700 dark:bg-slate-800 text-amber-600 focus:ring-amber-500">
+                  <span class="text-slate-700 dark:text-slate-300">{{ label }}</span>
+                </label>
+              {% endfor %}
+            </div>
+
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 pt-2 border-t border-slate-100 dark:border-slate-800">Minimum % off</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <label class="cursor-pointer">
+                <input type="radio" name="min_pct" value="" {% if not selected.min_pct %}checked{% endif %} class="sr-only peer">
+                <span class="chip peer-checked:bg-amber-100 peer-checked:text-amber-900 dark:peer-checked:bg-amber-900/40 dark:peer-checked:text-amber-200">Any</span>
+              </label>
+              {% for pct in min_pct_options %}
+                <label class="cursor-pointer">
+                  <input type="radio" name="min_pct" value="{{ pct }}" {% if selected.min_pct == pct %}checked{% endif %} class="sr-only peer">
+                  <span class="chip peer-checked:bg-amber-100 peer-checked:text-amber-900 dark:peer-checked:bg-amber-900/40 dark:peer-checked:text-amber-200">{{ pct }}%+</span>
+                </label>
+              {% endfor %}
+            </div>
+
             <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 pt-2 border-t border-slate-100 dark:border-slate-800">Editor's picks</h3>
             <label class="flex items-center gap-2 text-sm py-1 cursor-pointer mb-3">
               <input type="checkbox" name="gems" value="1" {% if selected.gems %}checked{% endif %} class="rounded border-slate-300 dark:border-slate-700 dark:bg-slate-800 text-amber-600 focus:ring-amber-500">
@@ -78,6 +102,21 @@
         </button>
       </div>
       <span id="filter-spinner" class="htmx-indicator text-xs text-slate-400 mt-2 inline-block">Updating…</span>
+
+      {% if all_areas %}
+      <div class="mt-5 flex flex-wrap gap-2 justify-center" aria-label="Filter by area">
+        <label class="cursor-pointer">
+          <input type="radio" name="area" value="" {% if not selected.area %}checked{% endif %} class="sr-only peer">
+          <span class="chip peer-checked:bg-amber-100 peer-checked:text-amber-900 dark:peer-checked:bg-amber-900/40 dark:peer-checked:text-amber-200 hover:bg-slate-200 dark:hover:bg-slate-700">All areas</span>
+        </label>
+        {% for area in all_areas %}
+          <label class="cursor-pointer">
+            <input type="radio" name="area" value="{{ area }}" {% if selected.area == area %}checked{% endif %} class="sr-only peer">
+            <span class="chip peer-checked:bg-amber-100 peer-checked:text-amber-900 dark:peer-checked:bg-amber-900/40 dark:peer-checked:text-amber-200 hover:bg-slate-200 dark:hover:bg-slate-700">{{ area }}</span>
+          </label>
+        {% endfor %}
+      </div>
+      {% endif %}
     </form>
   </div>
 </section>
