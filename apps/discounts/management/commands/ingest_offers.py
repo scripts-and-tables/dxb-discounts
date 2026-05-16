@@ -411,6 +411,16 @@ def ingest_adcb_touchpoints(*, dry_run: bool, limit: int | None) -> IngestStats:
         stats.slugs_seen.add(discount_slug)
         dtype = type_map.get(row.get("discount_type"), DiscountType.OTHER)
 
+        # ADCB's SPA doesn't have per-offer permalinks — offer detail opens
+        # in a client-side modal. The closest stable public URL is the
+        # `offers list` route with the brand pre-loaded into the `keywords`
+        # query param, which the SPA picks up on init and uses to filter
+        # the catalogue.
+        external_url = (
+            "https://offers.adcb.com/offer/websites/personal/touchpoints-offers/list"
+            f"?keywords={urllib.parse.quote(brand_name)}"
+        )[:500]
+
         defaults = {
             "place": place,
             "title": title[:200],
@@ -418,6 +428,7 @@ def ingest_adcb_touchpoints(*, dry_run: bool, limit: int | None) -> IngestStats:
             "percentage": row.get("percentage"),
             "fixed_price_aed": _decimal(row.get("fixed_price_aed")),
             "description": (row.get("description") or title)[:2000],
+            "external_url": external_url,
             "source_program": DiscountProgram.ADCB_TOUCHPOINTS,
             "is_members_only": False,
             # is_active intentionally omitted (curator overrides survive).
