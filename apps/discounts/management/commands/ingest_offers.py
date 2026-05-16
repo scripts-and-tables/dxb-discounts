@@ -343,6 +343,136 @@ def ingest_fazaa(*, dry_run: bool, limit: int | None) -> IngestStats:
     return stats
 
 
+def ingest_atlantis_circle(*, dry_run: bool, limit: int | None) -> IngestStats:
+    """Ingest the 20 Atlantis Dubai dining venues from
+    data/atlantis_circle_enriched.json (produced by the refresh-atlantis-circle
+    skill).
+
+    Each venue becomes one Discount at the Blue (free) tier — currently 15% off.
+    Tier ladder is described in the discount's `terms` so users know about the
+    Silver/Gold/Black upgrades. Slug pattern matches migration
+    0026_atlantis_circle_venues.py: `atlantis-circle-{place-slug}`.
+    """
+    stats = IngestStats(source="atlantis_circle")
+    path = DATA / "atlantis_circle_enriched.json"
+    if not path.exists():
+        return stats  # skill hasn't been run yet — caller decides what to do
+
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    tiers_path = DATA / "atlantis_circle_tiers.json"
+    tiers_meta = (
+        json.loads(tiers_path.read_text(encoding="utf-8"))
+        if tiers_path.exists() else {}
+    )
+    tier_lines = " / ".join(
+        f"{t['name']} {t['percentage']}%" for t in (tiers_meta.get("tiers") or [])
+    ) or "Blue 15% / Silver 20% / Gold 25% / Black 30%"
+
+    if limit:
+        rows = rows[:limit]
+    for row in rows:
+        slug = row.get("slug")
+        if not slug:
+            stats.skipped += 1
+            continue
+        place_name = row.get("name") or slug.replace("-", " ").title()
+        category = Category.RESTAURANT
+        lat = row.get("lat")
+        lng = row.get("lng")
+
+        place_defaults = {
+            "address": row.get("address") or "",
+            "website": row.get("external_url") or "",
+            "description": row.get("cuisine_blurb") or "",
+            "phone": row.get("phone") or "",
+        }
+
+        # Atlantis slugs are authoritative (hard-coded in scripts/parse_atlantis_circle.py
+        # to match migration 0026_atlantis_circle_venues.py), so skip the
+        # name-based matcher and look up by slug directly. This avoids
+        # accidentally creating a duplicate Place when the seed row exists
+        # without lat/lng (find_or_create_place's name+coords match needs
+        # both sides to have coords; the seed doesn't).
+        if dry_run:
+            place, created = None, False
+        else:
+            place = Place.objects.filter(slug=slug).first()
+            if place is None:
+                place, created = find_or_create_place(
+                    name=place_name, lat=lat, lng=lng,
+                    category=category,
+                    defaults={**place_defaults, "area": "Palm Jumeirah"},
+                )
+            else:
+                created = False
+                changed = False
+                # Backfill empty fields on the existing Place from fresh source data.
+                # Never overwrite curator-set values.
+                if place.lat is None and lat is not None:
+                    place.lat = Decimal(str(lat)); changed = True
+                if place.lng is None and lng is not None:
+                    place.lng = Decimal(str(lng)); changed = True
+                for k, v in place_defaults.items():
+                    if v and not getattr(place, k, None):
+                        setattr(place, k, v); changed = True
+                if changed:
+                    place.save()
+        if created:
+            stats.places_created += 1
+        else:
+            stats.places_matched += 1
+
+        discount_slug = f"atlantis-circle-{slug}"
+        stats.slugs_seen.add(discount_slug)
+        blue_pct = row.get("tier_percentages", {}).get("blue", 15)
+        title = f"{place_name} — {blue_pct}% off with Atlantis Circle (Blue, free)"
+        description = (
+            f"{row.get('cuisine_blurb', '')}\n\n"
+            f"Atlantis Circle members get tiered F&B discounts at all Atlantis "
+            f"Dubai dining venues ({tier_lines}). The Blue tier is free; higher "
+            f"tiers unlock as your rolling 12-month spend grows. Sign up at "
+            f"https://www.atlantis.com/dubai/membership/atlantis-circle."
+        ).strip()
+        terms = (
+            "Discount applies to the food & beverage bill, excluding alcohol "
+            "and service charge unless stated. Members must present a valid "
+            "Atlantis Circle digital card before settling. Tier % is set by "
+            "rolling 12-month dining spend at Atlantis Dubai venues. See "
+            "atlantis.com/dubai/membership/atlantis-circle for full terms, "
+            "exclusions and tier qualifying rules."
+        )
+        defaults = {
+            "place": place,
+            "title": title[:200],
+            "discount_type": DiscountType.PERCENTAGE,
+            "percentage": blue_pct,
+            "description": description,
+            "terms": terms,
+            "external_url": (row.get("external_url") or "")[:500],
+            "source_program": DiscountProgram.ATLANTIS_CIRCLE,
+            "is_members_only": False,
+            # is_active intentionally omitted (curator-deactivated rows survive).
+        }
+        if dry_run:
+            stats.discounts_created += 1
+            continue
+        _, was_created = Discount.objects.update_or_create(
+            slug=discount_slug, defaults=defaults,
+        )
+        if was_created:
+            stats.discounts_created += 1
+        else:
+            stats.discounts_updated += 1
+
+        # Explicit pause handling: if the source flags the venue as not
+        # operational, deactivate. find_or_create_place / update_or_create
+        # never touch is_active, so this is the only path that turns offers
+        # off when the source signals so.
+        if not row.get("is_operational", True):
+            Discount.objects.filter(slug=discount_slug).update(is_active=False)
+    return stats
+
+
 def ingest_playbook(*, dry_run: bool, limit: int | None) -> IngestStats:
     """No-op kept for historical migration compatibility.
 
@@ -421,12 +551,13 @@ def backfill_existing_place_coords() -> int:
 SOURCE_FNS = {
     "entertainer": ingest_entertainer,
     "fazaa": ingest_fazaa,
+    "atlantis_circle": ingest_atlantis_circle,
     "playbook": ingest_playbook,  # no-op; kept so migration 0012 still works
 }
 
 # Sources actually included by `--source all`. Playbook is dropped because
 # its ingest is a no-op (the program isn't really a discount program).
-ALL_SOURCES = ["entertainer", "fazaa"]
+ALL_SOURCES = ["entertainer", "fazaa", "atlantis_circle"]
 
 # (DiscountProgram value, slug prefix) per source. The prefix is used by
 # --deactivate-missing to scope the diff query — anything with the right
@@ -435,6 +566,7 @@ ALL_SOURCES = ["entertainer", "fazaa"]
 SOURCE_TO_PROGRAM = {
     "entertainer": (DiscountProgram.ENTERTAINER, "entertainer-"),
     "fazaa": (DiscountProgram.FAZAA, "fazaa-"),
+    "atlantis_circle": (DiscountProgram.ATLANTIS_CIRCLE, "atlantis-circle-"),
 }
 
 
