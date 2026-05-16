@@ -385,6 +385,11 @@ def ingest_atlantis_circle(*, dry_run: bool, limit: int | None) -> IngestStats:
             "website": row.get("external_url") or "",
             "description": row.get("cuisine_blurb") or "",
             "phone": row.get("phone") or "",
+            # Per-venue logo from schema.org Restaurant JSON-LD (Kerzner CDN).
+            # Without this, every Atlantis venue falls back to the same
+            # icon.horse(atlantis.com) generic resort logo because they all
+            # share Place.website = atlantis.com/dubai/dining/...
+            "logo_url_override": (row.get("logo_url") or "")[:500],
         }
 
         # Atlantis slugs are authoritative (hard-coded in scripts/parse_atlantis_circle.py

@@ -195,6 +195,7 @@ def parse_venue(slug: str, url_segment: str, html: bytes) -> dict:
         "lat": None,
         "lng": None,
         "image_url": "",
+        "logo_url": "",
         "cuisine": "",
         "is_operational": True,  # parser can't tell; flag manually via skill report
         "source": "html-jsonld",
@@ -216,6 +217,7 @@ def parse_venue(slug: str, url_segment: str, html: bytes) -> dict:
     record["phone"] = (rest.get("telephone") or "").strip()
     record["cuisine"] = (rest.get("servesCuisine") or "").strip()
     record["image_url"] = (rest.get("image") or "").strip()
+    record["logo_url"] = (rest.get("logo") or "").strip()
 
     addr = rest.get("address") or {}
     street = (addr.get("streetAddress") or "").strip()
