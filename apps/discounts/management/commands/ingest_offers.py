@@ -343,6 +343,99 @@ def ingest_fazaa(*, dry_run: bool, limit: int | None) -> IngestStats:
     return stats
 
 
+def ingest_adcb_touchpoints(*, dry_run: bool, limit: int | None) -> IngestStats:
+    """Ingest ADCB TouchPoints partner offers from
+    data/adcb_offers_enriched.json (produced by the refresh-adcb-touchpoints
+    skill).
+
+    Each ADCB API record becomes one Discount keyed by `adcb-{offer-uuid}`.
+    The Place is matched/created from the offer's brand_name (+ coords from
+    the API). Many offers share a brand (e.g. Mall of the Emirates has 100+
+    offers) — find_or_create_place collapses them onto a single Place via
+    name+coords matching.
+
+    The discount-% is parsed best-effort by parse_adcb_offers.py; offers
+    whose title doesn't match a clean pattern fall through as
+    discount_type=OTHER with the raw title preserved.
+    """
+    stats = IngestStats(source="adcb_touchpoints")
+    path = DATA / "adcb_offers_enriched.json"
+    if not path.exists():
+        return stats
+
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    if limit:
+        rows = rows[:limit]
+
+    type_map = {
+        "percentage": DiscountType.PERCENTAGE,
+        "fixed_price": DiscountType.FIXED_PRICE,
+        "bogo": DiscountType.BOGO,
+        "other": DiscountType.OTHER,
+    }
+
+    for row in rows:
+        offer_id = row.get("id")
+        brand_name = (row.get("brand_name") or "").strip()
+        title = (row.get("title") or "").strip()
+        if not offer_id or not brand_name or not title:
+            stats.skipped += 1
+            continue
+
+        lat = row.get("lat")
+        lng = row.get("lng")
+        if lat == 0 and lng == 0:
+            lat = lng = None  # treat (0,0) as "no coords" like Fazaa
+
+        category_hint = (row.get("category") or "").lower()
+        category = _category_for([category_hint])
+
+        place_defaults = {
+            "logo_url_override": (row.get("brand_logo") or row.get("merchant_logo") or "")[:500],
+        }
+        if dry_run:
+            place, created = None, False
+        else:
+            place, created = find_or_create_place(
+                name=brand_name,
+                lat=lat, lng=lng,
+                category=category,
+                defaults={k: v for k, v in place_defaults.items() if v},
+            )
+        if created:
+            stats.places_created += 1
+        else:
+            stats.places_matched += 1
+
+        discount_slug = f"adcb-{offer_id}"
+        stats.slugs_seen.add(discount_slug)
+        dtype = type_map.get(row.get("discount_type"), DiscountType.OTHER)
+
+        defaults = {
+            "place": place,
+            "title": title[:200],
+            "discount_type": dtype,
+            "percentage": row.get("percentage"),
+            "fixed_price_aed": _decimal(row.get("fixed_price_aed")),
+            "description": (row.get("description") or title)[:2000],
+            "source_program": DiscountProgram.ADCB_TOUCHPOINTS,
+            "is_members_only": False,
+            # is_active intentionally omitted (curator overrides survive).
+            "valid_until": _parse_iso_date(row.get("end_time")),
+        }
+        if dry_run:
+            stats.discounts_created += 1
+            continue
+        _, was_created = Discount.objects.update_or_create(
+            slug=discount_slug, defaults=defaults,
+        )
+        if was_created:
+            stats.discounts_created += 1
+        else:
+            stats.discounts_updated += 1
+    return stats
+
+
 def ingest_atlantis_circle(*, dry_run: bool, limit: int | None) -> IngestStats:
     """Ingest the 20 Atlantis Dubai dining venues from
     data/atlantis_circle_enriched.json (produced by the refresh-atlantis-circle
@@ -557,12 +650,13 @@ SOURCE_FNS = {
     "entertainer": ingest_entertainer,
     "fazaa": ingest_fazaa,
     "atlantis_circle": ingest_atlantis_circle,
+    "adcb_touchpoints": ingest_adcb_touchpoints,
     "playbook": ingest_playbook,  # no-op; kept so migration 0012 still works
 }
 
 # Sources actually included by `--source all`. Playbook is dropped because
 # its ingest is a no-op (the program isn't really a discount program).
-ALL_SOURCES = ["entertainer", "fazaa", "atlantis_circle"]
+ALL_SOURCES = ["entertainer", "fazaa", "atlantis_circle", "adcb_touchpoints"]
 
 # (DiscountProgram value, slug prefix) per source. The prefix is used by
 # --deactivate-missing to scope the diff query — anything with the right
@@ -572,6 +666,7 @@ SOURCE_TO_PROGRAM = {
     "entertainer": (DiscountProgram.ENTERTAINER, "entertainer-"),
     "fazaa": (DiscountProgram.FAZAA, "fazaa-"),
     "atlantis_circle": (DiscountProgram.ATLANTIS_CIRCLE, "atlantis-circle-"),
+    "adcb_touchpoints": (DiscountProgram.ADCB_TOUCHPOINTS, "adcb-"),
 }
 
 

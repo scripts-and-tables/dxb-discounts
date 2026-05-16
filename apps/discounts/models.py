@@ -32,6 +32,7 @@ class DiscountProgram(models.TextChoices):
     ATLANTIS_CIRCLE = "atlantis_circle", "Atlantis Circle"
     U_BY_EMAAR = "u_by_emaar", "U By Emaar"
     AL_FUTTAIM_BLUE = "al_futtaim_blue", "Blue (Al-Futtaim)"
+    ADCB_TOUCHPOINTS = "adcb_touchpoints", "ADCB TouchPoints"
     REFERRAL = "referral", "Refer & Earn"
 
 
