@@ -58,7 +58,7 @@ Last updated: 2026-05-16.
 
 | Program | In model | Has skill | Public catalog | Fits our model | Notes |
 |---|:-:|:-:|:-:|:-:|---|
-| ADCB TouchPoints | ✗ | ✗ | ✓ | ✓ | Public `offers.adcb.com` — VOX BOGO, Talabat 20%, Noon 15% |
+| ADCB TouchPoints | ✗ | ✗ | ~ | ✗ | Public site, but the offer-list API is OAuth-gated. Credentials embedded in the JS bundle (`mallservices`/`P@ssword12`) are rejected by the server — either rotated or additional gating (signature/IP allow-list). The two no-auth endpoints (category taxonomy + campaign-locations as IDs+coords) lack actual offer titles/discounts. Verified 2026-05-16 — dead-end without Playwright. |
 | FAB Rewards | ✗ | ✗ | ✓ | ✓ | Manchester City card, Careem 20% |
 | Emirates NBD Smiles | ✗ | ✗ | ✓ | ✓ | Massive lifestyle perks catalog |
 | CBD Smiles | ✗ | ✗ | ~ | ✓ | Co-brand with Smiles |
@@ -110,6 +110,7 @@ Last updated: 2026-05-16.
 |---|---|
 | **Playbook** (my-playbook.com) | "Highlights" are venue programming (Ladies Night, Brunch) — freeform English, not structured discounts. Kept as a venue-metadata + icon-backfill source only. |
 | **Blue by Al-Futtaim** | Mobile-app-only catalog. Public web (mybluerewards.com + alfuttaim.com/blue-rewards) only shows marketing copy describing the benefit structure, never the actual partner offers. Verified 2026-05-16. |
+| **ADCB TouchPoints** | Public site is a Vue SPA whose offer-list API is OAuth-gated; bundle credentials are rejected by the server. Only the category taxonomy + campaign-location coords are reachable without auth — neither contains actual offer titles or discounts. Verified 2026-05-16. |
 
 ---
 
