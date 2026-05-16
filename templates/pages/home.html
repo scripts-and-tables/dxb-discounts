@@ -23,10 +23,10 @@
       hx-push-url="true"
       hx-indicator="#filter-spinner"
     >
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-row gap-2 relative">
         <input type="search" name="q" value="{{ selected.q }}" placeholder="Search places, areas, brands…" class="field flex-1 min-w-0" aria-label="Search places">
 
-        <details class="relative" id="filter-panel">
+        <details class="sm:relative" id="filter-panel">
           <summary class="btn-ghost cursor-pointer list-none select-none relative px-3 sm:px-4" aria-label="Filters">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-4 sm:h-4 sm:mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/>
