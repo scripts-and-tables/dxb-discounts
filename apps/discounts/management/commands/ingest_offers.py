@@ -17,15 +17,25 @@ Inputs (produced by the refresh-* skills):
 
 The command never deletes anything. It upserts Discounts by stable slug
 (e.g. 'entertainer-12345-67890-99'), so re-running with newer JSON updates
-existing rows in place. Discounts no longer present in the source aren't
-removed — handle that as a separate cleanup pass when you trust the source
-diff is real (not a transient API blip).
+existing rows in place.
+
+Discounts no longer present in the source stay around with their existing
+`is_active` value unless you pass `--deactivate-missing`, which marks them
+`is_active=False` once the source-side payload is trusted. That flag is
+scoped per source (filters by `source_program` AND slug prefix) and refuses
+to run with `--limit` (a partial scan would wrongly deactivate everything
+past the limit).
+
+`is_active` is intentionally not in the upsert defaults: new rows get the
+model default of True, existing rows keep whatever state they had — so
+curator-deactivated offers (and offers turned off on a prior
+`--deactivate-missing` run) survive an ingest.
 """
 from __future__ import annotations
 
 import json
 import urllib.parse
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, date
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -120,7 +130,9 @@ class IngestStats:
     places_matched: int = 0
     discounts_created: int = 0
     discounts_updated: int = 0
+    discounts_deactivated: int = 0  # set by --deactivate-missing post-pass
     skipped: int = 0
+    slugs_seen: set[str] = field(default_factory=set)
 
 
 # ---------- per-source ingestors -------------------------------------------
@@ -189,6 +201,7 @@ def ingest_entertainer(*, dry_run: bool, limit: int | None) -> IngestStats:
                 if not offer_id:
                     continue
                 discount_slug = f"entertainer-{merchant_id}-{outlet_id}-{offer_id}"
+                stats.slugs_seen.add(discount_slug)
                 voucher_type = offer.get("voucher_type")
                 is_pct = offer.get("is_percentage_offer")
                 if voucher_type == 1:
@@ -213,7 +226,10 @@ def ingest_entertainer(*, dry_run: bool, limit: int | None) -> IngestStats:
                     "terms": terms,
                     "source_program": DiscountProgram.ENTERTAINER,
                     "is_members_only": True,
-                    "is_active": True,
+                    # is_active is intentionally omitted: new rows get True via
+                    # the model default, existing rows keep their value (so a
+                    # curator-deactivated row, or one that --deactivate-missing
+                    # turned off on a prior run, stays off).
                     "valid_from": _parse_iso_date(offer.get("valid_from_date")),
                     "valid_until": _parse_iso_date(offer.get("validity_date")),
                 }
@@ -309,14 +325,16 @@ def ingest_fazaa(*, dry_run: bool, limit: int | None) -> IngestStats:
             "external_url": external_url[:500],
             "source_program": DiscountProgram.FAZAA,
             "is_members_only": False,
-            "is_active": True,
+            # is_active intentionally omitted — see entertainer block above.
             "valid_until": _parse_iso_date(detail.get("offerExpiry")),
         }
+        discount_slug = f"fazaa-{slug}"
+        stats.slugs_seen.add(discount_slug)
         if dry_run:
             stats.discounts_created += 1
             continue
         _, was_created = Discount.objects.update_or_create(
-            slug=f"fazaa-{slug}", defaults=defaults,
+            slug=discount_slug, defaults=defaults,
         )
         if was_created:
             stats.discounts_created += 1
@@ -410,6 +428,15 @@ SOURCE_FNS = {
 # its ingest is a no-op (the program isn't really a discount program).
 ALL_SOURCES = ["entertainer", "fazaa"]
 
+# (DiscountProgram value, slug prefix) per source. The prefix is used by
+# --deactivate-missing to scope the diff query — anything with the right
+# source_program but a non-matching slug (e.g. legacy `ent-` rows that
+# pre-date the per-offer slug scheme) is left alone.
+SOURCE_TO_PROGRAM = {
+    "entertainer": (DiscountProgram.ENTERTAINER, "entertainer-"),
+    "fazaa": (DiscountProgram.FAZAA, "fazaa-"),
+}
+
 
 class Command(BaseCommand):
     help = "Ingest enriched JSON from refresh-* skills into Place + Discount."
@@ -425,9 +452,25 @@ class Command(BaseCommand):
                             help="Process only the first N rows per source (for smoke tests).")
         parser.add_argument("--skip-backfill", action="store_true",
                             help="Skip the lat/lng backfill on existing Places.")
+        parser.add_argument(
+            "--deactivate-missing", action="store_true",
+            help=(
+                "After each source's ingest, mark `is_active=False` on Discounts "
+                "with this source_program whose slug wasn't seen in the current "
+                "payload. Refuses to run when --limit is set (the slug set would "
+                "be partial). Pairs with --dry-run to preview the count."
+            ),
+        )
 
     def handle(self, *args, dry_run: bool, source: str, limit: int | None,
-               skip_backfill: bool, **kwargs):
+               skip_backfill: bool, deactivate_missing: bool, **kwargs):
+        if deactivate_missing and limit is not None:
+            self.stderr.write(self.style.ERROR(
+                "--deactivate-missing cannot be combined with --limit "
+                "(the slug set would be partial and would wrongly deactivate "
+                "offers that weren't visited)."
+            ))
+            return
         if not skip_backfill and not dry_run:
             self.stdout.write("Backfilling lat/lng on existing Places...")
             n = backfill_existing_place_coords()
@@ -443,14 +486,30 @@ class Command(BaseCommand):
             fn = SOURCE_FNS[src]
             with transaction.atomic():
                 stats = fn(dry_run=dry_run, limit=limit)
+                if deactivate_missing and src in SOURCE_TO_PROGRAM:
+                    program, prefix = SOURCE_TO_PROGRAM[src]
+                    missing_qs = Discount.objects.filter(
+                        source_program=program,
+                        slug__startswith=prefix,
+                        is_active=True,
+                    ).exclude(slug__in=stats.slugs_seen)
+                    if dry_run:
+                        stats.discounts_deactivated = missing_qs.count()
+                    else:
+                        stats.discounts_deactivated = missing_qs.update(is_active=False)
                 if dry_run:
                     transaction.set_rollback(True)
             all_stats.append(stats)
+            deact_part = (
+                f" | deactivated={stats.discounts_deactivated}"
+                if deactivate_missing else ""
+            )
             self.stdout.write(self.style.SUCCESS(
                 f"  {src}: places created={stats.places_created} "
                 f"matched={stats.places_matched} | "
                 f"discounts created={stats.discounts_created} "
-                f"updated={stats.discounts_updated} | skipped={stats.skipped}"
+                f"updated={stats.discounts_updated}{deact_part} | "
+                f"skipped={stats.skipped}"
             ))
 
         self.stdout.write("\n--- Summary ---")
@@ -458,7 +517,10 @@ class Command(BaseCommand):
         tot_pm = sum(s.places_matched for s in all_stats)
         tot_dc = sum(s.discounts_created for s in all_stats)
         tot_du = sum(s.discounts_updated for s in all_stats)
+        tot_dd = sum(s.discounts_deactivated for s in all_stats)
         self.stdout.write(f"Places: {tot_pc} created, {tot_pm} matched (across sources)")
         self.stdout.write(f"Discounts: {tot_dc} created, {tot_du} updated")
+        if deactivate_missing:
+            self.stdout.write(f"Discounts deactivated (missing from source): {tot_dd}")
         if dry_run:
             self.stdout.write(self.style.WARNING("DRY RUN — no changes committed."))

@@ -69,10 +69,16 @@ _NAME_CACHE: list[tuple[int, str, float | None, float | None]] | None = None
 def prime_cache() -> None:
     """Load every published Place's name + coords into memory so the matcher
     runs at O(N) per query without N DB hits. Call once at the start of an
-    ingestion pass."""
+    ingestion pass.
+
+    Unpublished Places (soft-deleted via merge_places) are excluded so a fresh
+    ingest doesn't re-attach new offers to a loser that was merged away in a
+    previous run.
+    """
     global _NAME_CACHE
     rows = list(
-        Place.objects.values_list("id", "name", "lat", "lng")
+        Place.objects.filter(is_published=True)
+        .values_list("id", "name", "lat", "lng")
     )
     _NAME_CACHE = [
         (
@@ -161,12 +167,14 @@ def find_or_create_place(*, name: str, lat: float | None, lng: float | None,
     defaults = defaults or {}
     base_slug = slugify(name)[:200] or "place"
 
-    # Step 1: exact slug
-    place = Place.objects.filter(slug=base_slug).first()
+    # Step 1: exact slug. Filter to is_published=True so we never re-attach
+    # a new offer to a Place that was merged away (the loser keeps its slug
+    # but is_published=False; Place.save() suffixes new collisions with -2).
+    place = Place.objects.filter(slug=base_slug, is_published=True).first()
     if place is None:
         # Or a slug suffix collision (slugify("Karma") matched some other Karma)
         # — only if we have coords to verify it's the same place.
-        for candidate in Place.objects.filter(slug__startswith=base_slug + "-"):
+        for candidate in Place.objects.filter(slug__startswith=base_slug + "-", is_published=True):
             if (lat is not None and lng is not None
                     and candidate.lat is not None and candidate.lng is not None):
                 d = _haversine_m(lat, lng,
