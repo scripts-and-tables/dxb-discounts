@@ -46,7 +46,7 @@ Last updated: 2026-05-16.
 |---|:-:|:-:|:-:|:-:|---|
 | **Shukran** | ✓ | ✗ | ~ | ~ | Landmark Group — points across Centrepoint, Splash, Babyshop |
 | **SHARE Rewards** | ✓ | ✗ | ✓ | ~ | Majid Al Futtaim — Carrefour, VOX, Ski Dubai, Magic Planet |
-| **Blue by Al-Futtaim** | ✓ | ✗ | ✓ | ~ | IKEA, ACE, Plug-Ins, Toys R Us |
+| **Blue by Al-Futtaim** | ✓ | ✗ | ✗ | ✗ | IKEA, ACE, M&S, Toys R Us, Watsons. **No public offer catalog** — all flat-% / 2-for-1 deals live inside the Blue mobile app behind login. Web pages (mybluerewards.com, alfuttaim.com/blue-rewards) are marketing copy only. Verified 2026-05-16 — dead-end for scraping. |
 | Al Tayer Amber | ✗ | ✗ | ✓ | ~ | Bloomingdale's, Harvey Nichols, Areej, Mamas & Papas |
 | Club Apparel | ✗ | ✗ | ✓ | ~ | Apparel Group — 75+ brands (Levi's, ALDO, Tommy Hilfiger) |
 | GMG Loyalty | ✗ | ✗ | ~ | ~ | Sun & Sand Sports, Nike, Columbia |
@@ -109,6 +109,7 @@ Last updated: 2026-05-16.
 | Program | Why declined |
 |---|---|
 | **Playbook** (my-playbook.com) | "Highlights" are venue programming (Ladies Night, Brunch) — freeform English, not structured discounts. Kept as a venue-metadata + icon-backfill source only. |
+| **Blue by Al-Futtaim** | Mobile-app-only catalog. Public web (mybluerewards.com + alfuttaim.com/blue-rewards) only shows marketing copy describing the benefit structure, never the actual partner offers. Verified 2026-05-16. |
 
 ---
 
